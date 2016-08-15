@@ -1,0 +1,286 @@
+body{
+  background-color: #e1c69d;
+  font-family : Georgia,Utopia,Charter,serif;
+  background-image: url("kikoi.jpg");
+}
+
+iframe {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  width:270px;
+  height:205px;
+  overflow:hidden;
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+
+
+}
+
+#submit_btn{
+  width: 98%;
+  margin-top: 6px;
+
+}
+
+
+.wordDiv{
+  background-color: #f1e4d1;;
+  padding: 4px; 
+  border: 2px solid #684235; 
+  border-radius: 10px;
+  margin: 25px;
+  clear: both;
+  border-style: inset;
+  margin-top: 3px;
+
+}
+
+
+.singleTerm:active:after {
+  content:attr(title);
+  padding:5px;
+  border:1px solid #ccc;
+  top:5px;
+  right:10%;
+  background: #bada55;
+}
+
+
+
+.sourceInfo{
+  margin-right: auto; margin-left: auto; width: 340px;
+}
+
+.wordInfo{
+  margin-right: auto; margin-left: auto; width: 340px;
+}
+
+#swap{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  float: center;
+  cursor: pointer;
+  border: none;
+ 
+}
+
+#input_word{
+  margin-left: 47px;
+  text-align: center;
+}
+
+
+
+
+.inputTerm{
+  
+  width: 150px;
+  border: 2px solid #684235;
+  /* background-color: #93A661;*/
+  border-radius: 8px;
+  color: white; text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  font:  bold;
+
+}
+.inputTermDiv{
+  float: left;
+  
+}
+
+.termsDump{
+  float: left;
+}
+
+.noTerm{
+  float: left;
+}
+
+.singleInfoDiv{
+  border: 2px solid #684235;
+  border-radius: 8px;
+  color: white; text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  overflow:auto;
+
+}
+
+.noInfo{
+  border: 2px solid #684235;
+  background-color:white !important;
+  border-radius: 8px;
+  color: red; text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  overflow:auto;
+}
+
+.terms{
+ 
+  width: 150px;
+  border: 2px solid #684235;
+
+  border-radius: 8px;
+  color: white; text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  font:  bold;
+   overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.no-term{
+ 
+  width: 150px;
+  border: 2px solid #684235;
+  background-color:white !important;
+  border-radius: 8px;
+  text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  font:  bold;
+   overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.noInfo{
+  border: 2px solid #684235;
+  background-color:#DA611E !important;
+  border-radius: 8px;
+  color: white; text-align: center;
+  margin: 3px;
+  padding: 3px;
+  cursor: default;
+  overflow:auto;
+}
+
+
+.language{
+  float: right;
+  display: inline;
+  width: 150px;
+  border: 2px solid #684235;
+ 
+  border-radius: 8px;
+  color: white; text-align: center;
+  font-style: italic;
+  margin: 3px;
+}
+
+.sourceDiv .language{
+  color: black;
+  background-color: #FCE8C4;
+} 
+
+.sourceDiv div div{
+
+  color: black;
+  background-color: #FCE8C4;
+
+}
+
+input[type="text"], textarea {
+
+  background-color : #FCE8C4; 
+  border: 2px solid #684235;
+  border-radius: 8px;
+  font-weight: bold;
+
+
+}
+
+
+
+.englishDiv .language{
+  background-color: #CEA899;
+  color: black;
+} 
+
+.englishDiv div div{
+
+  background-color: #CEA899;
+  color: black;
+  
+
+}
+
+.legendDiv .inputTerm{
+  background-color: #AB3939;
+  text-overflow:ellipsis;
+} 
+
+.legendDiv .language{
+  background-color: #AB3939;
+} 
+
+.legendDiv div div{
+
+ background-color: #AB3939;
+}
+
+.targetDiv .language{
+  background-color: #FFD29D;
+  color: black;
+} 
+
+.targetDiv div div{
+
+  background-color: #FFD29D;
+  color: black;
+}
+
+
+
+.englishDiv{
+  border-top: 2px solid #684235;
+
+}
+
+.targetDiv{
+  padding: 0 0 0 10px;
+  height: 5 px;
+  padding: 5px;
+	
+}
+
+
+#legendBigDiv{
+ 
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
+#form{
+ 
+  margin-top:25px;
+  margin-bottom:25px;
+  margin-top:25px;
+}
+
+.sourceDiv{
+  border-bottom: 2px solid #684235;
+
+}
+
+
+ul{
+	list-style: none;
+}
+
+
+
