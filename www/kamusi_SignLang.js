@@ -1,108 +1,73 @@
-function swapLanguages(){
-	 
+function swapLanguages(){	 
 	var trgt_idx = document.getElementById("target_language").selectedIndex;
 	var src_idx =  document.getElementById("source_language").selectedIndex;
 	document.getElementById("target_language").selectedIndex = src_idx;
 	document.getElementById("source_language").selectedIndex = trgt_idx;
 
 	chrome.storage.sync.set({'trgt_idx': src_idx}, function() {
-			
-		});
+	});
 
 	chrome.storage.sync.set({'src_idx': trgt_idx}, function() {
-			
-		});
+	});
 
 }
 
-
 window.onload = function() {
-
-
-
 	document.getElementById("swap").title = "Swap Languages";
-
 	document.getElementById("swap").onclick = swapLanguages;
 	
 	chrome.storage.sync.get('trgt_idx', function(result){
-
-	     document.getElementById("target_language").selectedIndex = result.trgt_idx;
-	    
+		document.getElementById("target_language").selectedIndex = result.trgt_idx;
 	});
 
 	chrome.storage.sync.get('src_idx', function(result){
-	    
-		
-	     document.getElementById("source_language").selectedIndex = result.src_idx;
-
-	    
-
+		document.getElementById("source_language").selectedIndex = result.src_idx;
 	});
 
-
 	chrome.storage.sync.get('input_word', function(result){
-	    
-		
-	     document.getElementById("input_word").value = result.input_word;
-	     run();
-
+    	document.getElementById("input_word").value = result.input_word;
+	    run();
 	});
 
 	$(document.getElementById("input_word")).bind('change', function(){
 
 		var input_word = document.getElementById("input_word").value;
 		chrome.storage.sync.set({'input_word': input_word}, function() {
-			
 		});
 
 	});
 
 	$(document.getElementById("source_language")).bind('change', function(){
 
-		
-		
 		var src_idx =  document.getElementById("source_language").selectedIndex;
 		var s = document.getElementById("source_language");
 		var src_lang = s.options[s.selectedIndex].value;
 		var src_lang_word = s.options[s.selectedIndex].text; 
 
 		chrome.storage.sync.set({'src_idx': src_idx}, function() {
-			
 		});
 
-		/*chrome.storage.sync.set({'src_lang': src_lang}, function() {
-			
+		/*chrome.storage.sync.set({'src_lang': src_lang}, function() {	
 		});
 
 		chrome.storage.sync.set({'src_lang_word': src_lang_word}, function() {
-		
-			
 		});*/
-
-		
 
 	});
 
 	$(document.getElementById("target_language")).bind('change', function(){
-
-		
-
 		var trgt_idx =  document.getElementById("target_language").selectedIndex;
 		var t = document.getElementById("target_language");
 		var trgt_lang = t.options[t.selectedIndex].value;
 		var trgt_lang_word = t.options[t.selectedIndex].text;
 		
 		chrome.storage.sync.set({'trgt_idx': trgt_idx}, function() {
-			
 		});
 
 	/*	chrome.storage.sync.set({'trgt_lang': trgt_lang}, function() {
-			
 		});
 
 		chrome.storage.sync.set({'trgt_lang_word': trgt_lang_word}, function() {
-			
-			
 		});*/
 
 
@@ -116,24 +81,20 @@ window.onload = function() {
 	var dumpTarget = document.getElementById("dump");
 	//dumpTarget.appendChild(legendBigDiv);
 
-
-  	
 	document.getElementById("input_word")
 	.addEventListener("keyup", function(event) {
 		event.preventDefault();
 		
-		if (event.keyCode == 13) {
-			
+		if (event.keyCode == 13) {		
 			run();
 		}
 	});
- document.getElementById("submit_btn").onclick= run;
+	
+	document.getElementById("submit_btn").onclick= run;
 };
 
 
 function run() {
-
-	
 	var dumpTarget = document.getElementById("dump");
 
 	var s = document.getElementById("source_language");
@@ -165,13 +126,10 @@ function run() {
 	//$.get("http://128.179.142.191:3000/preD/termTranslate/"+input_word+"/"+src_lang+"/"+trgt_lang
 	//$.get("http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/"+input_word+"/"+src_lang+"/"+trgt_lang
 	,function (data) {
-             	//dumpTarget.innerHTML = "before function call request";
-             	//(JSON.stringify(data))
-             	displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
-             });
-
-	
-	
+     	//dumpTarget.innerHTML = "before function call request";
+     	//(JSON.stringify(data))
+     	displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
+    });	
 }
 
 function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish, trgt_lang_word, src_lang_word){

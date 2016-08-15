@@ -1,24 +1,17 @@
-function swapLanguages(){
-	 
+function swapLanguages(){	 
 	var trgt_idx = document.getElementById("target_language").selectedIndex;
 	var src_idx =  document.getElementById("source_language").selectedIndex;
 	document.getElementById("target_language").selectedIndex = src_idx;
 	document.getElementById("source_language").selectedIndex = trgt_idx;
 /*
 	chrome.storage.sync.set({'trgt_idx': src_idx}, function() {
-			
-		});
+	});
 
 	chrome.storage.sync.set({'src_idx': trgt_idx}, function() {
-			
-		}); */
-
+	}); */
 }
 
-
 window.onload = function() {
-
-
 	document.getElementById("swap").title = "Swap Languages";
 	document.getElementById("swap").onclick = swapLanguages;
 	
@@ -32,41 +25,31 @@ window.onload = function() {
 	     document.getElementById("source_language").selectedIndex = result.src_idx;
 	});
 
-
 	chrome.storage.sync.get('input_word', function(result){
 	     document.getElementById("input_word").value = result.input_word;
 	     run();
-
 	}); */
 
 	$(document.getElementById("input_word")).bind('change', function(){
-
 		var input_word = document.getElementById("input_word").value;
 /*
 		chrome.storage.sync.set({'input_word': input_word}, function() {
-			
 		}); */
-
 	});
 
 	// Saving Settings on input change
 	$(document.getElementById("source_language")).bind('change', function(){
-
 		var src_idx =  document.getElementById("source_language").selectedIndex;
 	/*
 		chrome.storage.sync.set({'src_idx': src_idx}, function() {
-			
 		}); */
 	});
 
 	$(document.getElementById("target_language")).bind('change', function(){
-
 		var trgt_idx =  document.getElementById("target_language").selectedIndex;
 		/*
 		chrome.storage.sync.set({'trgt_idx': trgt_idx}, function() {
-			
 		}); */
-
 	});
     
 	document.getElementById("input_word")
@@ -77,13 +60,12 @@ window.onload = function() {
 			run();
 		}
 	});
- document.getElementById("submit_btn").onclick= run;
+	
+	document.getElementById("submit_btn").onclick = run;
 };
 
 
 function run() {
-
-	
 	var dumpTarget = document.getElementById("dump");
 
 	var s = document.getElementById("source_language");
@@ -99,7 +81,6 @@ function run() {
 	var trgt_idx = document.getElementById("target_language").selectedIndex;
 	var src_idx = document.getElementById("source_language").selectedIndex;
 
-
 	//saveChanges(src_idx, trgt_idx, input_word );
 
 	var displayEnglish = false;
@@ -108,29 +89,22 @@ function run() {
 		displayEnglish = true;
 	}
 
-	
-
 	//$.get("http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/:term"+input_word+"/:srclang"+src_lang+"/:dstlang"+trgt_lang
 	$.get("http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/"+input_word+"/"+src_lang+"/"+trgt_lang
 	//$.get("http://128.179.142.191:3000/preD/termTranslate/"+input_word+"/"+src_lang+"/"+trgt_lang
 	//$.get("http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/"+input_word+"/"+src_lang+"/"+trgt_lang
 	,function (data) {
-             	//dumpTarget.innerHTML = "before function call request";
-             	//(JSON.stringify(data))
-             	displayResults(data, input_word, src_lang, trgt_lang, displayEnglish ,trgt_lang_word, src_lang_word);
-             });
-
-	
-	
+     	//dumpTarget.innerHTML = "before function call request";
+     	//(JSON.stringify(data))
+     	displayResults(data, input_word, src_lang, trgt_lang, displayEnglish ,trgt_lang_word, src_lang_word);
+     });	
 }
 
 function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, trgt_lang_word, src_lang_word){
 	
 	var dumpTarget = document.getElementById("dump");
 	dumpTarget.innerHTML = "";
-	
-	
-	
+		
 	var wordDiv = document.createElement("div");
 	wordDiv.setAttribute('class','wordDiv w3-container');
 
