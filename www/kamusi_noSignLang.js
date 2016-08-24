@@ -1,3 +1,5 @@
+var app = angular.module('main', ['ionic']);
+
 function swapLanguages(){	 
 	var trgt_idx = document.getElementById("target_language").selectedIndex;
 	var src_idx =  document.getElementById("source_language").selectedIndex;
@@ -67,7 +69,6 @@ window.onload = function() {
 
 function run() {
 	var dumpTarget = document.getElementById("dump");
-
 	var s = document.getElementById("source_language");
 	var src_lang = s.options[s.selectedIndex].value;
 	var src_lang_word = s.options[s.selectedIndex].text;
@@ -96,7 +97,9 @@ function run() {
 	,function (data) {
      	//dumpTarget.innerHTML = "before function call request";
      	//(JSON.stringify(data))
-     	displayResults(data, input_word, src_lang, trgt_lang, displayEnglish ,trgt_lang_word, src_lang_word);
+     	//displayResults(data, input_word, src_lang, trgt_lang, displayEnglish ,trgt_lang_word, src_lang_word);
+		angular.element(document.querySelector('[ng-controller="displayCtrl"]')).scope().displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
+             	;     	
      });	
 }
 
@@ -119,9 +122,9 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 	var t = document.createTextNode("Language");
 	srcLangDiv.appendChild(t);
 	legendBigDiv.appendChild(srcLangDiv);
+	
 
 	var inputTermDiv = document.createElement("div");
-	
 	inputTermDiv.setAttribute('class','inputTermDiv w3-container');
 	
 	var inputTerm = document.createElement("div");
@@ -151,7 +154,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 	if(data==""){
 
 		var h = document.createElement("H3");
-		var t = document.createTextNode("No data yet for "+ input_word +" in "+src_lang_word);
+		var t = document.createTextNode(" No data yet for "+ input_word +" in "+src_lang_word);
 		h.appendChild(t);
 		dumpTarget.appendChild(h);
 
@@ -210,9 +213,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 
 		var trgt_concept = data[i].target_concept;
 		
-		if(trgt_concept != null){ 
-
-			
+		if(trgt_concept != null){ 		
 			
 			var trgt_definition = trgt_concept.definition;
 			var trgt_example_sents  = trgt_concept.example_sents;
@@ -367,7 +368,8 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 		if(serverWords[i].src_example_sents !=""){
 			var singleInfoDiv = document.createElement("div");
 			singleInfoDiv.setAttribute('class','singleInfoDiv w3-container');
-			var t = document.createTextNode("Context Example: "+serverWords[i].src_example_sents);
+			var t = document.createTextNode("Example: "+serverWords[i].src_example_sents);
+			// removed the word context
 			singleInfoDiv.appendChild(t);
 			sourceInfo.appendChild(singleInfoDiv);
 		}
@@ -555,16 +557,11 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 				englishInfo.appendChild(singleInfoDiv);
 			}
 
-			
 			englishDiv.appendChild(englishInfo);
 
 			wordDiv.appendChild(englishDiv);
 			
 		}
-
-
-		
-		
 
 		wordsDiv.appendChild(wordDiv);
 		
@@ -584,3 +581,88 @@ function displayResults(data, input_word, src_lang, trgt_lang, displayEnglish, t
 
 }
 
+//Android code
+
+
+
+$(document).ready(function(){
+ 
+$("#submit_btn").click(function(){
+    $("#form").hide();
+    $(".leftArrow").css('visibility','visible');
+    $("#sample").show();
+});
+
+
+$(".leftArrow").click(function() {
+	$("#dump").hide();
+	$("#form").show();
+	$(".leftArrow").css('visibility','hidden');
+	 $("#sample").hide();
+})
+}); 
+
+app.controller('displayCtrl', function($scope, $http, $ionicPlatform) {
+
+	$ionicPlatform.onHardwareBackButton(function() {
+		event.preventDefault();
+		event.stopPropagation();
+		alert("Are you sure you want to exit ?");
+	})
+
+
+  $scope.displayResults = function(data, input_word, src_lang, trgt_lang, displayEnglish, trgt_lang_word, src_lang_word) {
+  	//alert("check");
+
+  	$scope.result = data;
+  	$scope.input_word = input_word;
+  	$scope.source_language = source_language;
+  	$scope.target_language = target_language;
+
+  	var t = document.getElementById("target_language");
+	$scope.target_language = t.options[t.selectedIndex].text;
+
+
+  //	console.log($scope.result);
+  $scope.$apply();
+  }
+
+  $scope.listTerms = function(terms) {
+  	var words = "";
+  	for (var i = 0; i < terms.length; i++) {
+  		words = words + terms[i].lemma + " (" + terms[i].pos  + ")" ;
+  		// Use the below ss_type, if 'pos' is not available.
+  		// ({{ob.english_concept.ss_type}})
+  		if (i != terms.length - 1) {
+  			words = words + ", "
+  		}
+  	}
+  	return words;
+  }
+
+  $scope.pos = function(t1,t2) {
+
+   if (t1 ==undefined) {
+   	  var pos = t2
+   } else {
+   	var pos = t1
+   }
+
+   pos = pos.slice(-1);
+   return pos;
+  }
+
+  $scope.defn =function(t1,t2) {
+
+  	if (t1 != undefined) {
+  		 var defn = t1;
+  	} else if (t2 != undefined) {
+  		var defn = t2;
+  	} else {
+  		var defn = "";
+  	}
+
+  	return defn;
+  }
+
+});

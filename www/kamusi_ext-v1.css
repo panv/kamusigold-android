@@ -1,6 +1,7 @@
 body {
   background-color: #e1c69d;
-  font-family : Georgia,Utopia,Charter,serif;
+  /* font-family : Georgia,Utopia,Charter,serif; */
+  font-family: 'Roboto', sans-serif;
   background-image: url("kikoi.jpg");
 }
 
@@ -22,41 +23,65 @@ iframe {
 }
 
 #form {
-  margin-top:25px;
-  margin-bottom:25px;
+  margin-top:50px; 
+  margin-bottom:50px;
+  margin: 4%;
+  text-align: center;
 }
 
 #submit_btn {
-  width: 98%;
-  margin-top: 6px;
+  align-content: center; 
+  width: 58%; 
+  margin-top: 15px;
+  width: 100%;
+  background-color: #684235;
+  color: white;
+  height: 41px;
+  font-size: large;
 }
 
 #swap {
   display: inline-block;
-  width: 45px;
+  width: 55px; /*edited 45px*/
   height: 45px;
-  float: center;
+  align-content: center;
+  margin: 10px 0px;
   cursor: pointer;
   border: none;
- 
+}
+
+#logo {
+  display: inline-block;
+  margin: 85px 0 22px 0;
+  cursor: pointer;
+  border: none;
+  align-self: center;
 }
 
 #input_word {
-  margin-left: 47px;
-  text-align: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 22px;
+    padding: 22px;
+  
+}
+
+#legendBigDiv {
+  margin-top: 6px; /*edited from 6px */
+  margin-bottom: 0px;
+  visibility: hidden; /*edited to remove the categorising*/
 }
 
 input[type="text"], textarea {
   background-color : #FCE8C4; 
-  border: 2px solid #684235;
   border-radius: 8px;
   font-weight: bold;
 }
 
 .wordDiv {
-  background-color: #f1e4d1;;
+  background-color: #f1e4d1;
   padding: 4px; 
-  border: 2px solid #684235; 
+  border: none;
   border-radius: 10px;
   margin: 25px;
   clear: both;
@@ -67,23 +92,26 @@ input[type="text"], textarea {
 .singleTerm:active:after {
   content:attr(title);
   padding:5px;
-  border:1px solid #ccc;
+  border:none;
   top:5px;
   right:10%;
   background: #bada55;
 }
 
 .sourceInfo {
-  margin-right: auto; margin-left: auto; width: 340px;
+  margin-right: auto; 
+  margin-left: auto; 
+  width: 340px;
 }
 
 .wordInfo {
-  margin-right: auto; margin-left: auto; width: 340px;
+  margin-right: auto; 
+  margin-left: auto; 
+  width: 340px;
 }
 
 .inputTerm {
   width: 150px;
-  border: 2px solid #684235;
   /* background-color: #93A661;*/
   border-radius: 8px;
   color: white; text-align: center;
@@ -106,33 +134,30 @@ input[type="text"], textarea {
 }
 
 .singleInfoDiv {
-  border: 2px solid #684235;
   border-radius: 8px;
   color: white; text-align: center;
   margin: 3px;
-  padding: 3px;
+  padding: none;
   cursor: default;
   overflow:auto;
 }
 
 .noInfo {
-  border: 2px solid #684235;
   background-color:white !important;
   border-radius: 8px;
   color: red; text-align: center;
   margin: 3px;
-  padding: 3px;
+  padding: none;
   cursor: default;
   overflow:auto;
 }
 
 .terms {
   width: 150px;
-  border: 2px solid #684235;
   border-radius: 8px;
   color: white; text-align: center;
   margin: 3px;
-  padding: 3px;
+  padding: none;
   cursor: default;
   font:  bold;
   overflow:hidden;
@@ -141,12 +166,11 @@ input[type="text"], textarea {
 
 .no-term {
   width: 150px;
-  border: 2px solid #684235;
   background-color:white !important;
   border-radius: 8px;
   text-align: center;
   margin: 3px;
-  padding: 3px;
+  padding: none;
   cursor: default;
   font:  bold;
   overflow:hidden;
@@ -154,22 +178,19 @@ input[type="text"], textarea {
 }
 
 .noInfo {
-  border: 2px solid #684235;
   background-color:#DA611E !important;
   border-radius: 8px;
   color: white; text-align: center;
   margin: 3px;
-  padding: 3px;
+  padding: none;
   cursor: default;
   overflow:auto;
 }
-
 
 .language {
   float: right;
   display: inline;
   width: 150px;
-  border: 2px solid #684235;
   border-radius: 8px;
   color: white; text-align: center;
   font-style: italic;
@@ -226,13 +247,7 @@ input[type="text"], textarea {
 .targetDiv {
   padding: 0 0 0 10px;
   height: 5 px;
-  padding: 5px;
-}
-
-
-#legendBigDiv {
-  margin-top: 6px;
-  margin-bottom: 0px;
+  padding: none;
 }
 
 .sourceDiv {
@@ -242,3 +257,75 @@ input[type="text"], textarea {
 ul {
 	list-style: none;
 }
+
+.header {
+    background-color: #684235;
+    height: 59px;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+}
+
+.leftArrow {
+    width: 30px;
+    margin-top: 14px;
+    float: left;
+    margin-left: 9px;
+    visibility: hidden;
+}
+
+.title  {
+    text-align: center;
+    display: inline-block;
+    margin-top: 17px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
+.sub_btn {
+  text-align: center;
+}
+
+.outerDiv {
+    border: 2px solid #AB3939;
+    border-radius: 7px;
+    background-color: #AB3939;
+    margin: 0px 15px 16px 15px;
+    /* padding: 2px; */
+}
+
+.inner1 {
+    border: 2px solid #AB3939;
+    background-color: #FCE8C4;
+    padding: 9px;
+    border-radius: 5px;
+
+}
+
+.inner2 {
+    border: 2px solid #AB3939;
+    background-color: #FFD29D;
+    border-radius: 5px;
+    padding: 9px;
+}
+
+.inner3 {
+    border: 2px solid #AB3939;
+    background-color: #CEA899;
+    border-radius: 5px;
+    padding: 9px;
+}
+
+.innernull {
+    border: 2px solid #AB3939;
+    background-color: #FFD29D;
+    border-radius: 5px;
+    padding: 9px;
+
+}
+
+#sample {
+  margin-top: 76px;
+}
+

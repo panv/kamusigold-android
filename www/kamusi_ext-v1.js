@@ -3,7 +3,7 @@
 // 2. search for languages
 
 
-
+var app = angular.module('', []);
 
 window.onload = function() {
 
@@ -13,14 +13,14 @@ window.onload = function() {
 	var legendBigDiv = document.createElement("div");
 	
 	var wordDiv = document.createElement("div");
-	wordDiv.setAttribute('class','wordDiv w3-container');
+	wordDiv.setAttribute('class','');
 	//	$(wordDiv).data("stack", []);   // to store the deleted li definintions
 	
-	legendBigDiv.setAttribute('class','legendDiv w3-container');
+	legendBigDiv.setAttribute('class','');//legendDiv w3-container
 	legendBigDiv.setAttribute('id','legendBigDiv');
 	
 	var srcLangDiv = document.createElement("div");
-	srcLangDiv.setAttribute('class','language w3-container');
+	srcLangDiv.setAttribute('class','');//language w3-container
 	
 	var t = document.createTextNode("Language");
 	srcLangDiv.appendChild(t);
@@ -28,10 +28,10 @@ window.onload = function() {
 
 	var inputTermDiv = document.createElement("div");
 	
-	inputTermDiv.setAttribute('class','inputTermDiv w3-container');
+	inputTermDiv.setAttribute('class','');//inputTermDiv w3-container
 	
 	var inputTerm = document.createElement("div");
-	inputTerm.setAttribute('class','inputTerm w3-container');
+	inputTerm.setAttribute('class','');//inputTerm w3-container
 	var t = document.createTextNode("Term");
 	inputTerm.appendChild(t);
 	inputTermDiv.appendChild(inputTerm);
@@ -41,12 +41,12 @@ window.onload = function() {
 	
 
 	var sourceInfo = document.createElement("div");
-	sourceInfo.setAttribute('class','sourceInfo w3-container');
+	sourceInfo.setAttribute('class','');//sourceInfo w3-container
 	
 
 	
 	var singleInfoDiv = document.createElement("div");
-	singleInfoDiv.setAttribute('class','singleInfoDiv w3-container');
+	singleInfoDiv.setAttribute('class','');//singleInfoDiv w3-container
 	var t = document.createTextNode("Definition - Context Example");
 	singleInfoDiv.appendChild(t);
 	sourceInfo.appendChild(singleInfoDiv);
@@ -103,7 +103,9 @@ function run() {
 	,function (data) {
              	//dumpTarget.innerHTML = "before function call request";
              	//alert(JSON.stringify(data))
-             	displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
+             	//displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
+             	angular.element(document.querySelector('[ng-controller="displayCtrl"]')).scope().displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displayEnglish ,trgt_lang_word, src_lang_word);
+             	;
              });
 
 	
@@ -306,7 +308,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 			var wordDiv = document.createElement("div");
 			var sourceDiv = document.createElement("div");
 			var targetDiv = document.createElement("div");
-			var englishDiv = document.createElement("div");
+			var = document.createElement("div");
 
 			wordDiv.setAttribute('class','wordDiv w3-container');
 		//	$(wordDiv).data("stack", []);   // to store the deleted li definintions
@@ -335,12 +337,12 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 		
 
 		var sourceInfo = document.createElement("div");
-		sourceInfo.setAttribute('class','sourceInfo w3-container');
+		sourceInfo.setAttribute('class','');//sourceInfo w3-container
 		
 
 		if(serverWords[i].src_definition !=""){
 			var singleInfoDiv = document.createElement("div");
-			singleInfoDiv.setAttribute('class','singleInfoDiv w3-container');
+			singleInfoDiv.setAttribute('class','');//singleInfoDiv w3-container
 			var t = document.createTextNode(serverWords[i].src_definition);
 			singleInfoDiv.appendChild(t);
 			sourceInfo.appendChild(singleInfoDiv);
@@ -348,7 +350,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 
 		if(serverWords[i].src_example_sents !=""){
 			var singleInfoDiv = document.createElement("div");
-			singleInfoDiv.setAttribute('class','singleInfoDiv w3-container');
+			singleInfoDiv.setAttribute('class','');//singleInfoDiv w3-container
 			var t = document.createTextNode(serverWords[i].src_example_sents);
 			singleInfoDiv.appendChild(t);
 			sourceInfo.appendChild(singleInfoDiv);
@@ -356,7 +358,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 
 		if(serverWords[i].src_gloss !=""){
 			var singleInfoDiv = document.createElement("div");
-			singleInfoDiv.setAttribute('class','singleInfoDiv w3-container');
+			singleInfoDiv.setAttribute('class','');//singleInfoDiv w3-container
 			var t = document.createTextNode(serverWords[i].src_gloss);
 			singleInfoDiv.appendChild(t);
 			sourceInfo.appendChild(singleInfoDiv);
@@ -365,11 +367,11 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 		sourceDiv.appendChild(sourceInfo);
 
 
-		targetDiv.setAttribute('class','targetDiv w3-container');
+		targetDiv.setAttribute('class','');//targetDiv w3-container
 		
 
 		var trgtLangDiv = document.createElement("div");
-		trgtLangDiv.setAttribute('class','language w3-container');
+		trgtLangDiv.setAttribute('class','');//language w3-container
 		var t = document.createTextNode(serverWords[i].dest_language);
 		trgtLangDiv.appendChild(t);
 		targetDiv.appendChild(trgtLangDiv);
@@ -385,10 +387,10 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 					searchTerms[i] = input_word;
 				}
 				var targetInfo = document.createElement("div");
-				targetInfo.setAttribute('class','wordInfo w3-container');
+				targetInfo.setAttribute('class','');//wordInfo w3-container
 
 				var singleInfoDiv = document.createElement("div");
-				singleInfoDiv.setAttribute('class','noInfo w3-container');
+				singleInfoDiv.setAttribute('class','');//noInfo w3-container
 				
 
 
@@ -401,12 +403,10 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 							
 						}
 						
-					
-						
+										
 						if(searchTerm == 'cat'){
 							var link = 'https://www.youtube.com/watch?v=ckcml3_IdF8&feature=youtu.be';
 							var link = link.replace("watch?v=", "v/");
-							
 							
 							singleInfoDiv.innerHTML += '<iframe src=' +link+"> </iframe>";
 
@@ -476,7 +476,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 				singleInfoDiv.appendChild(t);
 
 
-				var t2 = document.createTextNode("Upcoming Feature: Suggest a Term");
+				var t2 = document.createTextNode("Suggest a Term: Upcoming feature");
 				singleInfoDiv.appendChild(t2);
 
 				targetInfo.appendChild(singleInfoDiv)
@@ -487,7 +487,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 			wordDiv.appendChild(targetDiv);
 
 			if(displayEnglish){
-				englishDiv.setAttribute('class','englishDiv w3-container');
+				englishDiv.setAttribute('class','');
 				
 				
 
@@ -828,4 +828,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 		$(dumpTarget).appendTo($(dumpDiv)).fadeIn();
 	}
 }
+
+
+
 

@@ -1,32 +1,47 @@
 <!doctype html>
 <html>
 <head>
-  <title>Pre:D</title>
-  <link rel="stylesheet" href="kamusi_ext-v1.css">
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> 
-
-
-  <script src="kamusi_noSignLang.js"></script>
-  <script src="jquery.min.js"></script>
-
-
-
-  
-
 
   <meta charset="utf-8"/>
+  <title>Pre:D</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+  <link rel="stylesheet" href="kamusi_ext-v1.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+  <script src="jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>     
+  
+  <script src="kamusi_noSignLang.js"></script>  
+  <script src="main.js"></script>
+  <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
 
 </head>
-<body>
+<body ng-app="main">
+    <div class="header">
+      <img src="left.svg" class="leftArrow">
+      <div class="title">Kamusi Gold</div>
+    </div>
 
 
-  <div class="w3-row-padding" style = "width: 200px" id="form">
+
+  <div class="" id="form">
+    <div class="body" id="logo">
+      <img src="kamusi.png" class="logo">
+    </div>
 
 
+    <div class="">
+      <input class="form-control" type="text" id="input_word" placeholder="Enter your word here">
+    </div>
 
-    <div class="w3-quarter">
-      <select class="w3-select" name="source_language" title="Source Language" id="source_language" style="height:45px">
-        
+    <div class="">
+      <select class="form-control" name="source_language" title="Source Language" id="source_language" style="height:45px">
+
         <option value="" disabled selected>Choose your source language</option>
         <option value="eus">Basque</option>
         <option value="cat">Catalan</option>
@@ -35,18 +50,15 @@
         <option value="ron">Romanian</option>
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option>
-        
+
       </select> 
     </div>
 
+    <img src="swap.png" alt="Swap Languages" class="" id="swap">
 
+    <div class="">
+      <select class="form-control" name="target_language" title="Target Language" id="target_language" style="height:45px">
 
-    <img src="swap.png" alt="Swap Languages" class="w3-content w3-hover-opacity" id="swap">
-
-
-
-    <div class="w3-quarter">
-      <select class="w3-select" name="target_language" title="Target Language" id="target_language" style="height:45px">
         <option value="" disabled selected>Choose your target language</option>
         <option value="eus">Basque</option>
         <option value="cat">Catalan</option>
@@ -55,25 +67,50 @@
         <option value="ron">Romanian</option>
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option>
-        
-        
+
       </select>
     </div>
 
-    <div class="w3-third">
-      <input class="w3-input" type="text" id="input_word"  placeholder="enter your word here">
+
+    <div class="sub_btn">
+      <button class="btn" id="submit_btn">Submit</button>
     </div>
 
-    <div class="sub_btn" style = "width: 800px">
-     <button class="w3-btn w3-container  w3-round-large w3-brown  w3-hover-red w3-large" id = "submit_btn" >Submit</button>
-   </div>
- </div>
+  </div>
 
 
+<div id="sample" ng-controller="displayCtrl" style="display:none;">
 
+<div ng-show="result.length == 0"> No data yet for {{input_word}}.</div>
+<div  class="outerDiv" ng-repeat="ob in result" >
 
- <div id="dump" style = "width: 800px">
+  <div class="inner1">
+    <div>{{ ob.source_concept.language}}: {{ input_word}} ({{ pos(ob.source_concept.synset_ID_3_0,ob.source_concept.synset_ID_3_1)}})</div>
+    <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
+    <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
    
- </div>
+  </div>
+
+  <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion. 
+  <div style="font-style: italic">Upcoming feature</div>
+  </div>
+
+  <div class="inner2" ng-hide="ob.target_terms.length == 0">
+    <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
+    <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
+    <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
+  </div>
+
+  <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
+    <div>{{ ob.english_concept.language}}: {{ listTerms(ob.eng_terms)}}</div>
+    <div ng-hide="defn(ob.target_concept.gloss, ob.english_concept.definition).length == 0">Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}</div>
+    <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">Example: {{ob.english_concept.example_sents[0]}}</div>
+  </div>
+
+</div>
+
+
+</div>
+
 </body>
 </html>
