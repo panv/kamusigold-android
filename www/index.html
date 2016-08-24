@@ -1,45 +1,43 @@
 <!doctype html>
 <html>
-<head>
 
+<head>
   <meta charset="utf-8"/>
   <title>Pre:D</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
+  <!-- Load CSS -->
   <link rel="stylesheet" href="lib/ionic/css/ionic.css">
   <link rel="stylesheet" href="kamusi_ext-v1.css">
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> 
+
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-
+  <!-- Load JS -->
   <script src="jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>     
-  
-  <script src="kamusi_noSignLang.js"></script>  
-  <script src="main.js"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script> -->
+
   <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
-
+  <script src="kamusi_noSignLang.js"></script>
 </head>
+
 <body ng-app="main">
-    <div class="header">
-      <img src="left.svg" class="leftArrow">
-      <div class="title">Kamusi Gold</div>
+  <div class="header">
+    <img src="left.svg" class="leftArrow">
+    <div class="title">Kamusi Gold</div>
+  </div>
+
+  <div id="form">
+    <div id="logo">
+      <img src="kamusi.png" alt="Kamusi logo">
     </div>
 
-
-
-  <div class="" id="form">
-    <div class="body" id="logo">
-      <img src="kamusi.png" class="logo">
-    </div>
-
-
-    <div class="">
+    <div>
       <input class="form-control" type="text" id="input_word" placeholder="Enter your word here">
     </div>
 
-    <div class="">
+    <div>
       <select class="form-control" name="source_language" title="Source Language" id="source_language" style="height:45px">
 
         <option value="" disabled selected>Choose your source language</option>
@@ -54,7 +52,7 @@
       </select> 
     </div>
 
-    <img src="swap.png" alt="Swap Languages" class="" id="swap">
+    <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button>
 
     <div class="">
       <select class="form-control" name="target_language" title="Target Language" id="target_language" style="height:45px">
@@ -71,46 +69,40 @@
       </select>
     </div>
 
+    <button class="btn" id="submit_btn">Submit</button>
+  </div>
 
-    <div class="sub_btn">
-      <button class="btn" id="submit_btn">Submit</button>
+
+  <div id="sample" ng-controller="displayCtrl" style="display:none;">
+  
+    <div ng-show="result.length == 0"> No data yet for {{input_word}}.</div>
+
+    <div class="outerDiv" ng-repeat="ob in result" >
+
+      <div class="inner1">
+        <div>{{ob.source_concept.language}}: {{input_word}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+        <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
+        <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>  
+      </div>
+
+      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion. 
+        <div style="font-style: italic">Upcoming feature</div>
+      </div>
+
+      <div class="inner2" ng-hide="ob.target_terms.length == 0">
+        <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
+        <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
+        <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
+      </div>
+
+      <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
+        <div>{{ ob.english_concept.language}}: {{ listTerms(ob.eng_terms)}}</div>
+        <div ng-hide="defn(ob.target_concept.gloss, ob.english_concept.definition).length == 0">Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}</div>
+        <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">Example: {{ob.english_concept.example_sents[0]}}</div>
+      </div>
+
     </div>
 
   </div>
-
-
-<div id="sample" ng-controller="displayCtrl" style="display:none;">
-
-<div ng-show="result.length == 0"> No data yet for {{input_word}}.</div>
-<div  class="outerDiv" ng-repeat="ob in result" >
-
-  <div class="inner1">
-    <div>{{ ob.source_concept.language}}: {{ input_word}} ({{ pos(ob.source_concept.synset_ID_3_0,ob.source_concept.synset_ID_3_1)}})</div>
-    <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
-    <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
-   
-  </div>
-
-  <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion. 
-  <div style="font-style: italic">Upcoming feature</div>
-  </div>
-
-  <div class="inner2" ng-hide="ob.target_terms.length == 0">
-    <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
-    <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
-    <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
-  </div>
-
-  <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-    <div>{{ ob.english_concept.language}}: {{ listTerms(ob.eng_terms)}}</div>
-    <div ng-hide="defn(ob.target_concept.gloss, ob.english_concept.definition).length == 0">Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}</div>
-    <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">Example: {{ob.english_concept.example_sents[0]}}</div>
-  </div>
-
-</div>
-
-
-</div>
-
 </body>
 </html>
