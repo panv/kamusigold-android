@@ -150,6 +150,8 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
             displayResults(data, input_word, trgt_lang);
         });
 
+        displaySources(src_lang, trgt_lang);
+
         // This functionality should happen even when 'Enter' is pressed.
         $("#form").hide();
         $(".leftArrow").css('visibility','visible');
@@ -157,10 +159,35 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
         $("#sample").show();
     };
 
+    displaySources = function (src_lang, trgt_lang) {
+        let dict = {};
+        $.get("https://kamusigold.org/api/languages", function(lang_json) { // need to wait for http request (promise), should solve the problem in the language list
+                                                                            // maybe move it at the beginning
+            for (lang in lang_json) {
+                if (lang_json.hasOwnProperty(lang)) {
+                    dict[lang_json[lang]] = lang;
+                }
+            }
+        })
+
+        let url_root = "https://kamusigold.org/info/";
+        $scope.src_langs = [];
+    //    $scope.src_langs.push({name: "English", link: url_root + "eng_3_1"});
+    //    $scope.src_langs.push({name: "Arabic", link: url_root + "ara"});
+
+        $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
+        if (src_lang != trgt_lang) {
+            $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
+        }
+        let eng_code = "eng_3_1";
+        if (src_lang != eng_code && trgt_lang != eng_code) {
+            $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
+        }
+    }
+
     displayResults = function (data, input_word, target_language) {
         $scope.result = data;
         $scope.search_term = input_word;
-        $scope.letsclick =
         $scope.target_language = target_language
 
         $scope.$apply();
