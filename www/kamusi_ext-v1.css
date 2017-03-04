@@ -42,7 +42,7 @@ body {
 }
 
 #form {
-  margin-top:80px; 
+  margin-top:80px;
   margin-bottom:50px;
   margin: 4%;
   text-align: center;
@@ -50,7 +50,7 @@ body {
 
 #within {
   display: none;
-  margin-top:10px; 
+  margin-top:10px;
   margin-bottom:5px;
   margin: 4%;
   text-align: center;
@@ -79,14 +79,14 @@ body {
   margin-top: 15px;
   margin-bottom: 22px;
   /*padding: 22px;*/
-  background-color : #FCE8C4 !important; 
+  background-color : #FCE8C4 !important;
   border-radius: 8px;
   font-weight: bold;
 }
 
 .submit_btn {
-  align-content: center; 
-  width: 58%; 
+  align-content: center;
+  width: 58%;
   margin-top: 15px;
   width: 100%;
   background-color: #684235;
@@ -105,7 +105,7 @@ body {
   border-radius: 7px;
   background-color: #AB3939;
   margin: 5px 15px 16px 15px;
-  padding: 2px; 
+  padding: 2px;
 }
 
 .inner1 {
@@ -131,9 +131,10 @@ body {
 
 .innernull {
   border: 2px solid #AB3939;
-  background-color: #FFD29D;
+  background-color: #D0AF57;
   border-radius: 5px;
   padding: 9px;
+  color: #FFD700;
 }
 
 .nodata {

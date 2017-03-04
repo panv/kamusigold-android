@@ -30,7 +30,7 @@
     </script>-->
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
- 
+
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -43,11 +43,11 @@
     <script src="cordova.js"></script>
 
 
-  
+
 </head>
 
 <body ng-app="main" ng-controller="displayCtrl" class="platform-android">
-  
+
 
   <div class="header">
     <img src="left.svg" class="leftArrow">
@@ -79,7 +79,7 @@
         <option ng-repeat="language in language_list" value="{{language.code}}">
           {{language.name}}</option>
 
-      </select> 
+      </select>
     </div>
 
     <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button>
@@ -130,7 +130,7 @@
         <option ng-repeat="language in language_list" value="{{language.code}}">
         {{language.name}}</option>
 
-      </select> 
+      </select>
     </div>
 
     <!-- <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button> -->
@@ -164,17 +164,17 @@
       <div class="inner1">
         <div>{{ob.source_concept.language}}: {{search_term}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
         <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
-        <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>  
+        <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
       </div>
 
-      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion. 
+      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion.
         <div style="font-style: italic">Upcoming feature</div>
       </div>
 
       <div class="inner2" ng-hide="ob.target_terms.length == 0">
         <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
         <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
-        <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: Definition in {{ob.target_concept.language}} not available for this context.</div>
+        <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">Definition: Definition in {{ob.target_concept.language}} not available for this context. </div>
         <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
       </div>
 
