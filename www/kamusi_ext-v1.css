@@ -11,7 +11,7 @@ body {
   position: fixed;
   text-align: center;
   /*justify-content: center;*/
-  }
+}
 
 .leftArrow {
   width: 30px;
@@ -96,8 +96,8 @@ body {
 }
 
 #sample {
- height: 4%;
- margin-top: 13%;
+  height: 4%;
+  margin-top: 13%;
 }
 
 .outerDiv {
@@ -144,4 +144,13 @@ body {
   margin: 0px 15px 16px 15px;
   padding: 2px;
   color: white;
+}
+
+.sources {
+  border: 2px solid #AB3939;
+  border-radius: 5px;
+  background-color: #FCE8C4;
+  margin-bottom: 16px;
+  padding: 7px;
+  float: left;
 }

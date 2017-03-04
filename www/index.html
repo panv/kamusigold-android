@@ -186,6 +186,10 @@
 
     </div>
 
+    <div class="sources" ng-show="result.length != 0" ng-repeat="lang in src_langs">
+      <a ng-href="{{lang.link}}">{{lang.name}}</a>
+    </div>
+
   </div>
 </body>
 </html>
