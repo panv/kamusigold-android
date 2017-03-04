@@ -111,11 +111,11 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 		return;
 	}
 
-	serverWords = [];
+	serverWords = []; // contains all words (obj)
 	var searchTerms = [];
 
 	for (var i = 0; i < data.length; i++) {  // iterate over data sent by server
-		var obj = {};
+		var obj = {}; // contains all information about the term (def, examples...) in src, target and english language
 
 		var src_concept = data[i].source_concept;
 		if (src_concept != null) {
@@ -146,7 +146,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 
 			var src_language = src_concept.language;
 
-			// create obj containing words, defs and examples from src language
+			// add words, defs and examples for src language to obj
 			obj.src_term = input_word + " (" + src_pos + ")";
 			obj.src_definition = src_definition;
 			obj.src_example_sents = src_example_sent;
@@ -182,7 +182,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 				dest_terms.push(terms[j].lemma +" (" + terms[j].pos + ")");
 			}
 
-			// create obj containing words, defs and examples from target language
+			// add words, defs and examples for target language to obj
 			obj.dest_definition = trgt_definition;
 			obj.dest_example_sents = trgt_example_sent;
 			obj.dest_gloss = trgt_gloss;
@@ -200,6 +200,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 
 		var eng_terms = [];
 		var found = false;
+		// adding english definitions to obj if src and target languages are not english
 		if (displayEnglish && data[i].english_concept != null) {
 			//alert("displaying english!!");
 			var terms = data[i].eng_terms;
@@ -279,7 +280,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 			inputTerm.setAttribute('class','inputTerm w3-container');
 			var t = document.createTextNode(serverWords[i].src_term);
 			inputTerm.appendChild(t);
-			inputTermDiv.appendChild(inputTerm);
+			inputTermDiv.appendChild(inputTerm); // TODO: add onclicklistener to this?
 
 			sourceDiv.appendChild(inputTermDiv);
 
@@ -336,7 +337,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 				var singleInfoDiv = document.createElement("div");
 				singleInfoDiv.setAttribute('class',''); //noInfo w3-container
 
-				if (trgt_lang =='hds') {
+				if (trgt_lang == 'hds') {
 					if (src_language == 'English') {
 							var searchTerm = input_word;
 					}
@@ -353,7 +354,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 						link = link.replace("watch?v=", "v/");
 						singleInfoDiv.innerHTML += '<iframe  src=' +link+"> </iframe>";
 					}
-				} else if (trgt_lang =='nps') {
+				} else if (trgt_lang == 'nps') {
 					if (src_language == 'English') {
 						var searchTerm = input_word;
 					}
@@ -492,7 +493,7 @@ function displayResults(data, input_word, src_lang, trgt_lang, dumpTarget, displ
 			inputTerm.setAttribute('class','inputTerm w3-container');
 			var t = document.createTextNode(serverWords[i].src_term);
 			inputTerm.appendChild(t);
-			inputTermDiv.appendChild(inputTerm);
+			inputTermDiv.appendChild(inputTerm); // TODO: onclicklistener for this?
 
 			sourceDiv.appendChild(inputTermDiv);
 
