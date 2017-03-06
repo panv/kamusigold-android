@@ -112,7 +112,8 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
     //   req.send(null);
     // }
 
-    $.get("https://kamusigold.org/api/languages", loadListOfLanguages);
+    $.get("https://kamusigold.org/api/languages")
+        .then(loadListOfLanguages);
 
     function loadListOfLanguages(language_obj) {
         $scope.language_list = [];
@@ -160,29 +161,32 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
     };
 
     displaySources = function (src_lang, trgt_lang) {
-        let dict = {};
-        $.get("https://kamusigold.org/api/languages", function(lang_json) { // need to wait for http request (promise), should solve the problem in the language list
-                                                                            // maybe move it at the beginning
-            for (lang in lang_json) {
-                if (lang_json.hasOwnProperty(lang)) {
-                    dict[lang_json[lang]] = lang;
-                }
+        function buildSrcArray(dict) {
+            let url_root = "https://kamusigold.org/info/";
+            $scope.src_langs = [];
+
+            $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
+
+            if (src_lang != trgt_lang) {
+                $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
             }
-        })
 
-        let url_root = "https://kamusigold.org/info/";
-        $scope.src_langs = [];
-    //    $scope.src_langs.push({name: "English", link: url_root + "eng_3_1"});
-    //    $scope.src_langs.push({name: "Arabic", link: url_root + "ara"});
+            let eng_code = "eng_3_1";
+            if (src_lang != eng_code && trgt_lang != eng_code) {
+                $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
+            }
+        }
 
-        $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
-        if (src_lang != trgt_lang) {
-            $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
-        }
-        let eng_code = "eng_3_1";
-        if (src_lang != eng_code && trgt_lang != eng_code) {
-            $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
-        }
+        $.get("https://kamusigold.org/api/languages")
+            .then(function(lang_json) {
+                let dict = {};
+                for (lang in lang_json) {
+                    if (lang_json.hasOwnProperty(lang)) {
+                        dict[lang_json[lang]] = lang;
+                    }
+                }
+                return dict;})
+            .then(buildSrcArray);
     }
 
     displayResults = function (data, input_word, target_language) {
