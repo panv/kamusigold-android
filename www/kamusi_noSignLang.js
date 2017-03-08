@@ -1,5 +1,28 @@
 var app = angular.module('main', ['ionic']);
 
+app.factory("languageApi", function($http) {
+    let api_url = "https://kamusigold.org/api/languages";
+    return {
+        getApi: function() {
+            return $http.get(api_url).then(function(response) {
+                return response.data;
+            })
+        },
+        getDict: function() {
+            return $http.get(api_url).then(function(response) {
+                let json = response.data;
+                let dict = {};
+                for (lang in json) {
+                    if (json.hasOwnProperty(lang)) {
+                        dict[json[lang]] = lang;
+                    }
+                }
+                return dict;
+            })
+        }
+    }
+});
+
 // app.run(function($ionicPlatform, $ionicPopup) {
 
 //   //  $ionicPlatform.onHardwareBackButton(function () {
@@ -99,7 +122,7 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp()
 }, false);
 
-app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
+app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
 
     // function callLanguageListAPI() {
     //   var req = new XMLHttpRequest();
@@ -111,9 +134,6 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
     //   req.open("GET", url, true); // true for asynchronous
     //   req.send(null);
     // }
-
-    $.get("https://kamusigold.org/api/languages")
-        .then(loadListOfLanguages);
 
     function loadListOfLanguages(language_obj) {
         $scope.language_list = [];
@@ -128,6 +148,7 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
             $scope.language_list.push({"name": keys[i], "code": language_obj[keys[i]]});
         }
     }
+    languageApi.getApi().then(loadListOfLanguages);
 
     // callLanguageListAPI();
 
@@ -163,8 +184,8 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
     displaySources = function (src_lang, trgt_lang) {
         function buildSrcArray(dict) {
             let url_root = "https://kamusigold.org/info/";
-            $scope.src_langs = [];
 
+            $scope.src_langs = [];
             $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
 
             if (src_lang != trgt_lang) {
@@ -176,17 +197,7 @@ app.controller('displayCtrl', function ($scope, $http, $ionicPlatform) {
                 $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
             }
         }
-
-        $.get("https://kamusigold.org/api/languages")
-            .then(function(lang_json) {
-                let dict = {};
-                for (lang in lang_json) {
-                    if (lang_json.hasOwnProperty(lang)) {
-                        dict[lang_json[lang]] = lang;
-                    }
-                }
-                return dict;})
-            .then(buildSrcArray);
+        languageApi.getDict().then(buildSrcArray);
     }
 
     displayResults = function (data, input_word, target_language) {
