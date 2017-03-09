@@ -204,6 +204,9 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         $scope.result = data;
         $scope.search_term = input_word;
         $scope.target_language = target_language
+        languageApi.getDict().then(function(dict) {
+            $scope.target_language_name = dict[target_language];
+        });
 
         $scope.$apply();
     }

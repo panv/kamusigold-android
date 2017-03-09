@@ -167,14 +167,14 @@
         <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
       </div>
 
-      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language}} please input your suggestion.
-        <div style="font-style: italic">Upcoming feature</div>
+      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language_name}} please input your suggestion.
+        <div style="font-style: italic;color: #FFD700">Upcoming feature</div>
       </div>
 
       <div class="inner2" ng-hide="ob.target_terms.length == 0">
         <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
         <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
-        <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">Definition: Definition in {{ob.target_concept.language}} not available for this context. </div>
+        <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">Definition in {{ob.target_concept.language}} not available for this context. </div>
         <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
       </div>
 

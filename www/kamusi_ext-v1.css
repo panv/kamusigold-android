@@ -134,13 +134,13 @@ body {
   background-color: #D0AF57;
   border-radius: 5px;
   padding: 9px;
-  color: #FFD700;
+  color: black;
 }
 
 .nodata {
   border: 2px solid #AB3939;
   border-radius: 7px;
-  background-color: #AB3939;
+  background-color: #D0AF57;
   margin: 0px 15px 16px 15px;
   padding: 2px;
   color: white;
