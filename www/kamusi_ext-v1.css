@@ -139,18 +139,22 @@ body {
 
 .nodata {
   border: 2px solid #AB3939;
-  border-radius: 7px;
+  border-radius: 5px;
   background-color: #D0AF57;
   margin: 0px 15px 16px 15px;
-  padding: 2px;
-  color: white;
+  padding: 9px;
+  color: black;
 }
 
 .sources {
+  margin-bottom: 8px
+}
+
+.sources_links {
   border: 2px solid #AB3939;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #FCE8C4;
-  margin-bottom: 16px;
-  padding: 7px;
-  float: left;
+  margin-bottom: 32px;
+  padding: 5px;
+  display: inline-block;
 }

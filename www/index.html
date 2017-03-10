@@ -157,7 +157,11 @@
   </div>
 
 
-    <div class="nodata" ng-show="result.length == 0"> No data yet for {{search_term}}.</div>
+    <div class="nodata" ng-show="result.length == 0">
+      No data yet for {{search_term}}.
+      <br>
+      Registered speakers of {{target_language_name}} please input your suggestion.
+    </div>
 
     <div class="outerDiv" ng-repeat="ob in result" >
 
@@ -186,8 +190,11 @@
 
     </div>
 
-    <div class="sources" ng-show="result.length != 0" ng-repeat="lang in src_langs">
-      <a ng-href="{{lang.link}}">{{lang.name}}</a>
+    <div id="wrapper" ng-show="result.length != 0" style="text-align: center">
+      <div class="sources">Sources</div>
+      <div class="sources_links" ng-repeat="lang in src_langs">
+        <a ng-href="{{lang.link}}">{{lang.name}}</a>
+      </div>
     </div>
 
   </div>
