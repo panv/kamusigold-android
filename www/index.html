@@ -166,7 +166,8 @@
     <div class="outerDiv" ng-repeat="ob in result" >
 
       <div class="inner1">
-        <div>{{ob.source_concept.language}}: {{search_term}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+        <div>{{ob.source_concept.language}}: <button ng-click='test(ob)'>{{search_term}}</button>
+          ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
         <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
         <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
       </div>
@@ -176,7 +177,12 @@
       </div>
 
       <div class="inner2" ng-hide="ob.target_terms.length == 0">
-        <div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div>
+        <!--div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div-->
+        <div>{{ob.target_concept.language}}:
+            <span ng-repeat="term in ob.target_terms">
+              <button ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>{{term.lemma}} ({{term.pos}})</button>
+            </span>
+        </div>
         <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
         <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">Definition in {{ob.target_concept.language}} not available for this context. </div>
         <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>

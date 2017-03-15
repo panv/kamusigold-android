@@ -54,7 +54,7 @@ function swapLanguages () {
 }
 
 // Map the event functionality
-window.onload = function () {
+window.onload = function() {
     // When we click swap button
     document.getElementById("swap").onclick = swapLanguages;
 
@@ -122,7 +122,7 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp()
 }, false);
 
-app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
+app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
 
     // function callLanguageListAPI() {
     //   var req = new XMLHttpRequest();
@@ -162,17 +162,21 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         //var t = document.getElementById("target_language");
         var trgt_lang = $scope.target_language ; //t.options[t.selectedIndex].value;
 
+        $scope.wordSearch(input_word, src_lang, trgt_lang);
+
+/*
         $.get(
         //"http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/:term" + input_word + "/:srclang" + src_lang + "/:dstlang" + trgt_lang,
         //"http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
         "https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
 
         //"http://128.179.142.191:3000/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
-        function (data) {
+        function(data) {
             displayResults(data, input_word, trgt_lang);
         });
 
         displaySources(src_lang, trgt_lang);
+        */
 
         // This functionality should happen even when 'Enter' is pressed.
         $("#form").hide();
@@ -181,7 +185,44 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         $("#sample").show();
     };
 
-    displaySources = function (src_lang, trgt_lang) {
+    $scope.targetTermOnClick = function(input_word, source, target) {
+        console.log("input: " + input_word);
+        console.log("source: " + source);
+        console.log("target: " + target);
+        languageApi.getDict().then(function(dict) {
+            languageApi.getApi().then(function(api) {
+                let src_lang = api[source];
+                if (!(target in dict)) {
+                    $scope.wordSearch(input_word, src_lang, api[target]);
+                } else {
+                    $scope.wordSearch(input_word, src_lang, target);
+                }
+            });
+        });
+    }
+
+    $scope.wordSearch = function(input_word, src_lang, trgt_lang) {
+        console.log("input: " + input_word);
+        console.log("source: " + src_lang);
+        console.log("target: " + trgt_lang);
+        $.get("https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang)
+            .then(function(data) {
+                displayResults(data, input_word, trgt_lang);
+                displaySources(src_lang, trgt_lang);
+            });
+    }
+
+    $scope.getLanguageCode = function(language) {
+        languageApi.getApi().then(function(data) {
+            return data[language];
+        });
+    }
+
+    $scope.test = function(ob) {
+        console.log(ob);
+    }
+
+    displaySources = function(src_lang, trgt_lang) {
         function buildSrcArray(dict) {
             let url_root = "https://kamusigold.org/info/";
 
@@ -200,7 +241,7 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         languageApi.getDict().then(buildSrcArray);
     }
 
-    displayResults = function (data, input_word, target_language) {
+    displayResults = function(data, input_word, target_language) {
         $scope.result = data;
         $scope.search_term = input_word;
         $scope.target_language = target_language
@@ -211,7 +252,7 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         $scope.$apply();
     }
 
-    $scope.listTerms = function (terms) {
+    $scope.listTerms = function(terms) {
         var words = "";
         for (var i = 0; i < terms.length; i++) {
             // Use the below ss_type, if 'pos' is not available.
@@ -225,7 +266,7 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         return words;
     }
 
-    $scope.pos = function (t1, t2) {
+    $scope.pos = function(t1, t2) {
         if (t1 == undefined) {
             var pos = t2
         } else {
@@ -236,7 +277,7 @@ app.controller('displayCtrl', function ($scope, $ionicPlatform, languageApi) {
         return pos;
     }
 
-    $scope.defn = function (t1, t2) {
+    $scope.defn = function(t1, t2) {
         if (t1 != undefined) {
             var defn = t1;
         } else if (t2 != undefined) {
