@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="lib/ionic/css/ionic.css">
   <link rel="stylesheet" href="kamusi_ext-v1.css">
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <!-- Load JS -->
@@ -20,34 +21,29 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="kamusi_noSignLang.js"></script>
 
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-
-
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 </head>
 
 <body ng-app="main" ng-controller="displayCtrl" class="platform-android">
-
 
   <div class="header">
     <img src="left.svg" class="leftArrow">
@@ -56,6 +52,7 @@
   </div>
 
   <div id="form">
+
     <div id="logo">
       <img src="kamusi.png" alt="Kamusi logo">
     </div>
@@ -67,7 +64,7 @@
     <div>
       <select class="form-control" id = "source_language" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
 
-<!--         <option value="" disabled selected>Choose your source language</option>
+<!--    <option value="" disabled selected>Choose your source language</option>
         <option value="eus">Basque</option>
         <option value="cat">Catalan</option>
         <option value="eng_3_1">English</option>
@@ -76,9 +73,7 @@
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option>
  -->
-        <option ng-repeat="language in language_list" value="{{language.code}}">
-          {{language.name}}</option>
-
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
@@ -87,7 +82,7 @@
     <div class="">
       <select class="form-control" id = "target_language" name="target_language" title="Target Language" ng-model="target_language" style="height:45px">
 
-<!--         <option value="" disabled selected>Choose your target language</option>
+<!--    <option value="" disabled selected>Choose your target language</option>
         <option value="eus">Basque</option>
         <option value="cat">Catalan</option>
         <option value="eng_3_1">English</option>
@@ -96,18 +91,15 @@
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option>
  -->
-        <option ng-repeat="language in language_list" value="{{language.code}}">
-        {{language.name}}</option>
-
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
     <button class="btn submit_btn" ng-click="run()">Submit</button>
+
   </div>
 
-
   <div id="sample"  style="display:none;">
-
 
   <div id="within">
 
@@ -118,7 +110,7 @@
     <div>
       <select class="form-control" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
 
-<!--         <option value="" disabled selected>Choose your source language</option>
+<!--    <option value="" disabled selected>Choose your source language</option>
         <option value="eus">Basque</option>
         <option value="cat">Catalan</option>
         <option value="eng_3_1">English</option>
@@ -127,9 +119,7 @@
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option>
  -->
-        <option ng-repeat="language in language_list" value="{{language.code}}">
-        {{language.name}}</option>
-
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
@@ -147,62 +137,83 @@
         <option value="slk">Slovak</option>
         <option value="spa">Spanish</option> -->
 
-        <option ng-repeat="language in language_list" value="{{language.code}}">
-        {{language.name}}</option>
-
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
     <button class="btn submit_btn"  ng-click='run()'>Submit</button>
-  </div>
-
-
-    <div class="nodata" ng-show="result.length == 0">
-      No data yet for {{search_term}}.
-      <br>
-      Registered speakers of {{target_language_name}} please input your suggestion.
-    </div>
-
-    <div class="outerDiv" ng-repeat="ob in result" >
-
-      <div class="inner1">
-        <div>{{ob.source_concept.language}}: <button ng-click='test(ob)'>{{search_term}}</button>
-          ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
-        <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}</div>
-        <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">Example: {{ob.source_concept.example_sents[0]}}</div>
-      </div>
-
-      <div class= "innernull" ng-show="ob.target_terms.length == 0"> No matches yet. Registered speakers of {{target_language_name}} please input your suggestion.
-        <div style="font-style: italic;color: #FFD700">Upcoming feature</div>
-      </div>
-
-      <div class="inner2" ng-hide="ob.target_terms.length == 0">
-        <!--div>{{ob.target_concept.language}}: {{listTerms(ob.target_terms)}}</div-->
-        <div>{{ob.target_concept.language}}:
-            <span ng-repeat="term in ob.target_terms">
-              <button ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>{{term.lemma}} ({{term.pos}})</button>
-            </span>
-        </div>
-        <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}</div>
-        <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">Definition in {{ob.target_concept.language}} not available for this context. </div>
-        <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">Example: {{ob.target_concept.example_sents[0]}}</div>
-      </div>
-
-      <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-        <div>{{ ob.english_concept.language}}: {{ listTerms(ob.eng_terms)}}</div>
-        <div ng-hide="defn(ob.english_concept.gloss, ob.english_concept.definition).length == 0">Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}</div>
-        <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">Example: {{ob.english_concept.example_sents[0]}}</div>
-      </div>
-
-    </div>
-
-    <div id="wrapper" ng-show="result.length != 0" style="text-align: center">
-      <div class="sources">Sources</div>
-      <div class="sources_links" ng-repeat="lang in src_langs">
-        <a ng-href="{{lang.link}}">{{lang.name}}</a>
-      </div>
-    </div>
 
   </div>
+
+  <div class="nodata" ng-show="result.length == 0">
+    No data yet for {{search_term}}.
+    <br>
+    Registered speakers of {{target_language_name}} please input your suggestion.
+  </div>
+
+  <div class="outerDiv" ng-repeat="ob in result" >
+
+    <div class="inner1">
+      <div>{{ob.source_concept.language}}: {{search_term}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
+        Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
+      </div>
+      <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">
+        Example: {{ob.source_concept.example_sents[0]}}
+      </div>
+    </div>
+
+    <div class= "innernull" ng-show="ob.target_terms.length == 0">
+      No matches yet. Registered speakers of {{target_language_name}} please input your suggestion.
+      <div style="font-style:italic; color:#FFD700">Upcoming feature</div>
+    </div>
+
+    <div class="inner2" ng-hide="ob.target_terms.length == 0">
+      <div>{{ob.target_concept.language}}:
+        <span ng-repeat="term in ob.target_terms">
+          <button class="term_button" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
+            {{term.lemma}} ({{term.pos}})
+          </button>
+        </span>
+      </div>
+      <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
+        Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
+      </div>
+      <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">
+        Definition in {{ob.target_concept.language}} not available for this context.
+      </div>
+      <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">
+        Example: {{ob.target_concept.example_sents[0]}}
+      </div>
+    </div>
+
+    <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
+      <div>{{ ob.english_concept.language}}:
+        <span ng-repeat="term in ob.eng_terms">
+          <button class="term_button" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
+            {{term.lemma}} ({{term.pos}})
+          </button>
+        </span>
+      </div>
+      <div ng-hide="defn(ob.english_concept.gloss, ob.english_concept.definition).length == 0">
+        Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}
+      </div>
+      <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">
+        Example: {{ob.english_concept.example_sents[0]}}
+      </div>
+    </div>
+
+  </div>
+
+  <div id="wrapper" ng-show="result.length != 0" style="text-align: center">
+    <div class="sources">Sources</div>
+    <div class="sources_links" ng-repeat="lang in src_langs">
+      <a ng-href="{{lang.link}}">{{lang.name}}</a>
+    </div>
+  </div>
+
+  </div>
+
 </body>
+
 </html>

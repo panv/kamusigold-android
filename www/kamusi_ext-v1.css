@@ -158,3 +158,8 @@ body {
   padding: 5px;
   display: inline-block;
 }
+
+.term_button {
+  background-color: Transparent;
+  border: none;
+}
