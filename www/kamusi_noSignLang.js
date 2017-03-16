@@ -1,13 +1,16 @@
 var app = angular.module('main', ['ionic']);
 
+// Factory used to return http promises from the language api
 app.factory("languageApi", function($http) {
     let api_url = "https://kamusigold.org/api/languages";
     return {
+        // The api, JSON dict mapping language name to language code
         getApi: function() {
             return $http.get(api_url).then(function(response) {
                 return response.data;
-            })
+            });
         },
+        // Inverts the keys and values of the api, language code -> language name
         getDict: function() {
             return $http.get(api_url).then(function(response) {
                 let json = response.data;
@@ -18,7 +21,7 @@ app.factory("languageApi", function($http) {
                     }
                 }
                 return dict;
-            })
+            });
         }
     }
 });
@@ -45,7 +48,7 @@ app.factory("languageApi", function($http) {
 // return nav.pop();
 // }, false);
 
-function swapLanguages () {
+function swapLanguages() {
     var trgt_idx = document.getElementById("target_language").selectedIndex;
     var src_idx =  document.getElementById("source_language").selectedIndex;
 
@@ -109,17 +112,17 @@ window.onload = function() {
 // ------------ Double back button press to exit---------------
 document.addEventListener('backbutton', () => {
     if (this.nav.canGoBack()) {
-        this.nav.pop()
+        this.nav.pop();
         return;
     }
     if (!this.backPressed) {
-        this.backPressed = true
-        window.plugins.toast.show('Presiona el boton atras de nuevo para cerrar', 'short', 'bottom')
-        setTimeout(() => this.backPressed = false, 2000)
+        this.backPressed = true;
+        window.plugins.toast.show('Presiona el boton atras de nuevo para cerrar', 'short', 'bottom');
+        setTimeout(() => this.backPressed = false, 2000);
         return;
     }
     // this.platform.exitApp()
-    navigator.app.exitApp()
+    navigator.app.exitApp();
 }, false);
 
 app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
@@ -135,6 +138,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
     //   req.send(null);
     // }
 
+    // TODO: optimize this
+    // Languages used in the language selection drop-down menu
     function loadListOfLanguages(language_obj) {
         $scope.language_list = [];
         keys = []
@@ -160,7 +165,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         var src_lang = $scope.source_language; // s.options[s.selectedIndex].value;
 
         //var t = document.getElementById("target_language");
-        var trgt_lang = $scope.target_language ; //t.options[t.selectedIndex].value;
+        var trgt_lang = $scope.target_language; //t.options[t.selectedIndex].value;
 
         $scope.wordSearch(input_word, src_lang, trgt_lang);
 
@@ -185,10 +190,9 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         $("#sample").show();
     };
 
+    // Function called when clicking on one of the result terms.
+    // It first parses the source and target languages and then calls wordSearch
     $scope.targetTermOnClick = function(input_word, source, target) {
-        console.log("input: " + input_word);
-        console.log("source: " + source);
-        console.log("target: " + target);
         languageApi.getDict().then(function(dict) {
             languageApi.getApi().then(function(api) {
                 let src_lang = api[source];
@@ -201,10 +205,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         });
     }
 
+    // Sends a translation request to the database and displays the response
     $scope.wordSearch = function(input_word, src_lang, trgt_lang) {
-        console.log("input: " + input_word);
-        console.log("source: " + src_lang);
-        console.log("target: " + trgt_lang);
         $.get("https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang)
             .then(function(data) {
                 displayResults(data, input_word, trgt_lang);
@@ -212,27 +214,20 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
             });
     }
 
-    $scope.getLanguageCode = function(language) {
-        languageApi.getApi().then(function(data) {
-            return data[language];
-        });
-    }
-
-    $scope.test = function(ob) {
-        console.log(ob);
-    }
-
-    displaySources = function(src_lang, trgt_lang) {
+    // Builds the links for the language sources at the bottom of the result page
+    function displaySources(src_lang, trgt_lang) {
         function buildSrcArray(dict) {
             let url_root = "https://kamusigold.org/info/";
 
             $scope.src_langs = [];
             $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
 
+            // Adds target language link if source and target are different
             if (src_lang != trgt_lang) {
                 $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
             }
 
+            // Adds english link if both source and target languages are not english
             let eng_code = "eng_3_1";
             if (src_lang != eng_code && trgt_lang != eng_code) {
                 $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
@@ -241,10 +236,10 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         languageApi.getDict().then(buildSrcArray);
     }
 
-    displayResults = function(data, input_word, target_language) {
+    function displayResults(data, input_word, target_language) {
         $scope.result = data;
         $scope.search_term = input_word;
-        $scope.target_language = target_language
+        $scope.target_language = target_language;
         languageApi.getDict().then(function(dict) {
             $scope.target_language_name = dict[target_language];
         });
@@ -267,12 +262,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
     }
 
     $scope.pos = function(t1, t2) {
-        if (t1 == undefined) {
-            var pos = t2
-        } else {
-            var pos = t1
-        }
-
+        let pos = t1 == undefined ? t2 : t1;
         pos = pos.slice(-1);
         return pos;
     }
