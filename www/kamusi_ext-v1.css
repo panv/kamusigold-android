@@ -1,5 +1,5 @@
 body {
-  background-color: #e1c69d;
+  background-color: #E1C69D;
   font-family: 'Roboto', sans-serif;
   background-image: url("kikoi.jpg");
 }
@@ -31,7 +31,7 @@ body {
   visibility: hidden;
 }
 
-.title  {
+.title {
   /*text-align: center;*/
   display: inline-block;
   margin-top: 8px;
@@ -74,7 +74,7 @@ body {
   border: none;
 }
 
-.input_word {
+.inputWord {
   text-align: center;
   margin-top: 15px;
   margin-bottom: 22px;
@@ -84,7 +84,7 @@ body {
   font-weight: bold;
 }
 
-.submit_btn {
+.submitButton {
   align-content: center;
   width: 58%;
   margin-top: 15px;
@@ -150,16 +150,26 @@ body {
   margin-bottom: 8px
 }
 
-.sources_links {
+.sourcesLinks {
   border: 2px solid #AB3939;
   border-radius: 10px;
   background-color: #FCE8C4;
   margin-bottom: 32px;
   padding: 5px;
+  color: #55676C;
   display: inline-block;
 }
 
-.term_button {
-  background-color: Transparent;
+.termButton {
+  background-color: #FFF594;
   border: none;
+  border-radius: 12px;
+  color: black !important;
+}
+
+.engTermButton {
+  background-color: #ECD4BC;
+  border: none;
+  border-radius: 12px;
+  color: black !important;
 }

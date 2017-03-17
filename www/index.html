@@ -58,11 +58,12 @@
     </div>
 
     <div>
-      <input class="form-control input_word" type="text" ng-model="input_word" placeholder="Enter your word here">
+      <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
     </div>
 
     <div>
-      <select class="form-control" id = "source_language" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
+      <select class="form-control" id = "source_language" name="source_language"
+        title="Source Language" ng-model="source_language" style="height:45px">
 
 <!--    <option value="" disabled selected>Choose your source language</option>
         <option value="eus">Basque</option>
@@ -80,7 +81,8 @@
     <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button>
 
     <div class="">
-      <select class="form-control" id = "target_language" name="target_language" title="Target Language" ng-model="target_language" style="height:45px">
+      <select class="form-control" id = "target_language" name="target_language"
+        title="Target Language" ng-model="target_language" style="height:45px">
 
 <!--    <option value="" disabled selected>Choose your target language</option>
         <option value="eus">Basque</option>
@@ -95,16 +97,16 @@
       </select>
     </div>
 
-    <button class="btn submit_btn" ng-click="run()">Submit</button>
+    <button class="btn submitButton" ng-click="run()">Go !</button>
 
   </div>
 
-  <div id="sample"  style="display:none;">
+  <div id="sample"  style="display:none">
 
   <div id="within">
 
     <div>
-      <input class="new form-control input_word" type="text" ng-model="input_word" placeholder="Enter your word here">
+      <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
     </div>
 
     <div>
@@ -141,20 +143,20 @@
       </select>
     </div>
 
-    <button class="btn submit_btn"  ng-click='run()'>Submit</button>
+    <button class="btn submitButton"  ng-click='run()'>Go !</button>
 
   </div>
 
   <div class="nodata" ng-show="result.length == 0">
     No data yet for {{search_term}}.
     <br>
-    Registered speakers of {{target_language_name}} please input your suggestion.
+    Registered speakers of {{target_language_name}} please suggest a term.
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
 
     <div class="inner1">
-      <div>{{ob.source_concept.language}}: {{search_term}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div>{{ob.source_concept.language}}: <b>{{search_term}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
         Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>
@@ -164,14 +166,16 @@
     </div>
 
     <div class= "innernull" ng-show="ob.target_terms.length == 0">
-      No matches yet. Registered speakers of {{target_language_name}} please input your suggestion.
-      <div style="font-style:italic; color:#FFD700">Upcoming feature</div>
+      No matches yet.
+      <div style="font-style:italic">
+        <span style="color:#FFD700">Upcoming feature: </span>Registered speakers of {{target_language_name}} please suggest a term.
+      </div>
     </div>
 
     <div class="inner2" ng-hide="ob.target_terms.length == 0">
       <div>{{ob.target_concept.language}}:
         <span ng-repeat="term in ob.target_terms">
-          <button class="term_button" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
+          <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{term.lemma}} ({{term.pos}})
           </button>
         </span>
@@ -179,8 +183,11 @@
       <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
         Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
-      <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0" style="color:#D0AF57">
-        Definition in {{ob.target_concept.language}} not available for this context.
+      <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
+        <span style="color:#627149">No definition yet in {{ob.target_concept.language}} for this meaning of <b>{{search_term}}</b>.</span>
+        <div style="font-style:italic">
+          <span style="color:#D69A33">Upcoming feature: </span>Registered speakers of {{ob.target_concept.language}} please suggest a definition.
+        </div>
       </div>
       <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">
         Example: {{ob.target_concept.example_sents[0]}}
@@ -188,9 +195,9 @@
     </div>
 
     <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-      <div>{{ ob.english_concept.language}}:
+      <div>{{ob.english_concept.language}}:
         <span ng-repeat="term in ob.eng_terms">
-          <button class="term_button" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
+          <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{term.lemma}} ({{term.pos}})
           </button>
         </span>
@@ -205,10 +212,10 @@
 
   </div>
 
-  <div id="wrapper" ng-show="result.length != 0" style="text-align: center">
+  <div id="wrapper" ng-show="result.length != 0" style="text-align:center">
     <div class="sources">Sources</div>
-    <div class="sources_links" ng-repeat="lang in src_langs">
-      <a ng-href="{{lang.link}}">{{lang.name}}</a>
+    <div class="sourcesLinks" ng-repeat="lang in src_langs">
+      <a ng-href="{{lang.link}}" style="color:#55676C">{{lang.name}}</a>
     </div>
   </div>
 
