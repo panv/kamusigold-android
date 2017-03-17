@@ -50,7 +50,7 @@ app.factory("languageApi", function($http) {
 
 function swapLanguages() {
     var trgt_idx = document.getElementById("target_language").selectedIndex;
-    var src_idx =  document.getElementById("source_language").selectedIndex;
+    var src_idx = document.getElementById("source_language").selectedIndex;
 
     document.getElementById("target_language").selectedIndex = src_idx;
     document.getElementById("source_language").selectedIndex = trgt_idx;
@@ -219,6 +219,14 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         function buildSrcArray(dict) {
             let url_root = "https://kamusigold.org/info/";
 
+            let eng_url = "eng";
+            let eng_code = "eng_3_1";
+
+            // Parses the eng code because for english the code and url are different
+            dict[eng_url] = dict[eng_code];
+            src_lang = src_lang == eng_code ? eng_url : src_lang;
+            trgt_lang = trgt_lang == eng_code ? eng_url : trgt_lang;
+
             $scope.src_langs = [];
             $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
 
@@ -228,9 +236,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
             }
 
             // Adds english link if both source and target languages are not english
-            let eng_code = "eng_3_1";
-            if (src_lang != eng_code && trgt_lang != eng_code) {
-                $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_code});
+            if (src_lang != eng_url && trgt_lang != eng_url) {
+                $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_url});
             }
         }
         languageApi.getDict().then(buildSrcArray);
@@ -247,6 +254,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         $scope.$apply();
     }
 
+/*
     $scope.listTerms = function(terms) {
         var words = "";
         for (var i = 0; i < terms.length; i++) {
@@ -260,6 +268,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
         }
         return words;
     }
+*/
 
     $scope.pos = function(t1, t2) {
         let pos = t1 == undefined ? t2 : t1;
