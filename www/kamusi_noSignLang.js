@@ -209,6 +209,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
     $scope.wordSearch = function(input_word, src_lang, trgt_lang) {
         $.get("https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang)
             .then(function(data) {
+                $("#within").hide();
                 displayResults(data, input_word, trgt_lang);
                 displaySources(src_lang, trgt_lang);
             });

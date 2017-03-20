@@ -48,7 +48,7 @@
   <div class="header">
     <img src="left.svg" class="leftArrow">
     <div class="title">Kamusi Gold</div>
-    <img src="searchButton.png" class="searchButton">
+    <img src="searchButton.png" class="searchButton" ng-click="showSearchField = !showSearchField">
   </div>
 
   <div id="form">
@@ -103,7 +103,7 @@
 
   <div id="sample"  style="display:none">
 
-  <div id="within">
+  <div id="within" ng-show="showSearchField">
 
     <div>
       <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
