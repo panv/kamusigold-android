@@ -55,6 +55,7 @@ window.onload = function() {
 
     // When we click search button
     $(".searchButton").click(function() {
+        window.scrollTo(0, 0);
         $("#within").show();
         $(".leftArrow").css('visibility','visible');
         $(".searchButton").css('visibility','visible');
