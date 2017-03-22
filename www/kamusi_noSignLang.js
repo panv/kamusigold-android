@@ -125,7 +125,7 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp();
 }, false);
 
-app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
+app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window) {
 
     // function callLanguageListAPI() {
     //   var req = new XMLHttpRequest();
@@ -212,6 +212,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi) {
                 $("#within").hide();
                 displayResults(data, input_word, trgt_lang);
                 displaySources(src_lang, trgt_lang);
+                $window.scrollTo(0, 0);
             });
     }
 
