@@ -64,16 +64,6 @@
     <div>
       <select class="form-control" id = "source_language" name="source_language"
         title="Source Language" ng-model="source_language" style="height:45px">
-
-<!--    <option value="" disabled selected>Choose your source language</option>
-        <option value="eus">Basque</option>
-        <option value="cat">Catalan</option>
-        <option value="eng_3_1">English</option>
-        <option value="glg">Galician</option>
-        <option value="ron">Romanian</option>
-        <option value="slk">Slovak</option>
-        <option value="spa">Spanish</option>
- -->
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
@@ -83,16 +73,6 @@
     <div class="">
       <select class="form-control" id = "target_language" name="target_language"
         title="Target Language" ng-model="target_language" style="height:45px">
-
-<!--    <option value="" disabled selected>Choose your target language</option>
-        <option value="eus">Basque</option>
-        <option value="cat">Catalan</option>
-        <option value="eng_3_1">English</option>
-        <option value="glg">Galician</option>
-        <option value="ron">Romanian</option>
-        <option value="slk">Slovak</option>
-        <option value="spa">Spanish</option>
- -->
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
@@ -111,16 +91,6 @@
 
     <div>
       <select class="form-control" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
-
-<!--    <option value="" disabled selected>Choose your source language</option>
-        <option value="eus">Basque</option>
-        <option value="cat">Catalan</option>
-        <option value="eng_3_1">English</option>
-        <option value="glg">Galician</option>
-        <option value="ron">Romanian</option>
-        <option value="slk">Slovak</option>
-        <option value="spa">Spanish</option>
- -->
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
@@ -129,16 +99,6 @@
 
     <div class="">
       <select class="form-control" name="target_language" title="Target Language" ng-model="target_language" style="height:45px">
-
-        <!-- <option value="" disabled selected>Choose your target language</option>
-        <option value="eus">Basque</option>
-        <option value="cat">Catalan</option>
-        <option value="eng_3_1">English</option>
-        <option value="glg">Galician</option>
-        <option value="ron">Romanian</option>
-        <option value="slk">Slovak</option>
-        <option value="spa">Spanish</option> -->
-
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>

@@ -26,28 +26,6 @@ app.factory("languageApi", function($http) {
     }
 });
 
-// app.run(function($ionicPlatform, $ionicPopup) {
-
-//   //  $ionicPlatform.onHardwareBackButton(function () {
-//   // event.preventDefault();
-//   // event.stopPropagation();
-//   //   alert("Are you sure you want to exit ?");
-//   //  });
-// });
-
-// Disable BACK button on home
-// var deregisterHardBack = $ionicPlatform.registerBackButtonAction(
-//     doCustomBack, 101
-// );
-
-// document.addEventListener('backbutton', () => {
-// let nav = this.app.getComponent('nav');
-// if (!nav.canGoBack()) {
-// return navigator.app.exitApp();
-// }
-// return nav.pop();
-// }, false);
-
 function swapLanguages() {
     var trgt_idx = document.getElementById("target_language").selectedIndex;
     var src_idx = document.getElementById("source_language").selectedIndex;
@@ -60,31 +38,6 @@ function swapLanguages() {
 window.onload = function() {
     // When we click swap button
     document.getElementById("swap").onclick = swapLanguages;
-
-    // document.addEventListener("deviceready", onDeviceReady, false);
-
-    // function onDeviceReady() {
-    //   document.addEventListener("backbutton", function () {
-    //   alert("Hey!");
-    //   // navigator.notification.confirm(
-    //   //   'Do you want to quit',
-    //   //   onConfirmQuit,
-    //   //   'QUIT TITLE',
-    //   //   'OK,Cancel'
-    //   // );
-    //   alert("cool down");
-    // }, false);
-    // }
-
-    // document.addEventListener("backbutton", function () {
-    //   //alert("Hey!");
-    //   navigator.notification.confirm(
-    //     'Do you want to quit',
-    //     onConfirmQuit,
-    //     'QUIT TITLE',
-    //     'OK,Cancel'
-    //   );
-    // }, true);
 
     function onConfirmQuit(button){
         if (button == "1") {
@@ -121,22 +74,10 @@ document.addEventListener('backbutton', () => {
         setTimeout(() => this.backPressed = false, 2000);
         return;
     }
-    // this.platform.exitApp()
     navigator.app.exitApp();
 }, false);
 
 app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window) {
-
-    // function callLanguageListAPI() {
-    //   var req = new XMLHttpRequest();
-    //   req.onreadystatechange = function() {
-    //       if (req.readyState == 4 && req.status == 200)
-    //           loadListOfLanguages(JSON.parse(req.responseText));
-    //   }
-    //   url = "https://kamusigold.org/api/languages"
-    //   req.open("GET", url, true); // true for asynchronous
-    //   req.send(null);
-    // }
 
     // TODO: optimize this
     // Languages used in the language selection drop-down menu
@@ -155,33 +96,13 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     }
     languageApi.getApi().then(loadListOfLanguages);
 
-    // callLanguageListAPI();
-
     // Get data and show
     $scope.run = function() {
-        var input_word = $scope.input_word.trim(); //document.getElementById("input_word").value;
-
-        //var s = document.getElementById("source_language");
-        var src_lang = $scope.source_language; // s.options[s.selectedIndex].value;
-
-        //var t = document.getElementById("target_language");
-        var trgt_lang = $scope.target_language; //t.options[t.selectedIndex].value;
+        var input_word = $scope.input_word.trim();
+        var src_lang = $scope.source_language;
+        var trgt_lang = $scope.target_language;
 
         $scope.wordSearch(input_word, src_lang, trgt_lang);
-
-/*
-        $.get(
-        //"http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/:term" + input_word + "/:srclang" + src_lang + "/:dstlang" + trgt_lang,
-        //"http://lsir-kamusi.epfl.ch:3000/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
-        "https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
-
-        //"http://128.179.142.191:3000/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang,
-        function(data) {
-            displayResults(data, input_word, trgt_lang);
-        });
-
-        displaySources(src_lang, trgt_lang);
-        */
 
         // This functionality should happen even when 'Enter' is pressed.
         $("#form").hide();
@@ -255,22 +176,6 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
         $scope.$apply();
     }
-
-/*
-    $scope.listTerms = function(terms) {
-        var words = "";
-        for (var i = 0; i < terms.length; i++) {
-            // Use the below ss_type, if 'pos' is not available.
-            // ({{ob.english_concept.ss_type}})
-            words = words + terms[i].lemma + " (" + terms[i].pos  + ")";
-
-            if (i != terms.length - 1) {
-                words = words + ", "
-            }
-        }
-        return words;
-    }
-*/
 
     $scope.pos = function(t1, t2) {
         let pos = t1 == undefined ? t2 : t1;
