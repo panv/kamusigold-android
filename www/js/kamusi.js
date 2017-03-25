@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ionic']);
+var app = angular.module('main', ['ionic', 'gettext']);
 
 // Factory used to return http promises from the language api
 app.factory("languageApi", function($http) {
@@ -22,6 +22,10 @@ app.factory("languageApi", function($http) {
                 }
                 return dict;
             });
+        },
+        // Returns the list of available translations
+        getAvailableUiLanguages: function() {
+            return ['en'];
         }
     }
 });
@@ -78,7 +82,7 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp();
 }, false);
 
-app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window) {
+app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window, gettextCatalog) {
 
     // TODO: optimize this
     // Languages used in the language selection drop-down menu
@@ -183,6 +187,10 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         let target = "_blank"; // use _system to open with the platform default browser
         let options = "location=yes";
         cordova.InAppBrowser.open(url, target, options);
+    }
+
+    $scope.switchLanguage = function(language) {
+        gettextCatalog.setCurrentLanguage(language);
     }
 
     $scope.pos = function(t1, t2) {

@@ -35,6 +35,12 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- used for extracting strings and tranlating them -->
+    <script src="js/angular-gettext.min.js"></script>
+
+    <!-- the translation file -->
+    <script src="translations/translations.js"></script>
+
     <!-- your app's js -->
     <script src="js/kamusi.js"></script>
   </head>
@@ -43,7 +49,7 @@
 
   <div class="header">
     <img src="res/left.svg" class="leftArrow">
-    <div class="title">Kamusi Gold</div>
+    <div class="title" translate>Kamusi Gold</div>
     <img src="res/searchButton.png" class="searchButton" ng-click="showSearchField = !showSearchField">
   </div>
 
@@ -54,26 +60,28 @@
     </div>
 
     <div>
-      <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
+      <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
     </div>
 
     <div>
       <select class="form-control" id = "source_language" name="source_language"
-        title="Source Language" ng-model="source_language" style="height:45px">
+        title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button title="Swap Languages" id="swap" class="swapWrapper"><img src="res/swap.png" alt="Swap Languages" class="swap"></button>
+    <button title="{{'Swap Languages'|translate}}" id="swap" class="swapWrapper">
+      <img src="res/swap.png" alt="{{'Swap Languages'|translate}}" class="swap">
+    </button>
 
     <div class="">
       <select class="form-control" id = "target_language" name="target_language"
-        title="Target Language" ng-model="target_language" style="height:45px">
+        title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button class="btn submitButton" ng-click="run()">Go !</button>
+    <button class="btn submitButton" ng-click="run()" translate>Go !</button>
 
   </div>
 
@@ -82,11 +90,12 @@
   <div id="within" ng-show="showSearchField">
 
     <div>
-      <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
+      <input class="new form-control inputWord" type="text" ng-model="input_word"
+        placeholder="{{'Enter your word here'|translate}}">
     </div>
 
     <div>
-      <select class="form-control" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
+      <select class="form-control" name="source_language" title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
@@ -94,19 +103,19 @@
     <!-- <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button> -->
 
     <div class="">
-      <select class="form-control" name="target_language" title="Target Language" ng-model="target_language" style="height:45px">
+      <select class="form-control" name="target_language" title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button class="btn submitButton"  ng-click='run()'>Go !</button>
+    <button class="btn submitButton"  ng-click="run()" translate>Go !</button>
 
   </div>
 
   <div class="nodata" ng-show="result.length == 0">
-    No data yet for {{search_term}}.
+    <translate>No data yet for</translate> {{search_term}}.
     <br>
-    Registered speakers of {{target_language_name}} please suggest a term.
+    <translate>Registered speakers of {{target_language_name}} please suggest a term.</translate>
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
@@ -114,17 +123,17 @@
     <div class="inner1">
       <div>{{ob.source_concept.language}}: <b>{{search_term}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
-        Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
+        <translate>Definition:</translate> {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>
       <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">
-        Example: {{ob.source_concept.example_sents[0]}}
+        <translate>Example:</translate> {{ob.source_concept.example_sents[0]}}
       </div>
     </div>
 
     <div class= "innernull" ng-show="ob.target_terms.length == 0">
-      No matches yet.
+      <translate>No matches yet.</translate>
       <div style="font-style:italic">
-        <span style="color:#FFD700">Upcoming feature: </span>Registered speakers of {{target_language_name}} please suggest a term.
+        <span style="color:#FFD700" translate>Upcoming feature: </span><translate>Registered speakers of {{target_language_name}} please suggest a term.</translate>
       </div>
     </div>
 
@@ -137,16 +146,16 @@
         </span>
       </div>
       <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
+        <translate>Definition:</translate> {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
       <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        <span style="color:#627149">No definition yet in {{ob.target_concept.language}} for this meaning of <b>{{search_term}}</b>.</span>
+        <span style="color:#627149"><translate>No definition yet in {{ob.target_concept.language}} for this meaning of</translate> <b>{{search_term}}</b>.</span>
         <div style="font-style:italic">
-          <span style="color:#D69A33">Upcoming feature: </span>Registered speakers of {{ob.target_concept.language}} please suggest a definition.
+          <span style="color:#D69A33" translate>Upcoming feature: </span><translate>Registered speakers of {{ob.target_concept.language}} please suggest a definition.</translate>
         </div>
       </div>
       <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">
-        Example: {{ob.target_concept.example_sents[0]}}
+        <translate>Example:</translate> {{ob.target_concept.example_sents[0]}}
       </div>
     </div>
 
@@ -159,17 +168,17 @@
         </span>
       </div>
       <div ng-hide="defn(ob.english_concept.gloss, ob.english_concept.definition).length == 0">
-        Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}
+        <translate>Definition:</translate> {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}
       </div>
       <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">
-        Example: {{ob.english_concept.example_sents[0]}}
+        <translate>Example:</translate> {{ob.english_concept.example_sents[0]}}
       </div>
     </div>
 
   </div>
 
   <div id="wrapper" ng-show="result.length != 0" style="text-align:left;margin-left:15px">
-    <span class="sources">Sources</span>
+    <span class="sources" translate>Sources</span>
     <div class="sourcesLinks" ng-repeat="lang in src_langs">
       <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{lang.name}}</a>
     </div>

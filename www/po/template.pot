@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: www/index.html:126
+#: www/index.html:149
+#: www/index.html:171
+msgid "Definition:"
+msgstr ""
+
+#: www/index.html:63
+#: www/index.html:94
+msgid "Enter your word here"
+msgstr ""
+
+#: www/index.html:129
+#: www/index.html:158
+#: www/index.html:174
+msgid "Example:"
+msgstr ""
+
+#: www/index.html:111
+#: www/index.html:84
+msgid "Go !"
+msgstr ""
+
+#: www/index.html:52
+msgid "Kamusi Gold"
+msgstr ""
+
+#: www/index.html:116
+msgid "No data yet for"
+msgstr ""
+
+#: www/index.html:152
+msgid "No definition yet in {{ob.target_concept.language}} for this meaning of"
+msgstr ""
+
+#: www/index.html:134
+msgid "No matches yet."
+msgstr ""
+
+#: www/index.html:154
+msgid "Registered speakers of {{ob.target_concept.language}} please suggest a definition."
+msgstr ""
+
+#: www/index.html:118
+#: www/index.html:136
+msgid "Registered speakers of {{target_language_name}} please suggest a term."
+msgstr ""
+
+#: www/index.html:68
+#: www/index.html:98
+msgid "Source Language"
+msgstr ""
+
+#: www/index.html:181
+msgid "Sources"
+msgstr ""
+
+#: www/index.html:73
+#: www/index.html:74
+msgid "Swap Languages"
+msgstr ""
+
+#: www/index.html:106
+#: www/index.html:79
+msgid "Target Language"
+msgstr ""
+
+#: www/index.html:136
+#: www/index.html:154
+msgid "Upcoming feature:"
+msgstr ""
