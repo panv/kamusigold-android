@@ -64,7 +64,7 @@
       </select>
     </div>
 
-    <button title="Swap Languages" id="swap"><img src="res/swap.png" alt="Swap Languages" class="swap"></button>
+    <button title="Swap Languages" id="swap" class="swapWrapper"><img src="res/swap.png" alt="Swap Languages" class="swap"></button>
 
     <div class="">
       <select class="form-control" id = "target_language" name="target_language"
@@ -171,7 +171,7 @@
   <div id="wrapper" ng-show="result.length != 0" style="text-align:left;margin-left:15px">
     <span class="sources">Sources</span>
     <div class="sourcesLinks" ng-repeat="lang in src_langs">
-      <a ng-href="{{lang.link}}" style="color:#55676C">{{lang.name}}</a>
+      <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{lang.name}}</a>
     </div>
   </div>
 

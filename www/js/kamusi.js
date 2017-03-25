@@ -178,6 +178,13 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         $scope.$apply();
     }
 
+    // Opens the given url in the cordova browser using the InAppBrowser cordova plugin
+    $scope.openUrl = function(url) {
+        let target = "_blank"; // use _system to open with the platform default browser
+        let options = "location=yes";
+        cordova.InAppBrowser.open(url, target, options);
+    }
+
     $scope.pos = function(t1, t2) {
         let pos = t1 == undefined ? t2 : t1;
         pos = pos.slice(-1);
