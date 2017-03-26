@@ -64,7 +64,7 @@
     </div>
 
     <div>
-      <select class="form-control" id = "source_language" name="source_language"
+      <select class="form-control" id="source_language" name="source_language"
         title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
@@ -75,13 +75,18 @@
     </button>
 
     <div class="">
-      <select class="form-control" id = "target_language" name="target_language"
+      <select class="form-control" id="target_language" name="target_language"
         title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
         <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
     <button class="btn submitButton" ng-click="run()" translate>Go !</button>
+
+    <select class="switchLanguage" title="{{'UI language'|translate}}"
+      ng-options="translation.name for translation in translations"
+      ng-model="selected_translation" ng-change="switchLanguage()">
+    </select>
 
   </div>
 

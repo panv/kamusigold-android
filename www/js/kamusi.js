@@ -1,7 +1,7 @@
 var app = angular.module('main', ['ionic', 'gettext']);
 
 // Factory used to return http promises from the language api
-app.factory("languageApi", function($http) {
+app.factory("languageApi", function($http, gettext) {
     let api_url = "https://kamusigold.org/api/languages";
     return {
         // The api, JSON dict mapping language name to language code
@@ -25,7 +25,10 @@ app.factory("languageApi", function($http) {
         },
         // Returns the list of available translations
         getAvailableUiLanguages: function() {
-            return ['en'];
+            return [
+                {name: gettext("English"), code: "en"},
+                {name: gettext("French"), code: "fr"}
+            ];
         }
     }
 });
@@ -100,6 +103,9 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         }
     }
     languageApi.getApi().then(loadListOfLanguages);
+
+    // Load the list of available translations in the drop-down selector
+    $scope.translations = languageApi.getAvailableUiLanguages();
 
     // Get data and show
     $scope.run = function() {
@@ -189,8 +195,9 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         cordova.InAppBrowser.open(url, target, options);
     }
 
-    $scope.switchLanguage = function(language) {
-        gettextCatalog.setCurrentLanguage(language);
+    // Switch the language to the one selected in the drop-down menu
+    $scope.switchLanguage = function() {
+        gettextCatalog.setCurrentLanguage($scope.selected_translation.code);
     }
 
     $scope.pos = function(t1, t2) {
