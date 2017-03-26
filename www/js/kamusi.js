@@ -26,8 +26,8 @@ app.factory("languageApi", function($http, gettext) {
         // Returns the list of available translations
         getAvailableUiLanguages: function() {
             return [
-                {name: gettext("English"), code: "en"},
-                {name: gettext("French"), code: "fr"}
+                {name: "English", code: "en"},
+                {name: "French", code: "fr"}
             ];
         }
     }
@@ -197,7 +197,12 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
     // Switch the language to the one selected in the drop-down menu
     $scope.switchLanguage = function() {
-        gettextCatalog.setCurrentLanguage($scope.selected_translation.code);
+        gettextCatalog.setCurrentLanguage($scope.selected_translation);
+    }
+
+    // Returns the translation of term (used for translating language names)
+    $scope.translate = function(term) {
+        return gettextCatalog.getString(term);
     }
 
     $scope.pos = function(t1, t2) {

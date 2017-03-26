@@ -66,7 +66,7 @@
     <div>
       <select class="form-control" id="source_language" name="source_language"
         title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
 
@@ -77,14 +77,14 @@
     <div class="">
       <select class="form-control" id="target_language" name="target_language"
         title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
 
     <button class="btn submitButton" ng-click="run()" translate>Go !</button>
 
     <select class="switchLanguage" title="{{'UI language'|translate}}"
-      ng-options="translation.name for translation in translations"
+      ng-options="translation.code as translate(translation.name) for translation in translations"
       ng-model="selected_translation" ng-change="switchLanguage()">
     </select>
 
@@ -101,7 +101,7 @@
 
     <div>
       <select class="form-control" name="source_language" title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
 
@@ -109,7 +109,7 @@
 
     <div class="">
       <select class="form-control" name="target_language" title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
 
@@ -120,13 +120,13 @@
   <div class="nodata" ng-show="result.length == 0">
     <translate>No data yet for</translate> {{search_term}}.
     <br>
-    <translate>Registered speakers of {{target_language_name}} please suggest a term.</translate>
+    <translate>Registered speakers of {{translate(target_language_name)}} please suggest a term.</translate>
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
 
     <div class="inner1">
-      <div>{{ob.source_concept.language}}: <b>{{search_term}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div>{{translate(ob.source_concept.language)}}: <b>{{search_term}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
         <translate>Definition:</translate> {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>
@@ -138,12 +138,12 @@
     <div class= "innernull" ng-show="ob.target_terms.length == 0">
       <translate>No matches yet.</translate>
       <div style="font-style:italic">
-        <span style="color:#FFD700" translate>Upcoming feature: </span><translate>Registered speakers of {{target_language_name}} please suggest a term.</translate>
+        <span style="color:#FFD700" translate>Upcoming feature: </span><translate>Registered speakers of {{translate(target_language_name)}} please suggest a term.</translate>
       </div>
     </div>
 
     <div class="inner2" ng-hide="ob.target_terms.length == 0">
-      <div>{{ob.target_concept.language}}:
+      <div>{{translate(ob.target_concept.language)}}:
         <span ng-repeat="term in ob.target_terms">
           <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{term.lemma}} ({{term.pos}})
@@ -154,9 +154,9 @@
         <translate>Definition:</translate> {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
       <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        <span style="color:#627149"><translate>No definition yet in {{ob.target_concept.language}} for this meaning of</translate> <b>{{search_term}}</b>.</span>
+        <span style="color:#627149"><translate>No definition yet in {{translate(ob.target_concept.language)}} for this meaning of</translate> <b>{{search_term}}</b>.</span>
         <div style="font-style:italic">
-          <span style="color:#D69A33" translate>Upcoming feature: </span><translate>Registered speakers of {{ob.target_concept.language}} please suggest a definition.</translate>
+          <span style="color:#D69A33" translate>Upcoming feature: </span><translate>Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.</translate>
         </div>
       </div>
       <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">
@@ -165,7 +165,7 @@
     </div>
 
     <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-      <div>{{ob.english_concept.language}}:
+      <div>{{translate(ob.english_concept.language)}}:
         <span ng-repeat="term in ob.eng_terms">
           <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{term.lemma}} ({{term.pos}})
@@ -185,7 +185,7 @@
   <div id="wrapper" ng-show="result.length != 0" style="text-align:left;margin-left:15px">
     <span class="sources" translate>Sources</span>
     <div class="sourcesLinks" ng-repeat="lang in src_langs">
-      <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{lang.name}}</a>
+      <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{translate(lang.name)}}</a>
     </div>
   </div>
 
