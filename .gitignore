@@ -4,3 +4,7 @@
 node_modules/
 platforms/
 plugins/
+
+# gettext translation files
+*.po
+*.mo
