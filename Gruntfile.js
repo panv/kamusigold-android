@@ -6,7 +6,9 @@ module.exports = function(grunt) {
         nggettext_extract: {
             pot: {
                 files: {
-                    'www/po/template.pot': ['www/index.html', 'www/js/kamusi.js']
+                    'www/po/template.pot': [
+                        'www/index.html', 'www/js/kamusi.js', 'www/js/language-names.js'
+                    ]
                 }
             }
         },

@@ -1,4 +1,5 @@
 angular.module('gettext').run(['gettextCatalog', function (gettextCatalog) {
 /* jshint -W100 */
+    gettextCatalog.setStrings('fr', {"Arabic":"Arabe","Basque":"Basque","Catalan":"Catalan","Definition:":"Définition:","English":"Anglais","Enter your word here":"Entrez un mot","Example:":"Exemple:","Galician":"Galicien","Go !":"Allez !","Italian":"Italien","No data yet for":"Pas encore de données pour","No definition yet in {{translate(ob.target_concept.language)}} for this meaning of":"Pas de définition en {{translate(ob.target_concept.language)}} pour","No matches yet.":"Pas de résultat.","Persian":"Perse","Portuguese":"Portugais","Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.":"Pratiquants de {{translate(ob.target_concept.language)}}, suggérez une définition.","Registered speakers of {{translate(target_language_name)}} please suggest a term.":"Pratiquants de {{translate(target_language_name)}}, suggérez un terme.","Romanian":"Roumain","Slovak":"Slovaque","Source Language":"Langage Source","Sources":"Sources","Spanish":"Espagnol","Target Language":"Langage Cible"});
 /* jshint +W100 */
 }]);

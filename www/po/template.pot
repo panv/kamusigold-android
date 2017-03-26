@@ -4,60 +4,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: www/index.html:126
-#: www/index.html:149
-#: www/index.html:171
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr ""
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr ""
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr ""
+
+#: www/index.html:131
+#: www/index.html:154
+#: www/index.html:176
 msgid "Definition:"
 msgstr ""
 
+#: www/js/language-names.js:6
+msgid "English"
+msgstr ""
+
 #: www/index.html:63
-#: www/index.html:94
+#: www/index.html:99
 msgid "Enter your word here"
 msgstr ""
 
-#: www/index.html:129
-#: www/index.html:158
-#: www/index.html:174
+#: www/index.html:134
+#: www/index.html:163
+#: www/index.html:179
 msgid "Example:"
 msgstr ""
 
-#: www/index.html:111
+#: www/js/language-names.js:7
+msgid "Galician"
+msgstr ""
+
+#: www/index.html:116
 #: www/index.html:84
 msgid "Go !"
+msgstr ""
+
+#: www/js/language-names.js:8
+msgid "Italian"
 msgstr ""
 
 #: www/index.html:52
 msgid "Kamusi Gold"
 msgstr ""
 
-#: www/index.html:116
+#: www/index.html:121
 msgid "No data yet for"
 msgstr ""
 
-#: www/index.html:152
-msgid "No definition yet in {{ob.target_concept.language}} for this meaning of"
+#: www/index.html:157
+msgid "No definition yet in {{translate(ob.target_concept.language)}} for this meaning of"
 msgstr ""
 
-#: www/index.html:134
+#: www/index.html:139
 msgid "No matches yet."
 msgstr ""
 
-#: www/index.html:154
-msgid "Registered speakers of {{ob.target_concept.language}} please suggest a definition."
+#: www/js/language-names.js:9
+msgid "Persian"
 msgstr ""
 
-#: www/index.html:118
-#: www/index.html:136
-msgid "Registered speakers of {{target_language_name}} please suggest a term."
+#: www/js/language-names.js:10
+msgid "Portuguese"
 msgstr ""
 
+#: www/index.html:159
+msgid "Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition."
+msgstr ""
+
+#: www/index.html:123
+#: www/index.html:141
+msgid "Registered speakers of {{translate(target_language_name)}} please suggest a term."
+msgstr ""
+
+#: www/js/language-names.js:11
+msgid "Romanian"
+msgstr ""
+
+#: www/js/language-names.js:12
+msgid "Slovak"
+msgstr ""
+
+#: www/index.html:103
 #: www/index.html:68
-#: www/index.html:98
 msgid "Source Language"
 msgstr ""
 
-#: www/index.html:181
+#: www/index.html:186
 msgid "Sources"
+msgstr ""
+
+#: www/js/language-names.js:13
+msgid "Spanish"
 msgstr ""
 
 #: www/index.html:73
@@ -65,12 +109,16 @@ msgstr ""
 msgid "Swap Languages"
 msgstr ""
 
-#: www/index.html:106
+#: www/index.html:111
 #: www/index.html:79
 msgid "Target Language"
 msgstr ""
 
-#: www/index.html:136
-#: www/index.html:154
+#: www/index.html:86
+msgid "UI language"
+msgstr ""
+
+#: www/index.html:141
+#: www/index.html:159
 msgid "Upcoming feature:"
 msgstr ""
