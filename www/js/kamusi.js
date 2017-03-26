@@ -1,7 +1,7 @@
 var app = angular.module('main', ['ionic', 'gettext']);
 
 // Factory used to return http promises from the language api
-app.factory("languageApi", function($http, gettext) {
+app.factory("languageApi", function($http) {
     let api_url = "https://kamusigold.org/api/languages";
     return {
         // The api, JSON dict mapping language name to language code

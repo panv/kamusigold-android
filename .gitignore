@@ -6,5 +6,6 @@ platforms/
 plugins/
 
 # gettext translation files
-*.po
 *.mo
+
+*.keystore
