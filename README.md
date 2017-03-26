@@ -39,15 +39,25 @@ Run `cordova plugin add <plugin name>` to install the plugins.
 
 ## Translations
 
-When modifying the `index.html` file, you need to add the `translate` directive
-to the strings you want translated, then run `grunt extract` in the command line to generate
-the template file `po/template.pot` that is used as a basis for the translations.
+When modifying the `index.html` file, you need to mark the strings you want translated
+with the `translate` directive, or use the `translate(term)` function when markup is
+not applicable (typically in interpolations). If you need to translate a string in a
+javascript file, use the `gettext` function (it requires a `gettext` dependency).
 
-When the strings are translated, run `grunt compile` to generate the `translations.js`
-file that contains the translations.
+When all strings have been marked for translation, run `grunt extract` in the command line
+to extract them and generate the template file `www/po/template.pot` that is used as a basis
+for the translations. The easiest way to translate the strings is to use [Poedit].
+The translations are saved in a `<language code>.po` file in the `www/po` folder.
 
-When adding a new language to the available translations, you need to add it to the `getAvailableUiLanguages`
-list in the factory.
+When the translation is done, run `grunt compile` to generate the `translations.js`
+file that contains the translated strings that will be automatically injected back into the app.
+
+When adding a new language to the available translations, you need to add it to the
+`getAvailableUiLanguages` list in the factory, in the `www/js/kamusi.js` file.
+
+When a new language is added to the available source and target languages in the database,
+you need to add its name to the list in `www/js/language-names.js`.
+
 
 [Apache Cordova]: http://cordova.apache.org/
 [Ionic framework]: http://ionicframework.com/
@@ -57,3 +67,4 @@ list in the factory.
 [cordova-plugin-inappbrowser]: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/
 [angular-gettext]: https://angular-gettext.rocketeer.be/
 [Grunt]: https://gruntjs.com/
+[Poedit]: https://poedit.net/
