@@ -74,6 +74,16 @@ body {
   border: none;
 }
 
+.swapWrapper {
+  -webkit-appearance: none;
+  border: 1px solid #684235;
+  background-color: #ECE5DB;
+}
+
+.swapWrapper:active {
+  background-color: #D4CEC5;
+}
+
 .inputWord {
   text-align: center;
   margin-top: 15px;
