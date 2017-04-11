@@ -48,6 +48,15 @@ body {
   text-align: center;
 }
 
+#uiLanguageSelector {
+  margin-top: 60px;
+  text-align: right;
+}
+
+.uiLanguage {
+  background-color: white;
+}
+
 #within {
   display: none;
   margin-top:10px;
@@ -58,7 +67,7 @@ body {
 
 #logo {
   display: inline-block;
-  margin: 85px 0 22px 0;
+  margin: 22px 0 22px 0;
   cursor: pointer;
   border: none;
   align-self: center;

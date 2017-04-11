@@ -55,6 +55,14 @@
 
   <div id="form">
 
+    <div id="uiLanguageSelector">
+      <select class="uiLanguage" title="{{'UI language'|translate}}"
+        ng-options="translation.code as translate(translation.name) for translation in translations"
+        ng-model="selected_translation" ng-change="switchLanguage()">
+        <option value="" disabled="" translate>I speak</option>
+      </select>
+    </div>
+
     <div id="logo">
       <img src="res/kamusi.png" alt="Kamusi logo">
     </div>
@@ -84,11 +92,6 @@
     </div>
 
     <button class="btn submitButton" ng-click="run()" translate>Go !</button>
-
-    <select class="switchLanguage" title="{{'UI language'|translate}}"
-      ng-options="translation.code as translate(translation.name) for translation in translations"
-      ng-model="selected_translation" ng-change="switchLanguage()">
-    </select>
 
   </div>
 
