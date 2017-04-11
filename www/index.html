@@ -66,6 +66,7 @@
     <div>
       <select class="form-control" id="source_language" name="source_language"
         title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
+        <option value="" disabled="" translate>Language you want to translate from</option>
         <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
@@ -77,6 +78,7 @@
     <div class="">
       <select class="form-control" id="target_language" name="target_language"
         title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
+        <option value="" disabled="" translate>Language you want to translate to</option>
         <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
       </select>
     </div>
