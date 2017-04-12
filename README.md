@@ -6,7 +6,7 @@ Multi-platform dictionary app, using [Apache Cordova] and the [Ionic framework].
 
 Install [Node.js], [Cordova] and [Ionic]. You then need to add the platform you want to work on
 (android, ios, browser) with `cordova platform add <platform name>` and the required
-Cordova plugins (for now only the InAppBrowser plugin).
+Cordova plugins.
 
 ### The files
 
@@ -35,7 +35,8 @@ In the root folder `config.xml` defines the properties of the app.
 
 Run `cordova plugin add <plugin name>` to install the plugins.
 
-- [cordova-plugin-inappbrowser]
+- [whitelist], [statusbar], [device], [splashscreen] for compatibility and security
+- [cordova-plugin-inappbrowser] for opening the sources links
 
 ### External libraries
 
@@ -104,6 +105,10 @@ you need to add its name to the list in `www/js/language-names.js`.
 [Node.js]: https://nodejs.org/
 [Cordova]: http://cordova.apache.org/#getstarted
 [Ionic]: http://ionicframework.com/getting-started/
+[whitelist]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-whitelist/
+[statusbar]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-statusbar/
+[device]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-device/
+[splashscreen]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-splashscreen/
 [cordova-plugin-inappbrowser]: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/
 [angular-gettext]: https://angular-gettext.rocketeer.be/
 [Grunt]: https://gruntjs.com/
