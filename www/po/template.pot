@@ -16,9 +16,9 @@ msgstr ""
 msgid "Catalan"
 msgstr ""
 
-#: www/index.html:131
-#: www/index.html:154
-#: www/index.html:176
+#: www/index.html:136
+#: www/index.html:159
+#: www/index.html:181
 msgid "Definition:"
 msgstr ""
 
@@ -26,27 +26,35 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: www/index.html:63
-#: www/index.html:99
+#: www/index.html:104
+#: www/index.html:71
 msgid "Enter your word here"
 msgstr ""
 
-#: www/index.html:134
-#: www/index.html:163
-#: www/index.html:179
+#: www/index.html:139
+#: www/index.html:168
+#: www/index.html:184
 msgid "Example:"
 msgstr ""
 
 #: www/js/language-names.js:7
-msgid "Galician"
-msgstr ""
-
-#: www/index.html:116
-#: www/index.html:84
-msgid "Go !"
+msgid "French"
 msgstr ""
 
 #: www/js/language-names.js:8
+msgid "Galician"
+msgstr ""
+
+#: www/index.html:121
+#: www/index.html:94
+msgid "Go !"
+msgstr ""
+
+#: www/index.html:62
+msgid "I speak"
+msgstr ""
+
+#: www/js/language-names.js:9
 msgid "Italian"
 msgstr ""
 
@@ -54,71 +62,79 @@ msgstr ""
 msgid "Kamusi Gold"
 msgstr ""
 
-#: www/index.html:121
+#: www/index.html:77
+msgid "Language you want to translate from"
+msgstr ""
+
+#: www/index.html:89
+msgid "Language you want to translate to"
+msgstr ""
+
+#: www/index.html:126
 msgid "No data yet for"
 msgstr ""
 
-#: www/index.html:157
+#: www/index.html:162
 msgid "No definition yet in {{translate(ob.target_concept.language)}} for this meaning of"
 msgstr ""
 
-#: www/index.html:139
+#: www/index.html:144
 msgid "No matches yet."
 msgstr ""
 
-#: www/js/language-names.js:9
+#: www/js/language-names.js:10
 msgid "Persian"
 msgstr ""
 
-#: www/js/language-names.js:10
+#: www/js/language-names.js:11
 msgid "Portuguese"
 msgstr ""
 
-#: www/index.html:159
+#: www/index.html:164
 msgid "Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition."
 msgstr ""
 
-#: www/index.html:123
-#: www/index.html:141
+#: www/index.html:128
+#: www/index.html:146
 msgid "Registered speakers of {{translate(target_language_name)}} please suggest a term."
 msgstr ""
 
-#: www/js/language-names.js:11
+#: www/js/language-names.js:12
 msgid "Romanian"
 msgstr ""
 
-#: www/js/language-names.js:12
+#: www/js/language-names.js:13
 msgid "Slovak"
 msgstr ""
 
-#: www/index.html:103
-#: www/index.html:68
+#: www/index.html:108
+#: www/index.html:76
 msgid "Source Language"
 msgstr ""
 
-#: www/index.html:186
+#: www/index.html:191
 msgid "Sources"
 msgstr ""
 
-#: www/js/language-names.js:13
+#: www/js/language-names.js:14
 msgid "Spanish"
 msgstr ""
 
-#: www/index.html:73
-#: www/index.html:74
+#: www/index.html:82
+#: www/index.html:83
 msgid "Swap Languages"
 msgstr ""
 
-#: www/index.html:111
-#: www/index.html:79
+#: www/index.html:116
+#: www/index.html:88
 msgid "Target Language"
 msgstr ""
 
-#: www/index.html:86
+#: www/index.html:59
 msgid "UI language"
 msgstr ""
 
-#: www/index.html:141
-#: www/index.html:159
+#: www/index.html:146
+#: www/index.html:164
 msgid "Upcoming feature:"
 msgstr ""

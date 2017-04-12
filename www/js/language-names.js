@@ -4,6 +4,7 @@ angular.module("languageNames").controller("dummy", function(gettext) {
         gettext("Basque"),
         gettext("Catalan"),
         gettext("English"),
+        gettext("French"),
         gettext("Galician"),
         gettext("Italian"),
         gettext("Persian"),

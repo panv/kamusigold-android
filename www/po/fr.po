@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "Arabe"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "Basque"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "Catalan"
+
+#: www/index.html:136 www/index.html:159 www/index.html:181
+msgid "Definition:"
+msgstr "Définition:"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "Anglais"
+
+#: www/index.html:104 www/index.html:71
+msgid "Enter your word here"
+msgstr "Entrez un mot"
+
+#: www/index.html:139 www/index.html:168 www/index.html:184
+msgid "Example:"
+msgstr "Exemple:"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "Français"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "Galicien"
+
+#: www/index.html:121 www/index.html:94
+msgid "Go !"
+msgstr "Go !"
+
+#: www/index.html:62
+msgid "I speak"
+msgstr "Je parle"
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "Italien"
+
+#: www/index.html:52
+msgid "Kamusi Gold"
+msgstr "Kamusi Gold"
+
+#: www/index.html:77
+msgid "Language you want to translate from"
+msgstr "Langue du mot à traduire"
+
+#: www/index.html:89
+msgid "Language you want to translate to"
+msgstr "Langue de traduction"
+
+#: www/index.html:126
+msgid "No data yet for"
+msgstr "Pas encore de données pour"
+
+#: www/index.html:162
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of"
+msgstr ""
+"Pas encore de définition en {{translate(ob.target_concept.language)}} pour"
+
+#: www/index.html:144
+msgid "No matches yet."
+msgstr "Pas de résultat."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "Perse"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: www/index.html:164
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Locuteurs de {{translate(ob.target_concept.language)}}, suggérez une "
+"définition."
+
+#: www/index.html:128 www/index.html:146
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr "Locuteurs de {{translate(target_language_name)}}, suggérez un terme."
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "Roumain"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "Slovaque"
+
+#: www/index.html:108 www/index.html:76
+msgid "Source Language"
+msgstr "Langage Source"
+
+#: www/index.html:191
+msgid "Sources"
+msgstr "Sources"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: www/index.html:82 www/index.html:83
+msgid "Swap Languages"
+msgstr "Permutez les langues"
+
+#: www/index.html:116 www/index.html:88
+msgid "Target Language"
+msgstr "Langage Cible"
+
+#: www/index.html:59
+msgid "UI language"
+msgstr "Language de l'interface"
+
+#: www/index.html:146 www/index.html:164
+msgid "Upcoming feature:"
+msgstr "Prochaine fonctionnalité:"
+
+#~ msgid "{{ob.english_concept.language}}:"
+#~ msgstr "{{ob.english_concept.language}}:"
