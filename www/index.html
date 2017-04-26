@@ -131,7 +131,7 @@
   <div class="outerDiv" ng-repeat="ob in result" >
 
     <div class="inner1">
-      <div>{{translate(ob.source_concept.language)}}: <b>{{search_term}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div>{{translate(ob.source_concept.language)}}: <b>{{parse(search_term)}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
         <translate>Definition:</translate> {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>
@@ -151,7 +151,7 @@
       <div>{{translate(ob.target_concept.language)}}:
         <span ng-repeat="term in ob.target_terms">
           <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
-            {{term.lemma}} ({{term.pos}})
+            {{parse(term.lemma)}} ({{term.pos}})
           </button>
         </span>
       </div>
@@ -159,7 +159,7 @@
         <translate>Definition:</translate> {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
       <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        <span style="color:#627149"><translate>No definition yet in {{translate(ob.target_concept.language)}} for this meaning of</translate> <b>{{search_term}}</b>.</span>
+        <span style="color:#627149"><translate>No definition yet in {{translate(ob.target_concept.language)}} for this meaning of</translate> <b>{{parse(search_term)}}</b>.</span>
         <div style="font-style:italic">
           <span style="color:#D69A33" translate>Upcoming feature: </span><translate>Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.</translate>
         </div>
@@ -173,7 +173,7 @@
       <div>{{translate(ob.english_concept.language)}}:
         <span ng-repeat="term in ob.eng_terms">
           <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
-            {{term.lemma}} ({{term.pos}})
+            {{parse(term.lemma)}} ({{term.pos}})
           </button>
         </span>
       </div>

@@ -109,7 +109,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
     // Get data and show
     $scope.run = function() {
-        var input_word = $scope.input_word.trim();
+        var input_word = $scope.input_word.trim().replace(/ /g, '_');
         var src_lang = $scope.source_language;
         var trgt_lang = $scope.target_language;
 
@@ -203,6 +203,10 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     // Returns the translation of term (used for translating language names)
     $scope.translate = function(term) {
         return gettextCatalog.getString(term);
+    }
+
+    $scope.parse = function(term) {
+        return term.replace('_', ' ');
     }
 
     $scope.pos = function(t1, t2) {
