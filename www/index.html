@@ -74,7 +74,9 @@
     </div>
 
     <div>
-      <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
+      <form ng-submit="run()">
+        <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
+      </form>
     </div>
 
     <div>
