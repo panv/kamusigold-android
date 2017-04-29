@@ -33,19 +33,8 @@ app.factory("languageApi", function($http) {
     }
 });
 
-function swapLanguages() {
-    var trgt_idx = document.getElementById("target_language").selectedIndex;
-    var src_idx = document.getElementById("source_language").selectedIndex;
-
-    document.getElementById("target_language").selectedIndex = src_idx;
-    document.getElementById("source_language").selectedIndex = trgt_idx;
-}
-
 // Map the event functionality
 window.onload = function() {
-    // When we click swap button
-    document.getElementById("swap").onclick = swapLanguages;
-
     function onConfirmQuit(button){
         if (button == "1") {
             navigator.app.exitApp();
@@ -87,8 +76,16 @@ document.addEventListener('backbutton', () => {
 
 app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window, gettextCatalog) {
 
+    // Called when clicking on the swap button
+    $scope.swapLanguages = function() {
+        let temp_src = $scope.source_language;
+        let temp_trgt = $scope.target_language;
+        $scope.target_language = temp_src;
+        $scope.source_language = temp_trgt;
+    }
+
     // TODO: optimize this
-    // Languages used in the language selection drop-down menu
+    // Loads the list of languages in the language selection drop-down menus (source and target)
     function loadListOfLanguages(language_obj) {
         $scope.language_list = [];
         keys = []
@@ -104,11 +101,12 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     }
     languageApi.getApi().then(loadListOfLanguages);
 
-    // Load the list of available translations in the drop-down selector
+    // Loads the list of available UI translations in the drop-down selector
     $scope.translations = languageApi.getAvailableUiLanguages();
 
-    // Get data and show
+    // Called when clicking on the submit button
     $scope.run = function() {
+        // Replace spaces in query by underscores
         var input_word = $scope.input_word.trim().replace(/ /g, '_');
         var src_lang = $scope.source_language;
         var trgt_lang = $scope.target_language;
@@ -122,8 +120,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         $("#sample").show();
     };
 
-    // Function called when clicking on one of the result terms.
-    // It first parses the source and target languages and then calls wordSearch
+    // Called when clicking on one of the result terms
+    // First parses the source and target languages and then calls wordSearch
     $scope.targetTermOnClick = function(input_word, source, target) {
         languageApi.getDict().then(function(dict) {
             languageApi.getApi().then(function(api) {
@@ -144,6 +142,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
                 $("#within").hide();
                 displayResults(data, input_word, trgt_lang);
                 displaySources(src_lang, trgt_lang);
+                // Go to top of page on new search
                 $window.scrollTo(0, 0);
             });
     }
@@ -188,6 +187,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         $scope.$apply();
     }
 
+    // Called when clicking on the help button
     $scope.displayWalkthrough = function(walkthrough_id) {
         switch (walkthrough_id) {
             case 0:
@@ -201,12 +201,25 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
                 break;
             case 3:
                 $scope.walkthroughActive3 = true;
+                // Explanation to why german is not yet in the database
+                $scope.whereIsGerman =
+                    "Wo ist Deutsch?\n" +
+                    "Leider sind keine Daten für Deutsch verfügbar, die:\n" +
+                    "√ einfach an unseren Konzeptsatz auszurichten,\n" +
+                    "√ hoher Qualität und\n" +
+                    "√ frei\n" +
+                    "sind. Eine künftige Version dieser App wird dich um deine Hilfe bitten, einen Datensatz von 17.000 Begriffen auszurichten, um Deutsch in Kamusi anzupflanzen.\n" +
+                    "Mach bei der Arbeitsgruppe mit, um uns zu helfen, eine großartige deutsche Ressource zu erstellen.\n" +
+                    "E-Mail: taskforce+german@kamusi.org"
                 break;
             case 4:
                 $scope.walkthroughActive4 = true;
                 break;
             case 5:
                 $scope.walkthroughActive5 = true;
+                break;
+            case 6:
+                $scope.walkthroughActive6 = true;
                 break;
         }
     }
@@ -218,7 +231,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         cordova.InAppBrowser.open(url, target, options);
     }
 
-    // Switch the language to the one selected in the drop-down menu
+    // Switches the UI language to the one selected in the drop-down menu
     $scope.switchLanguage = function() {
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
     }
@@ -228,6 +241,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         return gettextCatalog.getString(term);
     }
 
+    // Replaces underscores by spaces in the result terms
     $scope.parse = function(term) {
         return term.replace('_', ' ');
     }

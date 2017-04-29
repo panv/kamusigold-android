@@ -53,15 +53,15 @@
 <body ng-app="main" ng-controller="displayCtrl" class="platform-android">
 
   <div class="header">
-    <img src="res/left.svg" class="leftArrow">
+    <img src="res/left_arrow.svg" class="leftArrow">
     <div class="title" translate>Kamusi Here!</div>
-    <img src="res/searchButton.png" class="searchButton" ng-click="showSearchField = !showSearchField">
+    <img src="res/search_button.png" class="searchButton" ng-click="showSearchField = !showSearchField">
   </div>
 
   <div id="form">
 
     <div id="uiLanguageSelector">
-      <img src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(0)">
+      <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(6)">
       <select id="language_selector" class="uiLanguage" title="{{'UI language'|translate}}"
         ng-options="translation.code as translate(translation.name) for translation in translations"
         ng-model="selected_translation" ng-change="switchLanguage()">
@@ -70,7 +70,7 @@
     </div>
 
     <div id="logo">
-      <img src="res/kamusi.png" alt="Kamusi logo">
+      <img src="res/kamusi_gold_logo.png" alt="Kamusi logo">
     </div>
 
     <div>
@@ -85,7 +85,7 @@
       </select>
     </div>
 
-    <button title="{{'Swap Languages'|translate}}" id="swap" class="swapWrapper">
+    <button title="{{'Swap Languages'|translate}}" id="swap" class="swapWrapper" ng-click="swapLanguages()">
       <img src="res/swap.png" alt="{{'Swap Languages'|translate}}" class="swap">
     </button>
 
@@ -98,6 +98,15 @@
     </div>
 
     <button class="btn submitButton" ng-click="run()" translate>Go !</button>
+
+    <walkthrough
+      wid="welcome"
+      walkthrough-type="transparency"
+      walkthrough-hero-image="res/kamusi_logo_512x512.png"
+      main-caption="{{'Welcome to Kamusi Here!'|translate}}"
+      on-walkthrough-hide="displayWalkthrough(0)"
+      is-active="walkthroughActive6">
+    </walkthrough>
 
     <walkthrough
       wid="language_selector_help"
@@ -116,9 +125,10 @@
       walkthrough-type="transparency"
       focus-element-selector="#swap"
       icon="arrow"
-      force-caption-location="TOP"
-      icon-padding-left="-50"
       main-caption="{{'You can swap source and destination languages with this button'|translate}}"
+      force-caption-location="BOTTOM"
+      icon-padding-left="-30"
+      icon-padding-top="30"
       on-walkthrough-hide="displayWalkthrough(2)"
       is-active="walkthroughActive1">
     </walkthrough>
@@ -127,7 +137,7 @@
       wid="tour_page_1"
       walkthrough-type="transparency"
       walkthrough-hero-image="res/result_example_marked.png"
-      main-caption="{{'On the result page, click any translation result to see a search for that term!'|translate}}"
+      main-caption="{{'On the result page, click any translation result to see a search for that term'|translate}}"
       on-walkthrough-hide="displayWalkthrough(3)"
       is-active="walkthroughActive2">
     </walkthrough>
@@ -135,8 +145,29 @@
     <walkthrough
       wid="tour_page_2"
       walkthrough-type="transparency"
-      main-caption="{{'You will notice that we do not always have a match for an idea you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      main-caption="{{whereIsGerman}}"
+      on-walkthrough-hide="displayWalkthrough(4)"
       is-active="walkthroughActive3">
+    </walkthrough>
+
+    <walkthrough
+      wid="tour_page_3"
+      walkthrough-type="transparency"
+      main-caption="{{'You will notice that we do not always have a match for a term you are looking for
+      from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      on-walkthrough-hide="displayWalkthrough(5)"
+      is-active="walkthroughActive4">
+    </walkthrough>
+
+    <walkthrough
+      wid="help_help"
+      walkthrough-type="transparency"
+      focus-element-selector="#help_button"
+      icon="arrow"
+      main-caption="{{'If you ever need to see this information again, click on this button'|translate}}"
+      force-caption-location="BOTTOM"
+      icon-padding-left="20"
+      is-active="walkthroughActive5">
     </walkthrough>
 
   </div>
@@ -194,7 +225,7 @@
     </div>
 
     <div class="inner2" ng-hide="ob.target_terms.length == 0">
-      <div>{{translate(ob.target_concept.language)}} ({{ob.target_terms.pos}}):
+      <div>{{translate(ob.target_concept.language)}} ({{ob.target_terms[0].pos}}):
         <span ng-repeat="term in ob.target_terms">
           <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{parse(term.lemma)}}
@@ -216,10 +247,10 @@
     </div>
 
     <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-      <div>{{translate(ob.english_concept.language)}}:
+      <div>{{translate(ob.english_concept.language)}} ({{ob.target_terms[0].pos}}):
         <span ng-repeat="term in ob.eng_terms">
           <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
-            {{parse(term.lemma)}} ({{term.pos}})
+            {{parse(term.lemma)}}
           </button>
         </span>
       </div>
