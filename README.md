@@ -42,6 +42,7 @@ Run `cordova plugin add <plugin name>` to install the plugins.
 
 - [angular-gettext], used to generate the localization of the app
 - [Grunt], required by angular-gettext
+- [ng-walkthrough], for onboarding
 
 ## Building the app
 
@@ -112,5 +113,6 @@ you need to add its name to the list in `www/js/language-names.js`.
 [cordova-plugin-inappbrowser]: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/
 [angular-gettext]: https://angular-gettext.rocketeer.be/
 [Grunt]: https://gruntjs.com/
+[ng-walkthrough]: https://github.com/souly1/ng-walkthrough
 [here]: http://ionicframework.com/docs/guide/publishing.html#building-the-app-for-production
 [Poedit]: https://poedit.net/
