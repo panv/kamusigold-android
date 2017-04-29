@@ -15,7 +15,7 @@ body {
 
 .leftArrow {
   width: 30px;
-  margin-top: 3px;
+  margin-top: 5px;
   margin-bottom: 1px;
   float: left;
   margin-left: 9px;
@@ -24,7 +24,7 @@ body {
 
 .searchButton {
   width: 30px;
-  margin-top: 3px;
+  margin-top: 5px;
   margin-bottom: 1px;
   float: right;
   margin-right: 9px;
@@ -49,12 +49,19 @@ body {
 }
 
 #uiLanguageSelector {
-  margin-top: 60px;
-  text-align: right;
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 
 .uiLanguage {
   background-color: white;
+  float: right;
+}
+
+.helpButton {
+  width: 30px;
+  float: left;
+  color: white;
 }
 
 #within {
@@ -163,6 +170,12 @@ body {
   margin: 0px 15px 16px 15px;
   padding: 9px;
   color: black;
+}
+
+#wrapper {
+  margin-right:15px;
+  margin-left:15px;
+  text-align:left;
 }
 
 .sources {

@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ionic', 'gettext']);
+var app = angular.module('main', ['ionic', 'gettext', 'ng-walkthrough']);
 
 // Factory used to return http promises from the language api
 app.factory("languageApi", function($http) {
@@ -186,6 +186,29 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         });
 
         $scope.$apply();
+    }
+
+    $scope.displayWalkthrough = function(walkthrough_id) {
+        switch (walkthrough_id) {
+            case 0:
+                $scope.walkthroughActive0 = true;
+                break;
+            case 1:
+                $scope.walkthroughActive1 = true;
+                break;
+            case 2:
+                $scope.walkthroughActive2 = true;
+                break;
+            case 3:
+                $scope.walkthroughActive3 = true;
+                break;
+            case 4:
+                $scope.walkthroughActive4 = true;
+                break;
+            case 5:
+                $scope.walkthroughActive5 = true;
+                break;
+        }
     }
 
     // Opens the given url in the cordova browser using the InAppBrowser cordova plugin

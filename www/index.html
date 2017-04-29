@@ -19,6 +19,8 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/kamusi.css" rel="stylesheet">
 
+    <link href="lib/ng-walkthrough/css/ng-walkthrough.css" rel="stylesheet">
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -41,6 +43,9 @@
     <!-- the translation file -->
     <script src="translations/translations.js"></script>
 
+    <!-- used for the help display and onboarding -->
+    <script type="text/javascript" src="lib/ng-walkthrough/ng-walkthrough.js"></script>
+
     <!-- your app's js -->
     <script src="js/kamusi.js"></script>
   </head>
@@ -56,7 +61,8 @@
   <div id="form">
 
     <div id="uiLanguageSelector">
-      <select class="uiLanguage" title="{{'UI language'|translate}}"
+      <img src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(0)">
+      <select id="language_selector" class="uiLanguage" title="{{'UI language'|translate}}"
         ng-options="translation.code as translate(translation.name) for translation in translations"
         ng-model="selected_translation" ng-change="switchLanguage()">
         <option value="" disabled="" translate>I speak</option>
@@ -92,6 +98,46 @@
     </div>
 
     <button class="btn submitButton" ng-click="run()" translate>Go !</button>
+
+    <walkthrough
+      wid="language_selector_help"
+      walkthrough-type="transparency"
+      focus-element-selector="#language_selector"
+      icon="arrow"
+      main-caption="{{'You can select the language of the application here.'|translate}}"
+      force-caption-location="BOTTOM"
+      icon-padding-left="20"
+      on-walkthrough-hide="displayWalkthrough(1)"
+      is-active="walkthroughActive0">
+    </walkthrough>
+
+    <walkthrough
+      wid="swap_help"
+      walkthrough-type="transparency"
+      focus-element-selector="#swap"
+      icon="arrow"
+      force-caption-location="TOP"
+      icon-padding-left="-50"
+      main-caption="{{'You can swap source and destination languages with this button'|translate}}"
+      on-walkthrough-hide="displayWalkthrough(2)"
+      is-active="walkthroughActive1">
+    </walkthrough>
+
+    <walkthrough
+      wid="tour_page_1"
+      walkthrough-type="transparency"
+      walkthrough-hero-image="res/result_example_marked.png"
+      main-caption="{{'On the result page, click any translation result to see a search for that term!'|translate}}"
+      on-walkthrough-hide="displayWalkthrough(3)"
+      is-active="walkthroughActive2">
+    </walkthrough>
+
+    <walkthrough
+      wid="tour_page_2"
+      walkthrough-type="transparency"
+      main-caption="{{'You will notice that we do not always have a match for an idea you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      is-active="walkthroughActive3">
+    </walkthrough>
 
   </div>
 
@@ -148,10 +194,10 @@
     </div>
 
     <div class="inner2" ng-hide="ob.target_terms.length == 0">
-      <div>{{translate(ob.target_concept.language)}}:
+      <div>{{translate(ob.target_concept.language)}} ({{ob.target_terms.pos}}):
         <span ng-repeat="term in ob.target_terms">
           <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
-            {{parse(term.lemma)}} ({{term.pos}})
+            {{parse(term.lemma)}}
           </button>
         </span>
       </div>
@@ -187,7 +233,7 @@
 
   </div>
 
-  <div id="wrapper" ng-show="result.length != 0" style="text-align:left;margin-left:15px">
+  <div id="wrapper" ng-show="result.length != 0">
     <span class="sources" translate>Sources</span>
     <div class="sourcesLinks" ng-repeat="lang in src_langs">
       <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{translate(lang.name)}}</a>
