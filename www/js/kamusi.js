@@ -201,8 +201,17 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
                 break;
             case 3:
                 $scope.walkthroughActive3 = true;
-                // Explanation to why german is not yet in the database
-                $scope.whereIsGerman =
+                $scope.whereAreFrenchAndGerman =
+                    // Explanation to why french is not yet in the database
+                    "Mais où se trouve le français?\n" +
+                    "Malheureusement, aucune donnée pour le français n'est actuellement disponible qui soit:\n" +
+                    "√ facilement alignable avec les concepts existants\n" +
+                    "√ de bonne qualité\n" +
+                    "√ et gratuite.\n" +
+                    "Une future version de l'application vous permettra de soumettre des termes français pour Kamusi, en commençant par des données imparfaites à améliorer.\n" +
+                    "Vous pouvez participer au projet pour améliorer nos données dès maintenant.\n" +
+                    "Email: taskforce+french@kamusi.org\n\n" +
+                    // Explanation to why german is not yet in the database
                     "Wo ist Deutsch?\n" +
                     "Leider sind keine Daten für Deutsch verfügbar, die:\n" +
                     "√ einfach an unseren Konzeptsatz auszurichten,\n" +

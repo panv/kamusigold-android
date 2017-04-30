@@ -35,7 +35,7 @@
 
 .walkthrough-element.walkthrough-text{
     margin-top: 10%;
-    width: 75%;
+    width: 80%;
     color: #000000;
     text-align: center;
     word-break: normal;
@@ -209,5 +209,5 @@
 
 .walkthrough-hero-image{
     margin-top: 15px;
-    max-width: 75%;
+    max-width: 80%;
 }
