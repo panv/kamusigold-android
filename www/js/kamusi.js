@@ -106,6 +106,28 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
     // Called when clicking on the submit button
     $scope.run = function() {
+        // Prompt user to rate the app
+        AppRate.preferences = {
+            displayAppName: 'Kamusi Here!',
+            usesUntilPrompt: 15,
+            promptAgainForEachNewVersion: true,
+            storeAppURL: {
+                ios: 'org.kamusigold.kamusihere',
+                android: 'market://details?id=com.ionicframework.kamusi454359'
+            },
+            customLocale: {
+                title: gettextCatalog.getString("Rate Kamusi Here!"),
+                message: gettextCatalog.getString(
+                    "We hope you are enjoying Kamusi Here!\n" +
+                    "If we have earned your appreciation, please give us a rating now!\n" +
+                    "If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact"),
+                cancelButtonLabel: gettextCatalog.getString("No Thanks"),
+                laterButtonLabel: gettextCatalog.getString("Remind Me Later"),
+                rateButtonLabel: gettextCatalog.getString("Rate It Now")
+            }
+        };
+        AppRate.promptForRating(false);
+
         // Replace spaces in query by underscores
         var input_word = $scope.input_word.trim().replace(/ /g, '_');
         var src_lang = $scope.source_language;
