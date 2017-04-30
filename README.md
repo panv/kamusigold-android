@@ -37,6 +37,7 @@ Run `cordova plugin add <plugin name>` to install the plugins.
 
 - [whitelist], [statusbar], [device], [splashscreen] for compatibility and security
 - [cordova-plugin-inappbrowser] for opening the sources links
+- [cordova-plugin-apprate] for the "rate the app" dialog
 
 ### External libraries
 
@@ -111,6 +112,7 @@ you need to add its name to the list in `www/js/language-names.js`.
 [device]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-device/
 [splashscreen]: http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-splashscreen/
 [cordova-plugin-inappbrowser]: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/
+[cordova-plugin-apprate]: https://github.com/pushandplay/cordova-plugin-apprate
 [angular-gettext]: https://angular-gettext.rocketeer.be/
 [Grunt]: https://gruntjs.com/
 [ng-walkthrough]: https://github.com/souly1/ng-walkthrough
