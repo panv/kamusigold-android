@@ -111,13 +111,16 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         var src_lang = $scope.source_language;
         var trgt_lang = $scope.target_language;
 
-        $scope.wordSearch(input_word, src_lang, trgt_lang);
+        // Prevent searches when source or target language are not selected
+        if (typeof src_lang != 'undefined' && typeof trgt_lang != 'undefined') {
+            $scope.wordSearch(input_word, src_lang, trgt_lang);
 
-        // This functionality should happen even when 'Enter' is pressed.
-        $("#form").hide();
-        $(".leftArrow").css('visibility','visible');
-        $(".searchButton").css('visibility','visible');
-        $("#sample").show();
+            // This functionality should happen even when 'Enter' is pressed.
+            $("#form").hide();
+            $(".leftArrow").css('visibility','visible');
+            $(".searchButton").css('visibility','visible');
+            $("#sample").show();
+        }
     };
 
     // Called when clicking on one of the result terms
