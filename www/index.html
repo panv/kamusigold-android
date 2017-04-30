@@ -127,7 +127,7 @@
       walkthrough-type="transparency"
       focus-element-selector="#swap"
       icon="arrow"
-      main-caption="{{'You can swap source and destination languages with this button'|translate}}"
+      main-caption="{{'You can swap source and destination languages with this button.'|translate}}"
       force-caption-location="BOTTOM"
       icon-padding-left="-30"
       icon-padding-top="30"
@@ -139,7 +139,7 @@
       wid="tour_page_1"
       walkthrough-type="transparency"
       walkthrough-hero-image="res/result_example_marked.png"
-      main-caption="{{'On the result page, click any translation result to see a search for that term'|translate}}"
+      main-caption="{{'On the result page, click any translation result to see a search for that term.'|translate}}"
       on-walkthrough-hide="displayWalkthrough(3)"
       is-active="walkthroughActive2">
     </walkthrough>
@@ -165,7 +165,7 @@
       walkthrough-type="transparency"
       focus-element-selector="#help_button"
       icon="arrow"
-      main-caption="{{'If you ever need to see this information again, click on this button'|translate}}"
+      main-caption="{{'If you ever need to see this information again, click on this button.'|translate}}"
       force-caption-location="BOTTOM"
       icon-padding-left="20"
       is-active="walkthroughActive5">
@@ -178,8 +178,9 @@
   <div id="within" ng-show="showSearchField">
 
     <div>
-      <input class="new form-control inputWord" type="text" ng-model="input_word"
-        placeholder="{{'Enter your word here'|translate}}">
+      <form ng-submit="run()">
+        <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
+      </form>
     </div>
 
     <div>

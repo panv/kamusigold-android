@@ -34,11 +34,12 @@
 }
 
 .walkthrough-element.walkthrough-text{
-    margin-top: 10%;
-    width: 80%;
+    margin-top: 20%;
+    width: 85%;
     color: #000000;
-    text-align: center;
+    text-align: justify;
     word-break: normal;
+    font-size: 80%;
 }
 
 .walkthrough-element.walkthrough-done-button{
@@ -209,5 +210,5 @@
 
 .walkthrough-hero-image{
     margin-top: 15px;
-    max-width: 80%;
+    max-width: 85%;
 }
