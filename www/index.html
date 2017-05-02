@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Kamusi Gold</title>
+    <title>Kamusi Here!</title>
 
     <link rel="manifest" href="manifest.json">
 
@@ -54,7 +54,7 @@
 
   <div class="header">
     <img src="res/left_arrow.svg" class="leftArrow">
-    <div class="title" translate>Kamusi Here!</div>
+    <div class="title">Kamusi Here!</div>
     <img src="res/search_button.png" class="searchButton" ng-click="showSearchField = !showSearchField">
   </div>
 
@@ -155,7 +155,7 @@
     <walkthrough
       wid="tour_page_3"
       walkthrough-type="transparency"
-      main-caption="{{'You will notice that we do not always have a match for a term you are looking for from our original sources.\nSoon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      main-caption="{{'You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
       on-walkthrough-hide="displayWalkthrough(5)"
       is-active="walkthroughActive4">
     </walkthrough>
@@ -202,9 +202,13 @@
   </div>
 
   <div class="nodata" ng-show="result.length == 0">
-    <translate>No data yet for</translate> {{search_term}}.
+    <translate translate-comment="{{search_term}} is the term looked up, leave it as is in the translation">
+      No data yet for {{search_term}}.
+    </translate>
     <br>
-    <translate>Registered speakers of {{translate(target_language_name)}} please suggest a term.</translate>
+    <translate translate-comment="{{translate(target_language_name)}} is the name of a language, leave it as is in the translation">
+      Registered speakers of {{translate(target_language_name)}} please suggest a term.
+    </translate>
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
@@ -222,7 +226,10 @@
     <div class= "innernull" ng-show="ob.target_terms.length == 0">
       <translate>No matches yet.</translate>
       <div style="font-style:italic">
-        <span style="color:#FFD700" translate>Upcoming feature: </span><translate>Registered speakers of {{translate(target_language_name)}} please suggest a term.</translate>
+        <span style="color:#FFD700" translate>Upcoming feature:</span>
+        <translate translate-comment="{{translate(target_language_name)}} is the name of a language, leave it as is in the translation">
+          Registered speakers of {{translate(target_language_name)}} please suggest a term.
+        </translate>
       </div>
     </div>
 
@@ -238,9 +245,16 @@
         <translate>Definition:</translate> {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
       <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        <span style="color:#627149"><translate>No definition yet in {{translate(ob.target_concept.language)}} for this meaning of</translate> <b>{{parse(search_term)}}</b>.</span>
+        <span style="color:#627149">
+          <translate translate-comment="{{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation">
+            No definition yet in {{translate(ob.target_concept.language)}} for this meaning of <b>{{parse(search_term)}}</b>.
+          </translate>
+        </span>
         <div style="font-style:italic">
-          <span style="color:#D69A33" translate>Upcoming feature: </span><translate>Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.</translate>
+          <span style="color:#D69A33" translate>Upcoming feature: </span>
+          <translate translate-comment="{{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation">
+            Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.
+          </translate>
         </div>
       </div>
       <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">

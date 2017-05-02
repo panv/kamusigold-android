@@ -16,9 +16,9 @@ msgstr ""
 msgid "Catalan"
 msgstr ""
 
-#: www/index.html:136
-#: www/index.html:159
-#: www/index.html:181
+#: www/index.html:219
+#: www/index.html:245
+#: www/index.html:274
 msgid "Definition:"
 msgstr ""
 
@@ -26,14 +26,14 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: www/index.html:104
-#: www/index.html:71
+#: www/index.html:182
+#: www/index.html:78
 msgid "Enter your word here"
 msgstr ""
 
-#: www/index.html:139
-#: www/index.html:168
-#: www/index.html:184
+#: www/index.html:222
+#: www/index.html:261
+#: www/index.html:277
 msgid "Example:"
 msgstr ""
 
@@ -45,41 +45,55 @@ msgstr ""
 msgid "Galician"
 msgstr ""
 
-#: www/index.html:121
-#: www/index.html:94
+#: www/index.html:102
+#: www/index.html:200
 msgid "Go !"
 msgstr ""
 
-#: www/index.html:62
+#: www/index.html:64
+msgid "Help"
+msgstr ""
+
+#: www/index.html:68
 msgid "I speak"
+msgstr ""
+
+#: www/index.html:168
+msgid "If you ever need to see this information again, click on this button."
 msgstr ""
 
 #: www/js/language-names.js:9
 msgid "Italian"
 msgstr ""
 
-#: www/index.html:52
-msgid "Kamusi Gold"
-msgstr ""
-
-#: www/index.html:77
+#: www/index.html:85
 msgid "Language you want to translate from"
 msgstr ""
 
-#: www/index.html:89
+#: www/index.html:97
 msgid "Language you want to translate to"
 msgstr ""
 
-#: www/index.html:126
-msgid "No data yet for"
+#: www/js/kamusi.js:125
+msgid "No Thanks"
 msgstr ""
 
-#: www/index.html:162
-msgid "No definition yet in {{translate(ob.target_concept.language)}} for this meaning of"
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:205
+msgid "No data yet for {{search_term}}."
 msgstr ""
 
-#: www/index.html:144
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:249
+msgid "No definition yet in {{translate(ob.target_concept.language)}} for this meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+
+#: www/index.html:227
 msgid "No matches yet."
+msgstr ""
+
+#: www/index.html:142
+msgid "On the result page, click any translation result to see a search for that term."
 msgstr ""
 
 #: www/js/language-names.js:10
@@ -90,13 +104,27 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: www/index.html:164
+#: www/js/kamusi.js:127
+msgid "Rate It Now"
+msgstr ""
+
+#: www/js/kamusi.js:120
+msgid "Rate Kamusi Here!"
+msgstr ""
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:255
 msgid "Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition."
 msgstr ""
 
-#: www/index.html:128
-#: www/index.html:146
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:209
+#: www/index.html:230
 msgid "Registered speakers of {{translate(target_language_name)}} please suggest a term."
+msgstr ""
+
+#: www/js/kamusi.js:126
+msgid "Remind Me Later"
 msgstr ""
 
 #: www/js/language-names.js:12
@@ -107,12 +135,12 @@ msgstr ""
 msgid "Slovak"
 msgstr ""
 
-#: www/index.html:108
-#: www/index.html:76
+#: www/index.html:187
+#: www/index.html:84
 msgid "Source Language"
 msgstr ""
 
-#: www/index.html:191
+#: www/index.html:284
 msgid "Sources"
 msgstr ""
 
@@ -120,21 +148,44 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: www/index.html:82
-#: www/index.html:83
+#: www/index.html:90
+#: www/index.html:91
 msgid "Swap Languages"
 msgstr ""
 
-#: www/index.html:116
-#: www/index.html:88
+#: www/index.html:195
+#: www/index.html:96
 msgid "Target Language"
 msgstr ""
 
-#: www/index.html:59
+#: www/index.html:65
 msgid "UI language"
 msgstr ""
 
-#: www/index.html:146
-#: www/index.html:164
+#: www/index.html:229
+#: www/index.html:254
 msgid "Upcoming feature:"
+msgstr ""
+
+#: www/js/kamusi.js:121
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact"
+msgstr ""
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr ""
+
+#: www/index.html:118
+msgid "You can select the language of the application here."
+msgstr ""
+
+#: www/index.html:130
+msgid "You can swap source and destination languages with this button."
+msgstr ""
+
+#: www/index.html:158
+msgid "You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!"
 msgstr ""

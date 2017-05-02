@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: www/js/language-names.js:3
@@ -24,7 +24,7 @@ msgstr "Basque"
 msgid "Catalan"
 msgstr "Catalan"
 
-#: www/index.html:136 www/index.html:159 www/index.html:181
+#: www/index.html:219 www/index.html:245 www/index.html:274
 msgid "Definition:"
 msgstr "Définition:"
 
@@ -32,11 +32,11 @@ msgstr "Définition:"
 msgid "English"
 msgstr "Anglais"
 
-#: www/index.html:104 www/index.html:71
+#: www/index.html:182 www/index.html:78
 msgid "Enter your word here"
 msgstr "Entrez un mot"
 
-#: www/index.html:139 www/index.html:168 www/index.html:184
+#: www/index.html:222 www/index.html:261 www/index.html:277
 msgid "Example:"
 msgstr "Exemple:"
 
@@ -48,44 +48,63 @@ msgstr "Français"
 msgid "Galician"
 msgstr "Galicien"
 
-#: www/index.html:121 www/index.html:94
+#: www/index.html:102 www/index.html:200
 msgid "Go !"
 msgstr "Go !"
 
-#: www/index.html:62
+#: www/index.html:64
+msgid "Help"
+msgstr "Aide"
+
+#: www/index.html:68
 msgid "I speak"
 msgstr "Je parle"
+
+#: www/index.html:168
+msgid "If you ever need to see this information again, click on this button."
+msgstr "Pour revoir l'aide, cliquez ce bouton."
 
 #: www/js/language-names.js:9
 msgid "Italian"
 msgstr "Italien"
 
-#: www/index.html:52
-msgid "Kamusi Gold"
-msgstr "Kamusi Gold"
-
-#: www/index.html:77
+#: www/index.html:85
 msgid "Language you want to translate from"
 msgstr "Langue du mot à traduire"
 
-#: www/index.html:89
+#: www/index.html:97
 msgid "Language you want to translate to"
 msgstr "Langue de traduction"
 
-#: www/index.html:126
-msgid "No data yet for"
-msgstr "Pas encore de données pour"
+#: www/js/kamusi.js:125
+msgid "No Thanks"
+msgstr "Non Merci"
 
-#: www/index.html:162
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:205
+msgid "No data yet for {{search_term}}."
+msgstr "Pas encore de données pour {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:249
 msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
-"meaning of"
+"meaning of <b>{{parse(search_term)}}</b>."
 msgstr ""
-"Pas encore de définition en {{translate(ob.target_concept.language)}} pour"
+"Pas encore de définition en {{translate(ob.target_concept.language)}} pour "
+"ce sens de  <b>{{parse(search_term)}}</b>."
 
-#: www/index.html:144
+#: www/index.html:227
 msgid "No matches yet."
 msgstr "Pas de résultat."
+
+#: www/index.html:142
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"Vous pouvez cliquer sur les traductions pour lancer une nouvelle recherche "
+"pour ce terme."
 
 #: www/js/language-names.js:10
 msgid "Persian"
@@ -95,7 +114,16 @@ msgstr "Perse"
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: www/index.html:164
+#: www/js/kamusi.js:127
+msgid "Rate It Now"
+msgstr "Noter Maintenant"
+
+#: www/js/kamusi.js:120
+msgid "Rate Kamusi Here!"
+msgstr "Notez Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:255
 msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
@@ -103,11 +131,16 @@ msgstr ""
 "Locuteurs de {{translate(ob.target_concept.language)}}, suggérez une "
 "définition."
 
-#: www/index.html:128 www/index.html:146
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:209 www/index.html:230
 msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr "Locuteurs de {{translate(target_language_name)}}, suggérez un terme."
+
+#: www/js/kamusi.js:126
+msgid "Remind Me Later"
+msgstr "Plus Tard"
 
 #: www/js/language-names.js:12
 msgid "Romanian"
@@ -117,11 +150,11 @@ msgstr "Roumain"
 msgid "Slovak"
 msgstr "Slovaque"
 
-#: www/index.html:108 www/index.html:76
+#: www/index.html:187 www/index.html:84
 msgid "Source Language"
 msgstr "Langage Source"
 
-#: www/index.html:191
+#: www/index.html:284
 msgid "Sources"
 msgstr "Sources"
 
@@ -129,21 +162,72 @@ msgstr "Sources"
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: www/index.html:82 www/index.html:83
+#: www/index.html:90 www/index.html:91
 msgid "Swap Languages"
 msgstr "Permutez les langues"
 
-#: www/index.html:116 www/index.html:88
+#: www/index.html:195 www/index.html:96
 msgid "Target Language"
 msgstr "Langage Cible"
 
-#: www/index.html:59
+#: www/index.html:65
 msgid "UI language"
-msgstr "Language de l'interface"
+msgstr "Langue de l'interface"
 
-#: www/index.html:146 www/index.html:164
+#: www/index.html:229 www/index.html:254
 msgid "Upcoming feature:"
-msgstr "Prochaine fonctionnalité:"
+msgstr "Future fonctionnalité:"
+
+#: www/js/kamusi.js:121
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"Nous espérons que vous appréciez Kamusi Here!\n"
+"Si oui, pourriez-vous prendre le temps de noter l'application?\n"
+"Si vous avez des suggestions ou des commentaires, vous pouvez nous contacter "
+"à https://kamusigold.org/info/contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "Bienvenue dans Kamusi Here!"
+
+#: www/index.html:118
+msgid "You can select the language of the application here."
+msgstr "Vous pouvez choisir la langue de l'interface ici."
+
+#: www/index.html:130
+msgid "You can swap source and destination languages with this button."
+msgstr "Vous pouvez permuter les langues de traduction en cliquant ici."
+
+#: www/index.html:158
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
+msgstr ""
+"Nous manquons encore de données pour plusieurs termes. Bientôt cette "
+"application vous permettra de soumettre vos suggestions - Restez à l'écoute!"
+
+#~ msgid ""
+#~ "You will notice that we do not always have a match for a term you are "
+#~ "looking for from our original sources.Soon, this app will be asking you "
+#~ "to help share what you know - stay tuned!"
+#~ msgstr "hello"
+
+#~ msgid "Kamusi Gold"
+#~ msgstr "Kamusi Gold"
+
+#~ msgid "No data yet for"
+#~ msgstr "Pas encore de données pour"
+
+#~ msgid ""
+#~ "No definition yet in {{translate(ob.target_concept.language)}} for this "
+#~ "meaning of"
+#~ msgstr ""
+#~ "Pas encore de définition en {{translate(ob.target_concept.language)}} pour"
 
 #~ msgid "{{ob.english_concept.language}}:"
 #~ msgstr "{{ob.english_concept.language}}:"
