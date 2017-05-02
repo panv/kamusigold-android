@@ -109,7 +109,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         // Prompt user to rate the app
         AppRate.preferences = {
             displayAppName: 'Kamusi Here!',
-            usesUntilPrompt: 15,
+            usesUntilPrompt: 30,
             promptAgainForEachNewVersion: true,
             storeAppURL: {
                 ios: 'org.kamusigold.kamusihere',
