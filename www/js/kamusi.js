@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ionic', 'gettext', 'ng-walkthrough']);
+var app = angular.module('main', ['ionic', 'ng-walkthrough']);
 
 // Factory used to return http promises from the language api
 app.factory("languageApi", function($http) {
@@ -22,13 +22,6 @@ app.factory("languageApi", function($http) {
                 }
                 return dict;
             });
-        },
-        // Returns the list of available translations
-        getAvailableUiLanguages: function() {
-            return [
-                {name: "English", code: "en"},
-                {name: "French", code: "fr"}
-            ];
         }
     }
 });
@@ -74,7 +67,7 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp();
 }, false);
 
-app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window, gettextCatalog) {
+app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window) {
 
     // Called when clicking on the swap button
     $scope.swapLanguages = function() {
@@ -101,11 +94,9 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     }
     languageApi.getApi().then(loadListOfLanguages);
 
-    // Loads the list of available UI translations in the drop-down selector
-    $scope.translations = languageApi.getAvailableUiLanguages();
-
     // Called when clicking on the submit button
     $scope.run = function() {
+        /*
         // Prompt user to rate the app
         AppRate.preferences = {
             displayAppName: 'Kamusi Here!',
@@ -116,17 +107,18 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
                 android: 'market://details?id=com.ionicframework.kamusi454359'
             },
             customLocale: {
-                title: gettextCatalog.getString("Rate Kamusi Here!"),
-                message: gettextCatalog.getString(
+                title: "Rate Kamusi Here!",
+                message:
                     "We hope you are enjoying Kamusi Here!\n" +
                     "If we have earned your appreciation, please give us a rating now!\n" +
-                    "If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact"),
-                cancelButtonLabel: gettextCatalog.getString("No Thanks"),
-                laterButtonLabel: gettextCatalog.getString("Remind Me Later"),
-                rateButtonLabel: gettextCatalog.getString("Rate It Now")
+                    "If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact",
+                cancelButtonLabel: "No Thanks",
+                laterButtonLabel: "Remind Me Later",
+                rateButtonLabel: "Rate It Now"
             }
         };
         AppRate.promptForRating(false);
+        */
 
         // Replace spaces in query by underscores
         var input_word = $scope.input_word.trim().replace(/ /g, '_');
@@ -263,16 +255,6 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         let target = "_blank"; // use _system to open with the platform default browser
         let options = "location=yes";
         cordova.InAppBrowser.open(url, target, options);
-    }
-
-    // Switches the UI language to the one selected in the drop-down menu
-    $scope.switchLanguage = function() {
-        gettextCatalog.setCurrentLanguage($scope.selected_translation);
-    }
-
-    // Returns the translation of term (used for translating language names)
-    $scope.translate = function(term) {
-        return gettextCatalog.getString(term);
     }
 
     // Replaces underscores by spaces in the result terms

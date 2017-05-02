@@ -37,12 +37,6 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- used for extracting strings and tranlating them -->
-    <script src="js/angular-gettext.min.js"></script>
-
-    <!-- the translation file -->
-    <script src="translations/translations.js"></script>
-
     <!-- used for the help display and onboarding -->
     <script type="text/javascript" src="lib/ng-walkthrough/ng-walkthrough.js"></script>
 
@@ -61,12 +55,7 @@
   <div id="form">
 
     <div id="uiLanguageSelector">
-      <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(6)">
-      <select id="language_selector" class="uiLanguage" title="{{'UI language'|translate}}"
-        ng-options="translation.code as translate(translation.name) for translation in translations"
-        ng-model="selected_translation" ng-change="switchLanguage()">
-        <option value="" disabled="" translate>I speak</option>
-      </select>
+      <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="Help" ng-click="displayWalkthrough(6)">
     </div>
 
     <div id="logo">
@@ -75,51 +64,39 @@
 
     <div>
       <form ng-submit="run()">
-        <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
+        <input class="form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
       </form>
     </div>
 
     <div>
       <select class="form-control" id="source_language" name="source_language"
-        title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
-        <option value="" disabled="" translate>Language you want to translate from</option>
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
+        title="Source Language" ng-model="source_language" style="height:45px">
+        <option value="" disabled="">Language you want to translate from</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button title="{{'Swap Languages'|translate}}" id="swap" class="swapWrapper" ng-click="swapLanguages()">
-      <img src="res/swap.png" alt="{{'Swap Languages'|translate}}" class="swap">
+    <button title="Swap Languages" id="swap" class="swapWrapper" ng-click="swapLanguages()">
+      <img src="res/swap.png" alt="Swap Languages" class="swap">
     </button>
 
     <div class="">
       <select class="form-control" id="target_language" name="target_language"
-        title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
-        <option value="" disabled="" translate>Language you want to translate to</option>
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
+        title="Target Language" ng-model="target_language" style="height:45px">
+        <option value="" disabled="">Language you want to translate to</option>
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button class="btn submitButton" ng-click="run()" translate>Go !</button>
+    <button class="btn submitButton" ng-click="run()">Go !</button>
 
     <walkthrough
       wid="welcome"
       walkthrough-type="transparency"
       walkthrough-hero-image="res/kamusi_logo_512x512.png"
-      main-caption="{{'Welcome to Kamusi Here!'|translate}}"
-      on-walkthrough-hide="displayWalkthrough(0)"
-      is-active="walkthroughActive6">
-    </walkthrough>
-
-    <walkthrough
-      wid="language_selector_help"
-      walkthrough-type="transparency"
-      focus-element-selector="#language_selector"
-      icon="arrow"
-      main-caption="{{'You can select the language of the application here.'|translate}}"
-      force-caption-location="BOTTOM"
-      icon-padding-left="20"
+      main-caption="Welcome to Kamusi Here!"
       on-walkthrough-hide="displayWalkthrough(1)"
-      is-active="walkthroughActive0">
+      is-active="walkthroughActive6">
     </walkthrough>
 
     <walkthrough
@@ -127,7 +104,7 @@
       walkthrough-type="transparency"
       focus-element-selector="#swap"
       icon="arrow"
-      main-caption="{{'You can swap source and destination languages with this button.'|translate}}"
+      main-caption="You can swap source and destination languages with this button."
       force-caption-location="BOTTOM"
       icon-padding-left="-30"
       icon-padding-top="30"
@@ -139,7 +116,7 @@
       wid="tour_page_1"
       walkthrough-type="transparency"
       walkthrough-hero-image="res/result_example_marked.png"
-      main-caption="{{'On the result page, click any translation result to see a search for that term.'|translate}}"
+      main-caption="On the result page, click any translation result to see a search for that term."
       on-walkthrough-hide="displayWalkthrough(3)"
       is-active="walkthroughActive2">
     </walkthrough>
@@ -155,7 +132,7 @@
     <walkthrough
       wid="tour_page_3"
       walkthrough-type="transparency"
-      main-caption="{{'You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      main-caption="You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!"
       on-walkthrough-hide="displayWalkthrough(5)"
       is-active="walkthroughActive4">
     </walkthrough>
@@ -165,7 +142,7 @@
       walkthrough-type="transparency"
       focus-element-selector="#help_button"
       icon="arrow"
-      main-caption="{{'If you ever need to see this information again, click on this button.'|translate}}"
+      main-caption="If you ever need to see this information again, click on this button."
       force-caption-location="BOTTOM"
       icon-padding-left="20"
       is-active="walkthroughActive5">
@@ -179,62 +156,56 @@
 
     <div>
       <form ng-submit="run()">
-        <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="{{'Enter your word here'|translate}}">
+        <input class="new form-control inputWord" type="text" ng-model="input_word" placeholder="Enter your word here">
       </form>
     </div>
 
     <div>
-      <select class="form-control" name="source_language" title="{{'Source Language'|translate}}" ng-model="source_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
+      <select class="form-control" name="source_language" title="Source Language" ng-model="source_language" style="height:45px">
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
     <!-- <button title="Swap Languages" id="swap"><img src="swap.png" alt="Swap Languages" class="swap"></button> -->
 
     <div class="">
-      <select class="form-control" name="target_language" title="{{'Target Language'|translate}}" ng-model="target_language" style="height:45px">
-        <option ng-repeat="language in language_list" value="{{language.code}}">{{translate(language.name)}}</option>
+      <select class="form-control" name="target_language" title="Target Language" ng-model="target_language" style="height:45px">
+        <option ng-repeat="language in language_list" value="{{language.code}}">{{language.name}}</option>
       </select>
     </div>
 
-    <button class="btn submitButton"  ng-click="run()" translate>Go !</button>
+    <button class="btn submitButton"  ng-click="run()">Go !</button>
 
   </div>
 
   <div class="nodata" ng-show="result.length == 0">
-    <translate translate-comment="{{search_term}} is the term looked up, leave it as is in the translation">
-      No data yet for {{search_term}}.
-    </translate>
+    No data yet for {{search_term}}.
     <br>
-    <translate translate-comment="{{translate(target_language_name)}} is the name of a language, leave it as is in the translation">
-      Registered speakers of {{translate(target_language_name)}} please suggest a term.
-    </translate>
+    Registered speakers of {{target_language_name}} please suggest a term.
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
 
     <div class="inner1">
-      <div>{{translate(ob.source_concept.language)}}: <b>{{parse(search_term)}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div>{{ob.source_concept.language}}: <b>{{parse(search_term)}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
-        <translate>Definition:</translate> {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
+        Definition: {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>
       <div ng-hide="ob.source_concept.example_sents.length == 0 || ob.source_concept.example_sents == undefined">
-        <translate>Example:</translate> {{ob.source_concept.example_sents[0]}}
+        Example: {{ob.source_concept.example_sents[0]}}
       </div>
     </div>
 
     <div class= "innernull" ng-show="ob.target_terms.length == 0">
-      <translate>No matches yet.</translate>
+      No matches yet.
       <div style="font-style:italic">
-        <span style="color:#FFD700" translate>Upcoming feature:</span>
-        <translate translate-comment="{{translate(target_language_name)}} is the name of a language, leave it as is in the translation">
-          Registered speakers of {{translate(target_language_name)}} please suggest a term.
-        </translate>
+        <span style="color:#FFD700">Upcoming feature:</span>
+        Registered speakers of {{target_language_name}} please suggest a term.
       </div>
     </div>
 
     <div class="inner2" ng-hide="ob.target_terms.length == 0">
-      <div>{{translate(ob.target_concept.language)}} ({{ob.target_terms[0].pos}}):
+      <div>{{ob.target_concept.language}} ({{ob.target_terms[0].pos}}):
         <span ng-repeat="term in ob.target_terms">
           <button class="termButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{parse(term.lemma)}}
@@ -242,28 +213,24 @@
         </span>
       </div>
       <div ng-hide="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
-        <translate>Definition:</translate> {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
+        Definition: {{defn(ob.target_concept.gloss,ob.target_concept.definition)}}
       </div>
       <div ng-show="defn(ob.target_concept.gloss,ob.target_concept.definition).length == 0">
         <span style="color:#627149">
-          <translate translate-comment="{{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation">
-            No definition yet in {{translate(ob.target_concept.language)}} for this meaning of <b>{{parse(search_term)}}</b>.
-          </translate>
+          No definition yet in {{ob.target_concept.language}} for this meaning of <b>{{parse(search_term)}}</b>.
         </span>
         <div style="font-style:italic">
-          <span style="color:#D69A33" translate>Upcoming feature: </span>
-          <translate translate-comment="{{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation">
-            Registered speakers of {{translate(ob.target_concept.language)}} please suggest a definition.
-          </translate>
+          <span style="color:#D69A33">Upcoming feature: </span>
+            Registered speakers of {{ob.target_concept.language}} please suggest a definition.
         </div>
       </div>
       <div ng-hide="ob.target_concept.example_sents == undefined || ob.target_concept.example_sents.length == 0">
-        <translate>Example:</translate> {{ob.target_concept.example_sents[0]}}
+        Example: {{ob.target_concept.example_sents[0]}}
       </div>
     </div>
 
     <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-      <div>{{translate(ob.english_concept.language)}} ({{ob.target_terms[0].pos}}):
+      <div>{{ob.english_concept.language}} ({{ob.target_terms[0].pos}}):
         <span ng-repeat="term in ob.eng_terms">
           <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{parse(term.lemma)}}
@@ -271,19 +238,19 @@
         </span>
       </div>
       <div ng-hide="defn(ob.english_concept.gloss, ob.english_concept.definition).length == 0">
-        <translate>Definition:</translate> {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}
+        Definition: {{defn(ob.english_concept.gloss, ob.english_concept.definition)}}
       </div>
       <div ng-hide="ob.english_concept.example_sents == undefined || ob.english_concept.example_sents.length == 0 ">
-        <translate>Example:</translate> {{ob.english_concept.example_sents[0]}}
+        Example: {{ob.english_concept.example_sents[0]}}
       </div>
     </div>
 
   </div>
 
   <div id="wrapper" ng-show="result.length != 0">
-    <span class="sources" translate>Sources</span>
+    <span class="sources">Sources</span>
     <div class="sourcesLinks" ng-repeat="lang in src_langs">
-      <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{translate(lang.name)}}</a>
+      <a ng-href="#" style="color:#55676C" ng-click="openUrl(lang.link)">{{lang.name}}</a>
     </div>
   </div>
 
