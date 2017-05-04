@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sw\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "Kiarabu"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "Kibaski"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "Kikatalani"
+
+#: www/index.html:219 www/index.html:245 www/index.html:274
+msgid "Definition:"
+msgstr "Fasili:"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "Kiingereza"
+
+#: www/index.html:182 www/index.html:78
+msgid "Enter your word here"
+msgstr "Andika neno lako hapa"
+
+#: www/index.html:222 www/index.html:261 www/index.html:277
+msgid "Example:"
+msgstr "Mfano:"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "Kifaransa"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "Kigalisi"
+
+#: www/index.html:102 www/index.html:200
+msgid "Go !"
+msgstr "Twende!"
+
+#: www/index.html:64
+msgid "Help"
+msgstr "Msaada"
+
+#: www/index.html:68
+msgid "I speak"
+msgstr "Nazungumza"
+
+#: www/index.html:168
+msgid "If you ever need to see this information again, click on this button."
+msgstr "Ukitaka kuona taarifa hii mara nyingine, bonyeza kitufe hiki."
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "Kiitaliano"
+
+#: www/index.html:85
+msgid "Language you want to translate from"
+msgstr "Unataka kutafsiri kutoka lugha hii"
+
+#: www/index.html:97
+msgid "Language you want to translate to"
+msgstr "Unataka tafsiri katika lugha hii"
+
+#: www/js/kamusi.js:125
+msgid "No Thanks"
+msgstr "Sitaki"
+
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:205
+msgid "No data yet for {{search_term}}."
+msgstr "Bado hatuna maarifa kwa {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:249
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+"Bado hatuna fasili katika {{translate(ob.target_concept.language)}} kwa "
+"maana haya ya <b>{{parse(search_term)}}</b>."
+
+#: www/index.html:227
+msgid "No matches yet."
+msgstr "Hakuna kisawe bado."
+
+#: www/index.html:142
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"Katika ukurasa wa matokeo, bonyeza tafsiri yoyote ili kuanzisha utafutaji "
+"wa kwa neno hilo."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "Kiajemi"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "Kireno"
+
+#: www/js/kamusi.js:127
+msgid "Rate It Now"
+msgstr "Tathmini Sasa"
+
+#: www/js/kamusi.js:120
+msgid "Rate Kamusi Here!"
+msgstr "Tathmini Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:255
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Watumiaji waliojisajili kwa {{translate(ob.target_concept.language)}} watoe "
+"fasili."
+
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:209 www/index.html:230
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Watumiaji waliojisajili kwa {{translate(ob.target_concept.language)}} watoe "
+"neno."
+
+#: www/js/kamusi.js:126
+msgid "Remind Me Later"
+msgstr "Nikumbushe baadaye"
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "Kiromania"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "Kislovakia"
+
+#: www/index.html:187 www/index.html:84
+msgid "Source Language"
+msgstr "Lugha chanzo"
+
+#: www/index.html:284
+msgid "Sources"
+msgstr "Vyanzo"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "Kihispania"
+
+#: www/index.html:90 www/index.html:91
+msgid "Swap Languages"
+msgstr "Badilishana Lugha"
+
+#: www/index.html:195 www/index.html:96
+msgid "Target Language"
+msgstr "Lugha lengwa"
+
+#: www/index.html:65
+msgid "UI language"
+msgstr "Lugha ya kiolesura cha mtumiaji"
+
+#: www/index.html:229 www/index.html:254
+msgid "Upcoming feature:"
+msgstr "Kipengele kitakachofika"
+
+#: www/js/kamusi.js:121
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"Tunatumaini unapenda Kamusi Here!\n"
+"Ukipenda programu hivyo ndivyo ilivyo, tafadhali tutathmini sasa!\n"
+"Ikiwa kazi inabaki ili tustahili tathmini yako ya juu kabisa, tafadhali "
+"tutumie maoni yako kwenda https://kamusigold.org/info/contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "Karibu Kamusi Here!"
+
+#: www/index.html:118
+msgid "You can select the language of the application here."
+msgstr "Chagua lugha ya programu hapa."
+
+#: www/index.html:130
+msgid "You can swap source and destination languages with this button."
+msgstr ""
+"Unaweza kubadilishana lugha chanzo na lugha lengwa za kwanza na kulengea "
+"kwa kubonyeza kitufe hiki."
+
+#: www/index.html:158
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you "
+"to help share what you know - stay tuned!"
+msgstr ""
+"Utaona mara kwa mara kwamba hatuna kisawe kwa neno unalotafuta kutoka "
+"vyanzo vyetu vya awali. Siyo muda, programu hii itakuombea ugawe maarifa "
+"yako - uwe macho!"

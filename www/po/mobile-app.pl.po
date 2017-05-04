@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: pl_PL\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "Arabski"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "Baskijski"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "Kataloński"
+
+#: www/index.html:219 www/index.html:245 www/index.html:274
+msgid "Definition:"
+msgstr "Definicja:"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "Angielski"
+
+#: www/index.html:182 www/index.html:78
+msgid "Enter your word here"
+msgstr "Tutaj wpisz słowo"
+
+#: www/index.html:222 www/index.html:261 www/index.html:277
+msgid "Example:"
+msgstr "Przykład:"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "Francuski"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "Galicyjski"
+
+#: www/index.html:102 www/index.html:200
+msgid "Go !"
+msgstr "Start!"
+
+#: www/index.html:64
+msgid "Help"
+msgstr "Pomoc"
+
+#: www/index.html:68
+msgid "I speak"
+msgstr "Mówię"
+
+#: www/index.html:168
+msgid "If you ever need to see this information again, click on this button."
+msgstr ""
+"Jeśli chcesz ponownie zobaczyć tę informację, kliknij poniższy przycisk."
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "Włoski"
+
+#: www/index.html:85
+msgid "Language you want to translate from"
+msgstr "Język, z którego tłumaczysz"
+
+#: www/index.html:97
+msgid "Language you want to translate to"
+msgstr "Język, na który tłumaczysz"
+
+#: www/js/kamusi.js:125
+msgid "No Thanks"
+msgstr "Nie, dziękuję"
+
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:205
+msgid "No data yet for {{search_term}}."
+msgstr "Nie ma jeszcze w słowniku {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:249
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+"Nie ma jeszcze definicji {{translate(ob.target_concept.language)}} dla tego "
+"znaczenia <b>{{parse(search_term)}}</b>."
+
+#: www/index.html:227
+msgid "No matches yet."
+msgstr "Nie znaleziono."
+
+#: www/index.html:142
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"Na stronie z wynikami, kliknij na dowolne tłumaczenie, żeby wyszukać dany "
+"termin."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "Perski"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "Portugalski"
+
+#: www/js/kamusi.js:127
+msgid "Rate It Now"
+msgstr "Oceń"
+
+#: www/js/kamusi.js:120
+msgid "Rate Kamusi Here!"
+msgstr "Oceń Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:255
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Zarejestrowani użytkownicy {{translate(ob.target_concept.language)}} "
+"zaproponujcie definicję."
+
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:209 www/index.html:230
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Zarejestrowani użytkownicy {{translate(target_language_name)}} "
+"zaproponujcie termin."
+
+#: www/js/kamusi.js:126
+msgid "Remind Me Later"
+msgstr "Przypomnij mi później"
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "Rumuński"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "Słowacki"
+
+#: www/index.html:187 www/index.html:84
+msgid "Source Language"
+msgstr "Język źródłowy"
+
+#: www/index.html:284
+msgid "Sources"
+msgstr "Źródła"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "Hiszpański"
+
+#: www/index.html:90 www/index.html:91
+msgid "Swap Languages"
+msgstr "Zamień języki"
+
+#: www/index.html:195 www/index.html:96
+msgid "Target Language"
+msgstr "Język docelowy"
+
+#: www/index.html:65
+msgid "UI language"
+msgstr "Język interfejsu"
+
+#: www/index.html:229 www/index.html:254
+msgid "Upcoming feature:"
+msgstr "Nowa funkcja:"
+
+#: www/js/kamusi.js:121
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"Mamy nadzieję, że jesteś zadowolony z Kamusi Here!\n"
+"Jeśli spełniliśmy Twoje oczekiwania, oceń nas!\n"
+"Jeśli jeszcze powinniśmy popracować nad zawartością, wyślij nam komentarz "
+"na https://kamusigold.org/info/contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "Witamy w Kamusi Here!"
+
+#: www/index.html:118
+msgid "You can select the language of the application here."
+msgstr "Tutaj możesz wybrać język aplikacji."
+
+#: www/index.html:130
+msgid "You can swap source and destination languages with this button."
+msgstr "Tym przyciskiem możesz zamienić języki wyszukiwania."
+
+#: www/index.html:158
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you "
+"to help share what you know - stay tuned!"
+msgstr ""
+"Może zauważyłeś już, że nie zawsze mamy odpowiedź na Twoje pytanie."
+" Już niedługo aplikacja poprosi Cię o podzielenie się Twoją wiedzą - zostań "
+"z nami!"
