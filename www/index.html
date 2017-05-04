@@ -63,7 +63,7 @@
     <div id="uiLanguageSelector">
       <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(6)">
       <select id="language_selector" class="uiLanguage" title="{{'UI language'|translate}}"
-        ng-options="translation.code as translate(translation.name) for translation in translations"
+        ng-options="translation.code as translation.name for translation in translations"
         ng-model="selected_translation" ng-change="switchLanguage()">
         <option value="" disabled="" translate>I speak</option>
       </select>
@@ -147,7 +147,7 @@
     <walkthrough
       wid="tour_page_2"
       walkthrough-type="transparency"
-      main-caption="{{whereAreFrenchAndGerman}}"
+      main-caption="{{'You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
       on-walkthrough-hide="displayWalkthrough(4)"
       is-active="walkthroughActive3">
     </walkthrough>
@@ -155,7 +155,7 @@
     <walkthrough
       wid="tour_page_3"
       walkthrough-type="transparency"
-      main-caption="{{'You will notice that we do not always have a match for a term you are looking for from our original sources. Soon, this app will be asking you to help share what you know - stay tuned!'|translate}}"
+      main-caption="{{whereAreFrenchAndGerman}}"
       on-walkthrough-hide="displayWalkthrough(5)"
       is-active="walkthroughActive4">
     </walkthrough>
@@ -206,15 +206,15 @@
       No data yet for {{search_term}}.
     </translate>
     <br>
-    <translate translate-comment="{{translate(target_language_name)}} is the name of a language, leave it as is in the translation">
-      Registered speakers of {{translate(target_language_name)}} please suggest a term.
+    <translate translate-comment="{{translate(source_language_name)}} is the name of a language, leave it as is in the translation">
+      Registered speakers of {{translate(source_language_name)}} please suggest a term.
     </translate>
   </div>
 
   <div class="outerDiv" ng-repeat="ob in result" >
 
     <div class="inner1">
-      <div>{{translate(ob.source_concept.language)}}: <b>{{parse(search_term)}}</b> ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}})</div>
+      <div>{{translate(ob.source_concept.language)}} ({{pos(ob.source_concept.synset_ID_3_0, ob.source_concept.synset_ID_3_1)}}): <b>{{parse(search_term)}}</b></div>
       <div ng-hide="defn(ob.source_concept.gloss, ob.source_concept.definition).length == 0">
         <translate>Definition:</translate> {{defn(ob.source_concept.gloss, ob.source_concept.definition)}}
       </div>

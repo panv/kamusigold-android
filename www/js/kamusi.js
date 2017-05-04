@@ -26,8 +26,14 @@ app.factory("languageApi", function($http) {
         // Returns the list of available translations
         getAvailableUiLanguages: function() {
             return [
+                {name: "العربية", code: "ar"},
                 {name: "English", code: "en"},
-                {name: "French", code: "fr"}
+                {name: "Euskara", code: "eu"},
+                {name: "Français", code: "fr"},
+                {name: "Polish", code: "pl_PL"},
+                {name: "Română", code: "ro"},
+                {name: "Swahili", code: "sw"},
+                {name: "Urdu", code: "ur"}
             ];
         }
     }
@@ -165,7 +171,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         $.get("https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang)
             .then(function(data) {
                 $("#within").hide();
-                displayResults(data, input_word, trgt_lang);
+                displayResults(data, input_word, src_lang, trgt_lang);
                 displaySources(src_lang, trgt_lang);
                 // Go to top of page on new search
                 $window.scrollTo(0, 0);
@@ -201,12 +207,13 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         languageApi.getDict().then(buildSrcArray);
     }
 
-    function displayResults(data, input_word, target_language) {
+    function displayResults(data, input_word, source_language, target_language) {
         $scope.result = data;
         $scope.search_term = input_word;
         $scope.target_language = target_language;
         languageApi.getDict().then(function(dict) {
             $scope.target_language_name = dict[target_language];
+            $scope.source_language_name = dict[source_language];
         });
 
         $scope.$apply();
