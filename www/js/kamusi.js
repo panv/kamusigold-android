@@ -1,7 +1,7 @@
 var app = angular.module('main', ['ionic', 'gettext', 'ng-walkthrough']);
 
 // Factory used to return http promises from the language api
-app.factory("languageApi", function($http) {
+app.factory('languageApi', function($http) {
     let api_url = "https://kamusigold.org/api/languages";
     return {
         // The api, JSON dict mapping language name to language code
@@ -39,6 +39,27 @@ app.factory("languageApi", function($http) {
     }
 });
 
+// Factory used to access local storage
+app.factory('storage', function($window) {
+    return {
+        // Stores the current UI language
+        setUiLanguage: function(language) {
+            $window.localStorage.setItem('uiLanguage', language);
+        },
+        // Returns the previous UI language, or English if none was selected
+        getUiLanguage: function() {
+            let language = $window.localStorage.getItem('uiLanguage');
+            return language ? language : "en";
+        },
+        isInitialLaunch: function() {
+            return $window.localStorage.getItem('init') == 'undefined';
+        },
+        innocentNoMore: function() {
+            $window.localStorage.setItem('init', "hello");
+        }
+    }
+});
+
 // Map the event functionality
 window.onload = function() {
     function onConfirmQuit(button){
@@ -50,8 +71,8 @@ window.onload = function() {
     // When we click leftArrow button
     $(".leftArrow").click(function() {
         $("#form").show();
-        $(".leftArrow").css('visibility','hidden');
-        $(".searchButton").css('visibility','hidden');
+        $(".leftArrow").css('visibility', 'hidden');
+        $(".searchButton").css('visibility', 'hidden');
         $("#sample").hide();
     });
 
@@ -59,8 +80,8 @@ window.onload = function() {
     $(".searchButton").click(function() {
         window.scrollTo(0, 0);
         $("#within").show();
-        $(".leftArrow").css('visibility','visible');
-        $(".searchButton").css('visibility','visible');
+        $(".leftArrow").css('visibility', 'visible');
+        $(".searchButton").css('visibility', 'visible');
         $("#sample").show();
     });
 };
@@ -80,7 +101,41 @@ document.addEventListener('backbutton', () => {
     navigator.app.exitApp();
 }, false);
 
-app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $window, gettextCatalog) {
+app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
+                                       storage, $window, gettextCatalog) {
+
+    // Load the previously selected language
+    gettextCatalog.setCurrentLanguage(storage.getUiLanguage());
+
+    // Executed on app launch
+    document.addEventListener('deviceready', function() {
+
+        if (storage.isInitialLaunch()) {
+            console.log("hello");
+            storage.innocentNoMore();
+        }
+        // Prompt user to rate the app
+        AppRate.preferences = {
+            displayAppName: "Kamusi Here!",
+            usesUntilPrompt: 2,
+            promptAgainForEachNewVersion: true,
+            storeAppURL: {
+                ios: "org.kamusigold.kamusihere",
+                android: "market://details?id=com.ionicframework.kamusi454359"
+            },
+            customLocale: {
+                title: gettextCatalog.getString("Rate Kamusi Here!"),
+                message: gettextCatalog.getString(
+                    "We hope you are enjoying Kamusi Here!\n" +
+                    "If we have earned your appreciation, please give us a rating now!\n" +
+                    "If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact"),
+                cancelButtonLabel: gettextCatalog.getString("No Thanks"),
+                laterButtonLabel: gettextCatalog.getString("Remind Me Later"),
+                rateButtonLabel: gettextCatalog.getString("Rate It Now")
+            }
+        };
+        AppRate.promptForRating(false);
+    }, false);
 
     // Called when clicking on the swap button
     $scope.swapLanguages = function() {
@@ -102,7 +157,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
         }
         keys.sort()
         for (i = 0; i < keys.length; i++) {
-            $scope.language_list.push({"name": keys[i], "code": language_obj[keys[i]]});
+            $scope.language_list.push({'name': keys[i], 'code': language_obj[keys[i]]});
         }
     }
     languageApi.getApi().then(loadListOfLanguages);
@@ -112,28 +167,6 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
     // Called when clicking on the submit button
     $scope.run = function() {
-        // Prompt user to rate the app
-        AppRate.preferences = {
-            displayAppName: 'Kamusi Here!',
-            usesUntilPrompt: 30,
-            promptAgainForEachNewVersion: true,
-            storeAppURL: {
-                ios: 'org.kamusigold.kamusihere',
-                android: 'market://details?id=com.ionicframework.kamusi454359'
-            },
-            customLocale: {
-                title: gettextCatalog.getString("Rate Kamusi Here!"),
-                message: gettextCatalog.getString(
-                    "We hope you are enjoying Kamusi Here!\n" +
-                    "If we have earned your appreciation, please give us a rating now!\n" +
-                    "If we still have work to earn your highest rating, please send us feedback at https://kamusigold.org/info/contact"),
-                cancelButtonLabel: gettextCatalog.getString("No Thanks"),
-                laterButtonLabel: gettextCatalog.getString("Remind Me Later"),
-                rateButtonLabel: gettextCatalog.getString("Rate It Now")
-            }
-        };
-        AppRate.promptForRating(false);
-
         // Replace spaces in query by underscores
         var input_word = $scope.input_word.trim().replace(/ /g, '_');
         var src_lang = $scope.source_language;
@@ -145,8 +178,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
             // This functionality should happen even when 'Enter' is pressed.
             $("#form").hide();
-            $(".leftArrow").css('visibility','visible');
-            $(".searchButton").css('visibility','visible');
+            $(".leftArrow").css('visibility', 'visible');
+            $(".searchButton").css('visibility', 'visible');
             $("#sample").show();
         }
     };
@@ -168,7 +201,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
 
     // Sends a translation request to the database and displays the response
     $scope.wordSearch = function(input_word, src_lang, trgt_lang) {
-        $.get("https://kamusigold.org/preD/termTranslate/" + input_word + "/" + src_lang + "/" + trgt_lang)
+        $.get("https://kamusigold.org/preD/termTranslate/" + input_word + '/' + src_lang + '/' + trgt_lang)
             .then(function(data) {
                 $("#within").hide();
                 displayResults(data, input_word, src_lang, trgt_lang);
@@ -223,17 +256,17 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     $scope.displayWalkthrough = function(walkthrough_id) {
         switch (walkthrough_id) {
             case 0:
-                $scope.walkthroughActive0 = true;
+                $scope.walkthrough_active_0 = true;
                 break;
             case 1:
-                $scope.walkthroughActive1 = true;
+                $scope.walkthrough_active_1 = true;
                 break;
             case 2:
-                $scope.walkthroughActive2 = true;
+                $scope.walkthrough_active_2 = true;
                 break;
             case 3:
-                $scope.walkthroughActive3 = true;
-                $scope.whereAreFrenchAndGerman =
+                $scope.walkthrough_active_3 = true;
+                $scope.where_are_french_and_german =
                     // Explanation to why french is not yet in the database
                     "Mais où est le français?\n" +
                     "Malheureusement, aucune donnée pour le français n'est actuellement disponible qui soit:\n" +
@@ -254,13 +287,13 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
                     "E-Mail: taskforce+german@kamusi.org"
                 break;
             case 4:
-                $scope.walkthroughActive4 = true;
+                $scope.walkthrough_active_4 = true;
                 break;
             case 5:
-                $scope.walkthroughActive5 = true;
+                $scope.walkthrough_active_5 = true;
                 break;
             case 6:
-                $scope.walkthroughActive6 = true;
+                $scope.walkthrough_active_6 = true;
                 break;
         }
     }
@@ -275,6 +308,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi, $win
     // Switches the UI language to the one selected in the drop-down menu
     $scope.switchLanguage = function() {
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
+        storage.setUiLanguage($scope.selected_translation);
     }
 
     // Returns the translation of term (used for translating language names)
