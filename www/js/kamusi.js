@@ -51,11 +51,13 @@ app.factory('storage', function($window) {
             let language = $window.localStorage.getItem('uiLanguage');
             return language ? language : "en";
         },
+        // Tests whether this is the initial launch of the app
         isInitialLaunch: function() {
-            return $window.localStorage.getItem('init') == 'undefined';
+            return $window.localStorage.getItem('initial_launch');
         },
-        innocentNoMore: function() {
-            $window.localStorage.setItem('init', "hello");
+        // Called after initial launch of the app
+        setLaunch: function() {
+            $window.localStorage.setItem('initial_launch', "nope");
         }
     }
 });
@@ -109,11 +111,11 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
 
     // Executed on app launch
     document.addEventListener('deviceready', function() {
-
-        if (storage.isInitialLaunch()) {
-            console.log("hello");
-            storage.innocentNoMore();
+        // Display help on initial launch
+        if (!storage.isInitialLaunch()) {
+            displayWalkthrough(6);
         }
+
         // Prompt user to rate the app
         AppRate.preferences = {
             displayAppName: "Kamusi Here!",
@@ -137,12 +139,94 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         AppRate.promptForRating(false);
     }, false);
 
-    // Called when clicking on the swap button
-    $scope.swapLanguages = function() {
-        let temp_src = $scope.source_language;
-        let temp_trgt = $scope.target_language;
-        $scope.target_language = temp_src;
-        $scope.source_language = temp_trgt;
+    // Called when clicking on the help button
+    function displayWalkthrough(walkthrough_id) {
+        switch (walkthrough_id) {
+            case 0:
+                $scope.walkthrough_active_0 = true;
+                break;
+            case 1:
+                $scope.walkthrough_active_1 = true;
+                break;
+            case 2:
+                $scope.walkthrough_active_2 = true;
+                break;
+            case 3:
+                $scope.walkthrough_active_3 = true;
+                $scope.where_are_french_and_german =
+                    // Explanation to why french is not yet in the database
+                    "Mais où est le français?\n" +
+                    "Malheureusement, aucune donnée pour le français n'est actuellement disponible qui soit:\n" +
+                    "√ facilement alignable avec les concepts existants\n" +
+                    "√ de bonne qualité\n" +
+                    "√ et gratuite.\n" +
+                    "Une future version de l'application vous permettra de soumettre des termes français pour Kamusi, en commençant par des données imparfaites à améliorer.\n" +
+                    "Vous pouvez participer au projet pour améliorer nos données dès maintenant.\n" +
+                    "email: taskforce+french@kamusi.org\n\n\n" +
+                    // Explanation to why german is not yet in the database
+                    "Wo ist Deutsch?\n" +
+                    "Leider sind keine Daten für Deutsch verfügbar, die:\n" +
+                    "√ einfach an unseren Konzeptsatz auszurichten,\n" +
+                    "√ hoher Qualität und\n" +
+                    "√ frei\n" +
+                    "sind. Eine künftige Version dieser App wird dich um deine Hilfe bitten, einen Datensatz von 17.000 Begriffen auszurichten, um Deutsch in Kamusi anzupflanzen.\n" +
+                    "Mach bei der Arbeitsgruppe mit, um uns zu helfen, eine großartige deutsche Ressource zu erstellen.\n" +
+                    "E-Mail: taskforce+german@kamusi.org"
+                break;
+            case 4:
+                $scope.walkthrough_active_4 = true;
+                break;
+            case 5:
+                $scope.walkthrough_active_5 = true;
+                break;
+            case 6:
+                $scope.walkthrough_active_6 = true;
+                break;
+            case 7:
+                $scope.walkthrough_active_7 = true;
+                break;
+        }
+    }
+
+    // Builds the links for the language sources at the bottom of the result page
+    function displaySources(src_lang, trgt_lang) {
+        function buildSrcArray(dict) {
+            let url_root = "https://kamusigold.org/info/";
+
+            let eng_url = "eng";
+            let eng_code = "eng_3_1";
+
+            // Parses the eng code because for english the code and url are different
+            dict[eng_url] = dict[eng_code];
+            src_lang = src_lang == eng_code ? eng_url : src_lang;
+            trgt_lang = trgt_lang == eng_code ? eng_url : trgt_lang;
+
+            $scope.src_langs = [];
+            $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
+
+            // Adds target language link if source and target are different
+            if (src_lang != trgt_lang) {
+                $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
+            }
+
+            // Adds english link if both source and target languages are not english
+            if (src_lang != eng_url && trgt_lang != eng_url) {
+                $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_url});
+            }
+        }
+        languageApi.getDict().then(buildSrcArray);
+    }
+
+    function displayResults(data, input_word, source_language, target_language) {
+        $scope.result = data;
+        $scope.search_term = input_word;
+        $scope.target_language = target_language;
+        languageApi.getDict().then(function(dict) {
+            $scope.target_language_name = dict[target_language];
+            $scope.source_language_name = dict[source_language];
+        });
+
+        $scope.$apply();
     }
 
     // TODO: optimize this
@@ -160,7 +244,17 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
             $scope.language_list.push({'name': keys[i], 'code': language_obj[keys[i]]});
         }
     }
+
+    // Load the databases languages in the drop-down menus
     languageApi.getApi().then(loadListOfLanguages);
+
+    // Called when clicking on the swap button
+    $scope.swapLanguages = function() {
+        let temp_src = $scope.source_language;
+        let temp_trgt = $scope.target_language;
+        $scope.target_language = temp_src;
+        $scope.source_language = temp_trgt;
+    }
 
     // Loads the list of available UI translations in the drop-down selector
     $scope.translations = languageApi.getAvailableUiLanguages();
@@ -211,91 +305,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
             });
     }
 
-    // Builds the links for the language sources at the bottom of the result page
-    function displaySources(src_lang, trgt_lang) {
-        function buildSrcArray(dict) {
-            let url_root = "https://kamusigold.org/info/";
-
-            let eng_url = "eng";
-            let eng_code = "eng_3_1";
-
-            // Parses the eng code because for english the code and url are different
-            dict[eng_url] = dict[eng_code];
-            src_lang = src_lang == eng_code ? eng_url : src_lang;
-            trgt_lang = trgt_lang == eng_code ? eng_url : trgt_lang;
-
-            $scope.src_langs = [];
-            $scope.src_langs.push({name: dict[src_lang], link: url_root + src_lang});
-
-            // Adds target language link if source and target are different
-            if (src_lang != trgt_lang) {
-                $scope.src_langs.push({name: dict[trgt_lang], link: url_root + trgt_lang});
-            }
-
-            // Adds english link if both source and target languages are not english
-            if (src_lang != eng_url && trgt_lang != eng_url) {
-                $scope.src_langs.push({name: dict[eng_code], link: url_root + eng_url});
-            }
-        }
-        languageApi.getDict().then(buildSrcArray);
-    }
-
-    function displayResults(data, input_word, source_language, target_language) {
-        $scope.result = data;
-        $scope.search_term = input_word;
-        $scope.target_language = target_language;
-        languageApi.getDict().then(function(dict) {
-            $scope.target_language_name = dict[target_language];
-            $scope.source_language_name = dict[source_language];
-        });
-
-        $scope.$apply();
-    }
-
-    // Called when clicking on the help button
     $scope.displayWalkthrough = function(walkthrough_id) {
-        switch (walkthrough_id) {
-            case 0:
-                $scope.walkthrough_active_0 = true;
-                break;
-            case 1:
-                $scope.walkthrough_active_1 = true;
-                break;
-            case 2:
-                $scope.walkthrough_active_2 = true;
-                break;
-            case 3:
-                $scope.walkthrough_active_3 = true;
-                $scope.where_are_french_and_german =
-                    // Explanation to why french is not yet in the database
-                    "Mais où est le français?\n" +
-                    "Malheureusement, aucune donnée pour le français n'est actuellement disponible qui soit:\n" +
-                    "√ facilement alignable avec les concepts existants\n" +
-                    "√ de bonne qualité\n" +
-                    "√ et gratuite.\n" +
-                    "Une future version de l'application vous permettra de soumettre des termes français pour Kamusi, en commençant par des données imparfaites à améliorer.\n" +
-                    "Vous pouvez participer au projet pour améliorer nos données dès maintenant.\n" +
-                    "email: taskforce+french@kamusi.org\n\n\n" +
-                    // Explanation to why german is not yet in the database
-                    "Wo ist Deutsch?\n" +
-                    "Leider sind keine Daten für Deutsch verfügbar, die:\n" +
-                    "√ einfach an unseren Konzeptsatz auszurichten,\n" +
-                    "√ hoher Qualität und\n" +
-                    "√ frei\n" +
-                    "sind. Eine künftige Version dieser App wird dich um deine Hilfe bitten, einen Datensatz von 17.000 Begriffen auszurichten, um Deutsch in Kamusi anzupflanzen.\n" +
-                    "Mach bei der Arbeitsgruppe mit, um uns zu helfen, eine großartige deutsche Ressource zu erstellen.\n" +
-                    "E-Mail: taskforce+german@kamusi.org"
-                break;
-            case 4:
-                $scope.walkthrough_active_4 = true;
-                break;
-            case 5:
-                $scope.walkthrough_active_5 = true;
-                break;
-            case 6:
-                $scope.walkthrough_active_6 = true;
-                break;
-        }
+        displayWalkthrough(walkthrough_id);
     }
 
     // Opens the given url in the cordova browser using the InAppBrowser cordova plugin
@@ -309,6 +320,10 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     $scope.switchLanguage = function() {
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
         storage.setUiLanguage($scope.selected_translation);
+        if (!storage.isInitialLaunch()) {
+            storage.setLaunch();
+            displayWalkthrough(1);
+        }
     }
 
     // Returns the translation of term (used for translating language names)

@@ -61,7 +61,7 @@
   <div id="form">
 
     <div id="uiLanguageSelector">
-      <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(6)">
+      <img id="help_button" src="res/ic_help_outline.svg" class="helpButton" alt="{{'Help'|translate}}" ng-click="displayWalkthrough(0)">
       <select id="language_selector" class="uiLanguage" title="{{'UI language'|translate}}"
         ng-options="translation.code as translation.name for translation in translations"
         ng-model="selected_translation" ng-change="switchLanguage()">
@@ -106,8 +106,19 @@
       walkthrough-type="transparency"
       walkthrough-hero-image="res/kamusi_logo_512x512.png"
       main-caption="{{'Welcome to Kamusi Here!'|translate}}"
-      on-walkthrough-hide="displayWalkthrough(0)"
+      on-walkthrough-hide="displayWalkthrough(7)"
       is-active="walkthrough_active_6">
+    </walkthrough>
+
+    <walkthrough
+      wid="language_selector_prompt"
+      walkthrough-type="transparency"
+      focus-element-selector="#language_selector"
+      icon="arrow"
+      main-caption="{{'Please select your language here.'|translate}}"
+      force-caption-location="BOTTOM"
+      icon-padding-left="20"
+      is-active="walkthrough_active_7">
     </walkthrough>
 
     <walkthrough
