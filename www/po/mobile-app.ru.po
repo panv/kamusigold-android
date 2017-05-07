@@ -5,87 +5,86 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: pl_PL\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.1\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: www/js/language-names.js:3
 msgid "Arabic"
-msgstr "Arabski"
+msgstr "Арабский"
 
 #: www/js/language-names.js:4
 msgid "Basque"
-msgstr "Baskijski"
+msgstr "Баскский"
 
 #: www/js/language-names.js:5
 msgid "Catalan"
-msgstr "Kataloński"
+msgstr "Каталанский"
 
 #: www/index.html:230 www/index.html:256 www/index.html:285
 msgid "Definition:"
-msgstr "Definicja:"
+msgstr "Определение:"
 
 #: www/js/language-names.js:6
 msgid "English"
-msgstr "Angielski"
+msgstr "Английский"
 
 #: www/index.html:193 www/index.html:78
 msgid "Enter your word here"
-msgstr "Tutaj wpisz słowo"
+msgstr "Введите слово здесь"
 
 #: www/index.html:233 www/index.html:272 www/index.html:288
 msgid "Example:"
-msgstr "Przykład:"
+msgstr "Пример:"
 
 #: www/js/language-names.js:7
 msgid "French"
-msgstr "Francuski"
+msgstr "Французский"
 
 #: www/js/language-names.js:8
 msgid "Galician"
-msgstr "Galicyjski"
+msgstr "Галисийский"
 
 #: www/index.html:102 www/index.html:211
 msgid "Go !"
-msgstr "Start!"
+msgstr "Вперед!"
 
 #: www/index.html:64
 msgid "Help"
-msgstr "Pomoc"
+msgstr "Справка"
 
 #: www/index.html:68
 msgid "I speak"
-msgstr "Mówię"
+msgstr "Я говорю на"
 
 #: www/index.html:179
 msgid "If you ever need to see this information again, click on this button."
-msgstr ""
-"Jeśli chcesz ponownie zobaczyć tę informację, kliknij poniższy przycisk."
+msgstr "Если вам понадобится прочитать это еще раз, нажмите здесь."
 
 #: www/js/language-names.js:9
 msgid "Italian"
-msgstr "Włoski"
+msgstr "Итальянский"
 
 #: www/index.html:85
 msgid "Language you want to translate from"
-msgstr "Język, z którego tłumaczysz"
+msgstr "Язык, с которого вы хотите перевести"
 
 #: www/index.html:97
 msgid "Language you want to translate to"
-msgstr "Język, na który tłumaczysz"
+msgstr "Язык, на который вы хотите перевести"
 
 #: www/js/kamusi.js:134
 msgid "No Thanks"
-msgstr "Nie, dziękuję"
+msgstr "Нет, спасибо"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
 #: www/index.html:216
 msgid "No data yet for {{search_term}}."
-msgstr "Nie ma jeszcze w słowniku {{search_term}}."
+msgstr "Ещё нет данных для {{search_term}}."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
 #: www/index.html:260
@@ -93,36 +92,36 @@ msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
 msgstr ""
-"Nie ma jeszcze definicji {{translate(ob.target_concept.language)}} dla tego "
-"znaczenia <b>{{parse(search_term)}}</b>."
+"На {{translate(ob.target_concept.language)}} ещё нет определения для этого "
+"значения слова <b>{{parse(search_term)}}</b>."
 
 #: www/index.html:238
 msgid "No matches yet."
-msgstr "Nie znaleziono."
+msgstr "Ещё нет данных."
 
 #: www/index.html:153
 msgid ""
 "On the result page, click any translation result to see a search for that "
 "term."
 msgstr ""
-"Na stronie z wynikami, kliknij na dowolne tłumaczenie, żeby wyszukać dany "
-"termin."
+"На странице с результатами, нажмите на любой вариант перевода чтобы "
+"осуществить поиск слова."
 
 #: www/js/language-names.js:10
 msgid "Persian"
-msgstr "Perski"
+msgstr "Персидский"
 
 #: www/js/language-names.js:11
 msgid "Portuguese"
-msgstr "Portugalski"
+msgstr "Португальский"
 
 #: www/js/kamusi.js:136
 msgid "Rate It Now"
-msgstr "Oceń"
+msgstr "Поставьте оценку"
 
 #: www/js/kamusi.js:129
 msgid "Rate Kamusi Here!"
-msgstr "Oceń Kamusi Here!"
+msgstr "Поставьте оценку Kamusi Here!"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
 #: www/index.html:266
@@ -130,8 +129,8 @@ msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
 msgstr ""
-"Zarejestrowani użytkownicy {{translate(ob.target_concept.language)}} "
-"zaproponujcie definicję."
+"Если вы зарегитрированы как носитель {{translate(ob.target_concept."
+"language)}} пожалуйста, предложите определение."
 
 #. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
 #: www/index.html:220
@@ -139,8 +138,8 @@ msgid ""
 "Registered speakers of {{translate(source_language_name)}} please suggest a "
 "term."
 msgstr ""
-"Zarejestrowani użytkownicy {{translate(source_language_name)}} zaproponujcie "
-"termin."
+"Если вы зарегитрированы как носитель {{translate(source_language_name)}} "
+"пожалуйста, предложите термин."
 
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
 #: www/index.html:241
@@ -148,48 +147,48 @@ msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr ""
-"Zarejestrowani użytkownicy {{translate(target_language_name)}} zaproponujcie "
-"termin."
+"Если вы зарегитрированы как носитель {{translate(target_language_name)}} "
+"пожалуйста, предложите термин."
 
 #: www/js/kamusi.js:135
 msgid "Remind Me Later"
-msgstr "Przypomnij mi później"
+msgstr "Напомните мне позже."
 
 #: www/js/language-names.js:12
 msgid "Romanian"
-msgstr "Rumuński"
+msgstr "Румынский"
 
 #: www/js/language-names.js:13
 msgid "Slovak"
-msgstr "Słowacki"
+msgstr "Словацкий"
 
 #: www/index.html:198 www/index.html:84
 msgid "Source Language"
-msgstr "Język źródłowy"
+msgstr "Язык источника"
 
 #: www/index.html:295
 msgid "Sources"
-msgstr "Źródła"
+msgstr "Источники"
 
 #: www/js/language-names.js:14
 msgid "Spanish"
-msgstr "Hiszpański"
+msgstr "Испанский"
 
 #: www/index.html:90 www/index.html:91
 msgid "Swap Languages"
-msgstr "Zamień języki"
+msgstr "Поменять местами"
 
 #: www/index.html:206 www/index.html:96
 msgid "Target Language"
-msgstr "Język docelowy"
+msgstr "Язык перевода"
 
 #: www/index.html:65
 msgid "UI language"
-msgstr "Język interfejsu"
+msgstr "Язык взаимодействия с приложением"
 
 #: www/index.html:240 www/index.html:265
 msgid "Upcoming feature:"
-msgstr "Nowa funkcja:"
+msgstr "Будущая функция:"
 
 #: www/js/kamusi.js:130 www/js/kamusi.js:264
 msgid ""
@@ -198,22 +197,24 @@ msgid ""
 "If we still have work to earn your highest rating, please send us feedback "
 "at https://kamusigold.org/info/contact"
 msgstr ""
-"Mamy nadzieję, że jesteś zadowolony z Kamusi Here!\n"
-"Jeśli spełniliśmy Twoje oczekiwania, oceń nas!\n"
-"Jeśli jeszcze powinniśmy popracować nad zawartością, wyślij nam komentarz na "
-"https://kamusigold.org/info/contact"
+"Мы надеемся, что вам нравится Kamusi Here!\n"
+"Если мы заслужили ваше одобрениние - пожалуйста, постаавьте нам оценку!\n"
+"Если мы можем что-то улучшить - пожалуйста, оставьте нам свой отзыв на "
+"сайте: https://kamusigold.org/info/contact"
 
 #: www/index.html:108
 msgid "Welcome to Kamusi Here!"
-msgstr "Witamy w Kamusi Here!"
+msgstr "Добро пожаловать в Kamusi Here!"
 
 #: www/index.html:129
 msgid "You can select the language of the application here."
-msgstr "Tutaj możesz wybrać język aplikacji."
+msgstr "Здесь вы можете выбрать язык взаимодействия с приложением."
 
 #: www/index.html:141
 msgid "You can swap source and destination languages with this button."
-msgstr "Tym przyciskiem możesz zamienić języki wyszukiwania."
+msgstr ""
+"Вы можете поменять местами язык источника и язык перевода с помощью этой "
+"кнопки."
 
 #: www/index.html:161
 msgid ""
@@ -221,6 +222,6 @@ msgid ""
 "looking for from our original sources. Soon, this app will be asking you to "
 "help share what you know - stay tuned!"
 msgstr ""
-"Może zauważyłeś już, że nie zawsze mamy odpowiedź na Twoje pytanie. Już "
-"niedługo aplikacja poprosi Cię o podzielenie się Twoją wiedzą - zostań z "
-"nami!"
+"Вы заметите, что мы не всегда можем предоставить результат для вашего "
+"поиска. Скоро у нас появится возможность попросить вас поделиться вашим "
+"знанием языков - оставайтесь на связи!"

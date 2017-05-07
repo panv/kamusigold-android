@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 2.0.1\n"
 "Last-Translator: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: \n"
 "Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: www/js/language-names.js:3
 msgid "Arabic"
@@ -24,7 +24,7 @@ msgstr "باسکی ملک"
 msgid "Catalan"
 msgstr "کیٹالان"
 
-#: www/index.html:219 www/index.html:245 www/index.html:274
+#: www/index.html:230 www/index.html:256 www/index.html:285
 msgid "Definition:"
 msgstr "تعریف:"
 
@@ -32,11 +32,11 @@ msgstr "تعریف:"
 msgid "English"
 msgstr "انگریزی"
 
-#: www/index.html:182 www/index.html:78
+#: www/index.html:193 www/index.html:78
 msgid "Enter your word here"
 msgstr "یہاں آپ کی لفظ درج کریں"
 
-#: www/index.html:222 www/index.html:261 www/index.html:277
+#: www/index.html:233 www/index.html:272 www/index.html:288
 msgid "Example:"
 msgstr "مثال:"
 
@@ -48,7 +48,7 @@ msgstr "فرانسیسی"
 msgid "Galician"
 msgstr "گالیشیائی"
 
-#: www/index.html:102 www/index.html:200
+#: www/index.html:102 www/index.html:211
 msgid "Go !"
 msgstr "جاؤ !"
 
@@ -60,10 +60,9 @@ msgstr "مدد"
 msgid "I speak"
 msgstr "میں کہتا (مذکر، مونث۔۔۔۔زمانہ"
 
-#: www/index.html:168
+#: www/index.html:179
 msgid "If you ever need to see this information again, click on this button."
-msgstr ""
-"جب بھی آپ کو دوبارہ یہ معلومات دیکھنے کی ضرورت پڑے اس بٹن پر کلک کریں."
+msgstr "جب بھی آپ کو دوبارہ یہ معلومات دیکھنے کی ضرورت پڑے اس بٹن پر کلک کریں."
 
 #: www/js/language-names.js:9
 msgid "Italian"
@@ -77,27 +76,27 @@ msgstr "زبان جس سے آپ  ترجمہ کرنا چاہتے ہیں"
 msgid "Language you want to translate to"
 msgstr "زبان جس میں ترجمہ کرنا چاہتے ہیں"
 
-#: www/js/kamusi.js:125
+#: www/js/kamusi.js:134
 msgid "No Thanks"
 msgstr "نھیں شکر یہ"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
-#: www/index.html:205
+#: www/index.html:216
 msgid "No data yet for {{search_term}}."
 msgstr "ھنوز کو ئ مواد نہیں."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
-#: www/index.html:249
+#: www/index.html:260
 msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
 msgstr "ھنوز کو ئ مواد نہیں(          ) کے ترجمہ کے لیے."
 
-#: www/index.html:227
+#: www/index.html:238
 msgid "No matches yet."
 msgstr "کوئی مسابقت نہیں."
 
-#: www/index.html:142
+#: www/index.html:153
 msgid ""
 "On the result page, click any translation result to see a search for that "
 "term."
@@ -113,34 +112,42 @@ msgstr "فا رسی"
 msgid "Portuguese"
 msgstr "پرتگالی"
 
-#: www/js/kamusi.js:127
+#: www/js/kamusi.js:136
 msgid "Rate It Now"
 msgstr "اب  درجہ بندی کیجۓ"
 
-#: www/js/kamusi.js:120
+#: www/js/kamusi.js:129
 msgid "Rate Kamusi Here!"
 msgstr "اب کموسی  درجہ بندی کیجۓ!"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
-#: www/index.html:255
+#: www/index.html:266
 msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
 msgstr ""
-"رجسٹرڈ مقرر ین {{ترجمہ (of.target_concept.language)}} ایک تعریف کا مشورہ "
+"رجسٹرڈ مقرر ین {{translate(ob.target_concept.language)}} ایک تعریف کا مشورہ "
 "کریں."
 
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:220
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr ""
+"کے رجسٹرڈ مقرر ین {{translate(source_language_name)}} ایک تعریف کا "
+"مشورہ کریں."
+
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
-#: www/index.html:209 www/index.html:230
-#, fuzzy
+#: www/index.html:241
 msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr ""
-"کے رجسٹرڈ مقرر ین {{ترجمہ (of.target_concept.language)}} ایک تعریف کا مشورہ "
-"کریں."
+"کے رجسٹرڈ مقرر ین {{translate(target_language_name)}} ایک تعریف کا "
+"مشورہ کریں."
 
-#: www/js/kamusi.js:126
+#: www/js/kamusi.js:135
 msgid "Remind Me Later"
 msgstr "مجھے بعد میں یاد کروانا"
 
@@ -152,11 +159,11 @@ msgstr "رومانیائی"
 msgid "Slovak"
 msgstr "سلوواک"
 
-#: www/index.html:187 www/index.html:84
+#: www/index.html:198 www/index.html:84
 msgid "Source Language"
 msgstr "ماخذ زبان"
 
-#: www/index.html:284
+#: www/index.html:295
 msgid "Sources"
 msgstr "ذرائع"
 
@@ -168,7 +175,7 @@ msgstr "ہسپانوی"
 msgid "Swap Languages"
 msgstr "زبانیں  ردوبدل"
 
-#: www/index.html:195 www/index.html:96
+#: www/index.html:206 www/index.html:96
 msgid "Target Language"
 msgstr "مطلوبہ زبان"
 
@@ -176,11 +183,11 @@ msgstr "مطلوبہ زبان"
 msgid "UI language"
 msgstr "UI زبان"
 
-#: www/index.html:229 www/index.html:254
+#: www/index.html:240 www/index.html:265
 msgid "Upcoming feature:"
 msgstr "انے والے کی خصوصیات:"
 
-#: www/js/kamusi.js:121
+#: www/js/kamusi.js:130 www/js/kamusi.js:264
 msgid ""
 "We hope you are enjoying Kamusi Here!\n"
 "If we have earned your appreciation, please give us a rating now!\n"
@@ -196,19 +203,19 @@ msgstr ""
 msgid "Welcome to Kamusi Here!"
 msgstr "Kamusi پر خوش آمد ید!"
 
-#: www/index.html:118
+#: www/index.html:129
 msgid "You can select the language of the application here."
 msgstr "آپ یہاں درخواست کی زبان منتخب کر سکتے ہیں."
 
-#: www/index.html:130
+#: www/index.html:141
 msgid "You can swap source and destination languages with this button."
 msgstr "آپ اس بٹن کے ساتھ منبع اور منزل زبانوں تبادلہ کر سکتے ہیں."
 
-#: www/index.html:158
+#: www/index.html:161
 msgid ""
 "You will notice that we do not always have a match for a term you are "
-"looking for from our original sources.\\nSoon, this app will be asking you "
-"to help share what you know - stay tuned!"
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
 msgstr ""
-"آپ محسوس کریں گے کہ ھما ر ے پاس ہمیشہ آپ کا مطلوبہ جواب نہیں ہوتا۔ مگر "
-"جلد ، یہ ایپ آپ کو اپنی معلومات میں اضافے کے لۓ مدد کی درخواست کرے گی!"
+"آپ محسوس کریں گے کہ ھما ر ے پاس ہمیشہ آپ کا مطلوبہ جواب نہیں ہوتا۔ مگر جلد ، "
+"یہ ایپ آپ کو اپنی معلومات میں اضافے کے لۓ مدد کی درخواست کرے گی!"

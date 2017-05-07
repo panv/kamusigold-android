@@ -320,6 +320,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     $scope.switchLanguage = function() {
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
         storage.setUiLanguage($scope.selected_translation);
+        // Display help on first launch after selecting the language
         if (!storage.isInitialLaunch()) {
             storage.setLaunch();
             displayWalkthrough(1);

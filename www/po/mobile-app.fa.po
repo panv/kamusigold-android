@@ -5,37 +5,36 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: ar\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.1\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && "
-"n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: www/js/language-names.js:3
 msgid "Arabic"
-msgstr "العربية"
+msgstr "عربی"
 
 #: www/js/language-names.js:4
 msgid "Basque"
-msgstr "الباسكية"
+msgstr "باسکی"
 
 #: www/js/language-names.js:5
 msgid "Catalan"
-msgstr "الكاتالونية"
+msgstr "کاتالانی"
 
 #: www/index.html:230 www/index.html:256 www/index.html:285
 msgid "Definition:"
-msgstr "التعريف:"
+msgstr "تعریف:"
 
 #: www/js/language-names.js:6
 msgid "English"
-msgstr "الانجليزية"
+msgstr "انگلیسی"
 
 #: www/index.html:193 www/index.html:78
 msgid "Enter your word here"
-msgstr "أدخل الكلمة هنا"
+msgstr "کلمه خود را اینجا وارد کنید:"
 
 #: www/index.html:233 www/index.html:272 www/index.html:288
 msgid "Example:"
@@ -43,48 +42,48 @@ msgstr "مثال:"
 
 #: www/js/language-names.js:7
 msgid "French"
-msgstr "الفرنسية"
+msgstr "فرانسوی"
 
 #: www/js/language-names.js:8
 msgid "Galician"
-msgstr "الغاليسية"
+msgstr "گالیسیایی"
 
 #: www/index.html:102 www/index.html:211
 msgid "Go !"
-msgstr "إذهب!"
+msgstr "برو !"
 
 #: www/index.html:64
 msgid "Help"
-msgstr "مساعدة"
+msgstr "کمک"
 
 #: www/index.html:68
 msgid "I speak"
-msgstr "أتكلّم اللّغة"
+msgstr "من به این زبان صحبت میکنم:"
 
 #: www/index.html:179
 msgid "If you ever need to see this information again, click on this button."
-msgstr "إذا أردت رؤية هذه المعلومات مجدّداً أنقر على هذا الزرّ."
+msgstr "هرگاه مایل بودید که این اطلاعات را ببینید، بر روی این دکمه کلیک کنید."
 
 #: www/js/language-names.js:9
 msgid "Italian"
-msgstr "الإيطاليّة"
+msgstr "ایتالیایی"
 
 #: www/index.html:85
 msgid "Language you want to translate from"
-msgstr "‫لغة المصدر"
+msgstr "زبانی که می‌خواهید از آن ترجمه بشود"
 
 #: www/index.html:97
 msgid "Language you want to translate to"
-msgstr "لغة الترجمة"
+msgstr "زبانی که می‌خواهید به آن ترجمه بشود"
 
 #: www/js/kamusi.js:134
 msgid "No Thanks"
-msgstr "لا شكراً"
+msgstr "نه، ممنون"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
 #: www/index.html:216
 msgid "No data yet for {{search_term}}."
-msgstr "لا يوجد معلومات عن {{search_term}}."
+msgstr "هنوز برای {{search_term}} اطلاعاتی وارد نشده است."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
 #: www/index.html:260
@@ -92,33 +91,36 @@ msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
 msgstr ""
-"لا يوجد تعريف حتى الآن في اللغة {{translate(ob.target_concept.language)}} لهذا "
-"المعنى ل:  <b>{{parse(search_term)}}</b>."
+"هنوز در  {{translate(ob.target_concept.language)}}  تعریفی برای معنی "
+"{{parse(search_term)}} وجود ندارد."
 
 #: www/index.html:238
 msgid "No matches yet."
-msgstr "لا يوجد نتائج."
+msgstr "هنوز برای این کلمه اطلاعاتی وارد نشده است."
 
 #: www/index.html:153
 msgid ""
-"On the result page, click any translation result to see a search for that term."
-msgstr "على صفحة النتائج، أنقر أي عبارة مترجمة كي تبحث عن تعريفات لتلك العبارة."
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"در صفحه نتایج، بر روی هر یک از نتایج ترجمه که مایلید کلیک کنید تا آن کلمه را "
+"جستجو کنید."
 
 #: www/js/language-names.js:10
 msgid "Persian"
-msgstr "الفارسية"
+msgstr "فارسی"
 
 #: www/js/language-names.js:11
 msgid "Portuguese"
-msgstr "البرتغالية"
+msgstr "پرتغالی"
 
 #: www/js/kamusi.js:136
 msgid "Rate It Now"
-msgstr "قيّم البرنامج"
+msgstr "همین حالا به این نرم افزار امتیاز بده"
 
 #: www/js/kamusi.js:129
 msgid "Rate Kamusi Here!"
-msgstr "قيّم Kamusi Here!"
+msgstr "به این نرم افزار امتیاز بده"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
 #: www/index.html:266
@@ -126,8 +128,8 @@ msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
 msgstr ""
-"الرجاء من الأعضاء الذين يتكلّمون {{translate(ob.target_concept.language)}} أن "
-"يقترحوا تعريفاً."
+"همه {{translate(ob.target_concept.language)}} زبانان ثبت شده لطفا یک تعریف "
+"مناسب پیشنهاد دهید."
 
 #. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
 #: www/index.html:220
@@ -135,8 +137,8 @@ msgid ""
 "Registered speakers of {{translate(source_language_name)}} please suggest a "
 "term."
 msgstr ""
-"الرجاء من الأعضاء الذين يتكلّمون {{translate(source_language_name)}} أن يقترحوا "
-"عبارةً."
+"همه {{translate(source_language_name)}} زبانان ثبت شده لطفا یک کلمه مناسب "
+"پیشنهاد دهید."
 
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
 #: www/index.html:241
@@ -144,79 +146,79 @@ msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr ""
-"الرجاء من الأعضاء الذين يتكلّمون {{translate(target_language_name)}} أن يقترحوا "
-"عبارةً."
+"همه {{translate(target_language_name)}} زبانان ثبت شده لطفا یک کلمه مناسب "
+"پیشنهاد دهید."
 
 #: www/js/kamusi.js:135
 msgid "Remind Me Later"
-msgstr "ذكّرني لاحقاً"
+msgstr "بعدا به من بگو"
 
 #: www/js/language-names.js:12
 msgid "Romanian"
-msgstr "الرومانية"
+msgstr "رومانیایی"
 
 #: www/js/language-names.js:13
 msgid "Slovak"
-msgstr "السلوفاكية"
+msgstr "اسلواک"
 
 #: www/index.html:198 www/index.html:84
 msgid "Source Language"
-msgstr "لغة المصدر"
+msgstr "زبان مبدا"
 
 #: www/index.html:295
 msgid "Sources"
-msgstr "المصادر"
+msgstr "منابع"
 
 #: www/js/language-names.js:14
 msgid "Spanish"
-msgstr "الإسبانية"
+msgstr "اسپانیایی"
 
 #: www/index.html:90 www/index.html:91
 msgid "Swap Languages"
-msgstr "بدّل اللّغات"
+msgstr "ربان‌ها را جابه‌جا کن"
 
 #: www/index.html:206 www/index.html:96
 msgid "Target Language"
-msgstr "لغة الترجمة"
+msgstr "زبان هدف"
 
 #: www/index.html:65
 msgid "UI language"
-msgstr "لغة المستخدم"
+msgstr "زبان رابط کاربری"
 
 #: www/index.html:240 www/index.html:265
 msgid "Upcoming feature:"
-msgstr "خاصّية قادمة:"
+msgstr "در آینده اضافه می‌شود"
 
 #: www/js/kamusi.js:130 www/js/kamusi.js:264
 msgid ""
 "We hope you are enjoying Kamusi Here!\n"
 "If we have earned your appreciation, please give us a rating now!\n"
-"If we still have work to earn your highest rating, please send us feedback at "
-"https://kamusigold.org/info/contact"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
 msgstr ""
-"نأمل أن تكونوا تستمتعون ببرنامج Kamusi Here!‬\n"
-"إذا نلنا إعجابكم، سنكون ممتنّين إن قيّمتم التطبيق الآن!‬\n"
-"‫‫أمّا إذا كان لديكم أفكار لتحسين البرنامج، يُرجى مراسلتنا على: https://kamusigold."
-"org/info/contact"
+"امیدواریم که از این اپلیکیشن لذت ببرید.\n"
+"اگر از ما راضی هستید، لطفا به ما امتیاز دهید.\n"
+"اگر به نظرتان این برنامه هنوز جای پیشرفت داره، لطفا نظرات خود را از طریق "
+"آدرس https://kamusigold.org/info/contact برای ما بفرستید."
 
 #: www/index.html:108
 msgid "Welcome to Kamusi Here!"
-msgstr "أهلاً بكم في قاموسي هنا!"
+msgstr "به اپلیکیشن ما خوش آمدید."
 
 #: www/index.html:129
 msgid "You can select the language of the application here."
-msgstr "يمكنكم اختيار لغة البرنامج هنا."
+msgstr "از اینجا می‌توانید زبان اصلی اپلیکیشن را انتخاب کنید."
 
 #: www/index.html:141
 msgid "You can swap source and destination languages with this button."
-msgstr "يمكنكم تبديل لغة الهدف ولغة الترجمة بالنقر على هذا الزرّ."
+msgstr "با این دکمه جای زبان‌های مبدا و هدف را عوض کنید."
 
 #: www/index.html:161
 msgid ""
-"You will notice that we do not always have a match for a term you are looking "
-"for from our original sources. Soon, this app will be asking you to help share "
-"what you know - stay tuned!"
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
 msgstr ""
-"ستلاحظون أنّه في بعض الأحيان، لا يوجد نتائج لعبارة البحث من المصادر التي نعتمد "
-"عليها.‫‫‫قريباً، سنعطيكم إمكانيّة المساعدة في حال أردتم تقديم معرفتكم عن بعض "
-"العبارات!"
+"حتما متوجه شده‌اید که ما گاهی اوقات برای کلمه‌ای که دنبال ترجمه‌اش هستید از "
+"منابع خودمان پاسخی پیدا نمی‌کنیم. به زودی اپلیکیشن از نظرات شما برای به "
+"اشتراک گذاری و تکمیل اطلاعات استفاده می‌کند. منتظر خبرهای خوب باشد."

@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.8.1\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!"
-"=0)))?2:1));\n"
 "Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #: www/js/language-names.js:3
 msgid "Arabic"
@@ -25,7 +25,7 @@ msgstr "Bască"
 msgid "Catalan"
 msgstr "Catalană"
 
-#: www/index.html:219 www/index.html:245 www/index.html:274
+#: www/index.html:230 www/index.html:256 www/index.html:285
 msgid "Definition:"
 msgstr "Definiție:"
 
@@ -33,11 +33,11 @@ msgstr "Definiție:"
 msgid "English"
 msgstr "Engleză"
 
-#: www/index.html:182 www/index.html:78
+#: www/index.html:193 www/index.html:78
 msgid "Enter your word here"
 msgstr "Introduceți cuvantul aici:"
 
-#: www/index.html:222 www/index.html:261 www/index.html:277
+#: www/index.html:233 www/index.html:272 www/index.html:288
 msgid "Example:"
 msgstr "Exemplu:"
 
@@ -49,7 +49,7 @@ msgstr "Franceză"
 msgid "Galician"
 msgstr "Galiciană"
 
-#: www/index.html:102 www/index.html:200
+#: www/index.html:102 www/index.html:211
 msgid "Go !"
 msgstr "Găsește!"
 
@@ -61,7 +61,7 @@ msgstr "Ajutor"
 msgid "I speak"
 msgstr "Vorbesc limba"
 
-#: www/index.html:168
+#: www/index.html:179
 msgid "If you ever need to see this information again, click on this button."
 msgstr ""
 "Daca aveti nevoie de aceasta informatie din nou, apasati pe acest buton."
@@ -78,17 +78,17 @@ msgstr "Traduce din"
 msgid "Language you want to translate to"
 msgstr "Traduce în"
 
-#: www/js/kamusi.js:125
+#: www/js/kamusi.js:134
 msgid "No Thanks"
 msgstr "Nu mulțumesc"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
-#: www/index.html:205
+#: www/index.html:216
 msgid "No data yet for {{search_term}}."
 msgstr "Nu avem informație despre {{search_term}}."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
-#: www/index.html:249
+#: www/index.html:260
 msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
@@ -96,11 +96,11 @@ msgstr ""
 "Nu avem înca definiție în {{translate(ob.target_concept.language)}} pentru "
 "acest înțeles al cuvantului  <b>{{parse(search_term)}}</b>."
 
-#: www/index.html:227
+#: www/index.html:238
 msgid "No matches yet."
 msgstr "Nu avem echivalent încă."
 
-#: www/index.html:142
+#: www/index.html:153
 msgid ""
 "On the result page, click any translation result to see a search for that "
 "term."
@@ -116,16 +116,16 @@ msgstr "Persană"
 msgid "Portuguese"
 msgstr "Portugheză"
 
-#: www/js/kamusi.js:127
+#: www/js/kamusi.js:136
 msgid "Rate It Now"
 msgstr "Evaluează Acum"
 
-#: www/js/kamusi.js:120
+#: www/js/kamusi.js:129
 msgid "Rate Kamusi Here!"
 msgstr "Evaluează Kamusi Aici!"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
-#: www/index.html:255
+#: www/index.html:266
 msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
@@ -133,16 +133,25 @@ msgstr ""
 "Pentru vorbitorii înregistrați de {{translate(ob.target_concept.language)}} "
 "- vă rugăm sugerați o definiție."
 
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:220
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Pentru vorbitorii înregistrați de {{translate(source_language_name)}} - vă "
+"rugăm sugerați un termen."
+
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
-#: www/index.html:209 www/index.html:230
+#: www/index.html:241
 msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr ""
-"Pentru vorbitorii înregistrați de {{translate(ob.target_concept.language)}} "
-"- vă rugăm sugerați un termen."
+"Pentru vorbitorii înregistrați de {{translate(target_language_name)}} - vă "
+"rugăm sugerați un termen."
 
-#: www/js/kamusi.js:126
+#: www/js/kamusi.js:135
 msgid "Remind Me Later"
 msgstr "Adu-mi aminte mai târziu!"
 
@@ -154,11 +163,11 @@ msgstr "Română"
 msgid "Slovak"
 msgstr "Slovacă"
 
-#: www/index.html:187 www/index.html:84
+#: www/index.html:198 www/index.html:84
 msgid "Source Language"
 msgstr "Limba sursă"
 
-#: www/index.html:284
+#: www/index.html:295
 msgid "Sources"
 msgstr "Surse"
 
@@ -170,7 +179,7 @@ msgstr "Spaniolă"
 msgid "Swap Languages"
 msgstr "Inversează limbile"
 
-#: www/index.html:195 www/index.html:96
+#: www/index.html:206 www/index.html:96
 msgid "Target Language"
 msgstr "Limba destinație"
 
@@ -178,11 +187,11 @@ msgstr "Limba destinație"
 msgid "UI language"
 msgstr "Limba de afișare"
 
-#: www/index.html:229 www/index.html:254
+#: www/index.html:240 www/index.html:265
 msgid "Upcoming feature:"
 msgstr "Caracterisitcă viitoare:"
 
-#: www/js/kamusi.js:121
+#: www/js/kamusi.js:130 www/js/kamusi.js:264
 msgid ""
 "We hope you are enjoying Kamusi Here!\n"
 "If we have earned your appreciation, please give us a rating now!\n"
@@ -198,20 +207,20 @@ msgstr ""
 msgid "Welcome to Kamusi Here!"
 msgstr "Bine ați venit la Kamusi Here!"
 
-#: www/index.html:118
+#: www/index.html:129
 msgid "You can select the language of the application here."
 msgstr "Puteți selecta limba aplicației aici."
 
-#: www/index.html:130
+#: www/index.html:141
 msgid "You can swap source and destination languages with this button."
 msgstr "Puteți sa inversați limba sursă cu cea de destinație cu acest buton."
 
-#: www/index.html:158
+#: www/index.html:161
 msgid ""
 "You will notice that we do not always have a match for a term you are "
-"looking for from our original sources. Soon, this app will be asking you "
-"to help share what you know - stay tuned!"
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
 msgstr ""
 "Veți observa că nu avem întotdeauna un cuvânt corespunzător căutării "
-"dumneavoastră in sursele noastre originale. Curând, această aplicație va "
-"fii deschisă sugestiilor dumneavoastră - reveniți curând!"
+"dumneavoastră in sursele noastre originale. Curând, această aplicație va fii "
+"deschisă sugestiilor dumneavoastră - reveniți curând!"

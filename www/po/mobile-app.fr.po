@@ -24,7 +24,7 @@ msgstr "Basque"
 msgid "Catalan"
 msgstr "Catalan"
 
-#: www/index.html:219 www/index.html:245 www/index.html:274
+#: www/index.html:230 www/index.html:256 www/index.html:285
 msgid "Definition:"
 msgstr "Définition:"
 
@@ -32,11 +32,11 @@ msgstr "Définition:"
 msgid "English"
 msgstr "Anglais"
 
-#: www/index.html:182 www/index.html:78
+#: www/index.html:193 www/index.html:78
 msgid "Enter your word here"
 msgstr "Entrez un mot"
 
-#: www/index.html:222 www/index.html:261 www/index.html:277
+#: www/index.html:233 www/index.html:272 www/index.html:288
 msgid "Example:"
 msgstr "Exemple:"
 
@@ -48,7 +48,7 @@ msgstr "Français"
 msgid "Galician"
 msgstr "Galicien"
 
-#: www/index.html:102 www/index.html:200
+#: www/index.html:102 www/index.html:211
 msgid "Go !"
 msgstr "Go !"
 
@@ -60,7 +60,7 @@ msgstr "Aide"
 msgid "I speak"
 msgstr "Je parle"
 
-#: www/index.html:168
+#: www/index.html:179
 msgid "If you ever need to see this information again, click on this button."
 msgstr "Pour revoir l'aide, cliquez ce bouton."
 
@@ -76,17 +76,17 @@ msgstr "Langue du mot à traduire"
 msgid "Language you want to translate to"
 msgstr "Langue de traduction"
 
-#: www/js/kamusi.js:125
+#: www/js/kamusi.js:134
 msgid "No Thanks"
 msgstr "Non Merci"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
-#: www/index.html:205
+#: www/index.html:216
 msgid "No data yet for {{search_term}}."
 msgstr "Pas encore de données pour {{search_term}}."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
-#: www/index.html:249
+#: www/index.html:260
 msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
@@ -94,11 +94,11 @@ msgstr ""
 "Pas encore de définition en {{translate(ob.target_concept.language)}} pour "
 "ce sens de  <b>{{parse(search_term)}}</b>."
 
-#: www/index.html:227
+#: www/index.html:238
 msgid "No matches yet."
 msgstr "Pas de résultat."
 
-#: www/index.html:142
+#: www/index.html:153
 msgid ""
 "On the result page, click any translation result to see a search for that "
 "term."
@@ -114,16 +114,16 @@ msgstr "Perse"
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: www/js/kamusi.js:127
+#: www/js/kamusi.js:136
 msgid "Rate It Now"
 msgstr "Noter Maintenant"
 
-#: www/js/kamusi.js:120
+#: www/js/kamusi.js:129
 msgid "Rate Kamusi Here!"
 msgstr "Notez Kamusi Here!"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
-#: www/index.html:255
+#: www/index.html:266
 msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
@@ -131,14 +131,21 @@ msgstr ""
 "Locuteurs de {{translate(ob.target_concept.language)}}, suggérez une "
 "définition."
 
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:220
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr "Locuteurs de {{translate(source_language_name)}}, suggérez un terme."
+
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
-#: www/index.html:209 www/index.html:230
+#: www/index.html:241
 msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr "Locuteurs de {{translate(target_language_name)}}, suggérez un terme."
 
-#: www/js/kamusi.js:126
+#: www/js/kamusi.js:135
 msgid "Remind Me Later"
 msgstr "Plus Tard"
 
@@ -150,11 +157,11 @@ msgstr "Roumain"
 msgid "Slovak"
 msgstr "Slovaque"
 
-#: www/index.html:187 www/index.html:84
+#: www/index.html:198 www/index.html:84
 msgid "Source Language"
 msgstr "Langage Source"
 
-#: www/index.html:284
+#: www/index.html:295
 msgid "Sources"
 msgstr "Sources"
 
@@ -166,7 +173,7 @@ msgstr "Espagnol"
 msgid "Swap Languages"
 msgstr "Permutez les langues"
 
-#: www/index.html:195 www/index.html:96
+#: www/index.html:206 www/index.html:96
 msgid "Target Language"
 msgstr "Langage Cible"
 
@@ -174,11 +181,11 @@ msgstr "Langage Cible"
 msgid "UI language"
 msgstr "Langue de l'interface"
 
-#: www/index.html:229 www/index.html:254
+#: www/index.html:240 www/index.html:265
 msgid "Upcoming feature:"
 msgstr "Future fonctionnalité:"
 
-#: www/js/kamusi.js:121
+#: www/js/kamusi.js:130 www/js/kamusi.js:264
 msgid ""
 "We hope you are enjoying Kamusi Here!\n"
 "If we have earned your appreciation, please give us a rating now!\n"
@@ -194,15 +201,15 @@ msgstr ""
 msgid "Welcome to Kamusi Here!"
 msgstr "Bienvenue dans Kamusi Here!"
 
-#: www/index.html:118
+#: www/index.html:129
 msgid "You can select the language of the application here."
 msgstr "Vous pouvez choisir la langue de l'interface ici."
 
-#: www/index.html:130
+#: www/index.html:141
 msgid "You can swap source and destination languages with this button."
 msgstr "Vous pouvez permuter les langues de traduction en cliquant ici."
 
-#: www/index.html:158
+#: www/index.html:161
 msgid ""
 "You will notice that we do not always have a match for a term you are "
 "looking for from our original sources. Soon, this app will be asking you to "
