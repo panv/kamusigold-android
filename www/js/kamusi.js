@@ -30,10 +30,12 @@ app.factory('languageApi', function($http) {
                 {name: "English", code: "en"},
                 {name: "Euskara", code: "eu"},
                 {name: "Français", code: "fr"},
-                {name: "Polish", code: "pl_PL"},
+                {name: "فارسی", code: "fa"},
+                {name: "Język polski", code: "pl_PL"},
                 {name: "Română", code: "ro"},
+                {name: "ру́сский язы́к", code: "ru_RU"},
                 {name: "Swahili", code: "sw"},
-                {name: "Urdu", code: "ur"}
+                {name: "اُردُو", code: "ur"}
             ];
         }
     }
