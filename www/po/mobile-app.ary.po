@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ary\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "L3arbia"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "Lbaskia"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "Lcatalonia"
+
+#: www/index.html:230 www/index.html:256 www/index.html:285
+msgid "Definition:"
+msgstr "Ta3rif:"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "Nneglizia"
+
+#: www/index.html:193 www/index.html:78
+msgid "Enter your word here"
+msgstr "Kteb lkelma dialek hna"
+
+#: www/index.html:233 www/index.html:272 www/index.html:288
+msgid "Example:"
+msgstr "Matal:"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "Lfransawia"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "Lgalisia"
+
+#: www/index.html:102 www/index.html:211
+msgid "Go !"
+msgstr "Sir !"
+
+#: www/index.html:64
+msgid "Help"
+msgstr "Mousa3ada"
+
+#: www/index.html:68
+msgid "I speak"
+msgstr "Tantkellem"
+
+#: www/index.html:179
+msgid "If you ever need to see this information again, click on this button."
+msgstr "Ila 7tajiti bach t3awd tchouf had lme3louma, dghet 3la had lbouton."
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "Ttaliania"
+
+#: www/index.html:85
+msgid "Language you want to translate from"
+msgstr "Llougha dial lkelma li bghiti tterjemha"
+
+#: www/index.html:97
+msgid "Language you want to translate to"
+msgstr "Llougha li baghi tterjem liha lkelma dialek"
+
+#: www/js/kamusi.js:134
+msgid "No Thanks"
+msgstr "Lla choukran"
+
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:216
+msgid "No data yet for {{search_term}}."
+msgstr "Mazal ma kayn me3loumat 3la {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:260
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+"Mazal ma kayn ta3rif f {{translate(ob.target_concept.language)}} lhad lme3na "
+"dial <b>{{parse(search_term)}}</b>."
+
+#: www/index.html:238
+msgid "No matches yet."
+msgstr "Mazal ma kayn lme3louma lmounasiba."
+
+#: www/index.html:153
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"F ssef7a dial nata2ij, dghet 3la ay terjama bach tchouf be7t 3la dik lkelma."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "Lfarisia"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "Lbourtoughalia"
+
+#: www/js/kamusi.js:136
+msgid "Rate It Now"
+msgstr "3ti noqta daba"
+
+#: www/js/kamusi.js:129
+msgid "Rate Kamusi Here!"
+msgstr "3ti chi noqta l Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:266
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Tantelbou men nnatiqin lemsejlin dial {{translate(ob.target_concept."
+"language)}} yeqtar7o chi ta3rif."
+
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:220
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Tantelbou men nnatiqin lemsejlin dial {{translate(source_language_name)}} "
+"yeqtar7o chi kelma."
+
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:241
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Tantelbou men nnatiqin lemsejlin dial {{translate(target_language_name)}} "
+"yeqtar7o chi kelma."
+
+#: www/js/kamusi.js:135
+msgid "Remind Me Later"
+msgstr "Fekkerni men be3d"
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "Rromania"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "Sslovakia"
+
+#: www/index.html:198 www/index.html:84
+msgid "Source Language"
+msgstr "Llougha lmasdar"
+
+#: www/index.html:295
+msgid "Sources"
+msgstr "Lmasadir"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "Ssbenioulia"
+
+#: www/index.html:90 www/index.html:91
+msgid "Swap Languages"
+msgstr "Qleb lloughat"
+
+#: www/index.html:206 www/index.html:96
+msgid "Target Language"
+msgstr "Llougha lmoustahdafa"
+
+#: www/index.html:65
+msgid "UI language"
+msgstr "Llougha dial lwajiha"
+
+#: www/index.html:240 www/index.html:265
+msgid "Upcoming feature:"
+msgstr "Lmiza jjaya:"
+
+#: www/js/kamusi.js:130 www/js/kamusi.js:264
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"Tantmennaw binnak stemte3ti b Kamusi Here!\n"
+"Ila nelna l2i3jab dialek, 3tina wa7ed noqta daba!\n"
+"Ila baqi khassna nkhedmo bach te3tina a7san noqta, 3afak sift lina ra2yi "
+"dialek hna: https://kamusigold.org/info/contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "Mer7ba bik 3la Kamusi Here!"
+
+#: www/index.html:129
+msgid "You can select the language of the application here."
+msgstr "Yemken lik tekhtar llougha dial tatbiq hnaya."
+
+#: www/index.html:141
+msgid "You can swap source and destination languages with this button."
+msgstr ""
+"Yemken lik teqleb llougha lmasdar ou llougha lmoustahdafa bhad lbouton."
+
+#: www/index.html:161
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
+msgstr ""
+"Ghatla7ed binna ma ghaykounch 3endna dayman natija lelkelma li tatqelleb "
+"3liha men lmasadir l2aslia diawlna. Had tatbiq ghay welli men daba chwia "
+"itelbek bach techrek li tat3arfou - bqa mtabe3na!"

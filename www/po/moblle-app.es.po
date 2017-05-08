@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "árabe"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "vasco"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "catalán"
+
+#: www/index.html:230 www/index.html:256 www/index.html:285
+msgid "Definition:"
+msgstr "Definición"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "inglés"
+
+#: www/index.html:193 www/index.html:78
+msgid "Enter your word here"
+msgstr "Meta su palabra aquí"
+
+#: www/index.html:233 www/index.html:272 www/index.html:288
+msgid "Example:"
+msgstr "Ejemplo"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "francés"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "gallego"
+
+#: www/index.html:102 www/index.html:211
+msgid "Go !"
+msgstr "Ir"
+
+#: www/index.html:64
+msgid "Help"
+msgstr "Ayuda"
+
+#: www/index.html:68
+msgid "I speak"
+msgstr "Hablo"
+
+#: www/index.html:179
+msgid "If you ever need to see this information again, click on this button."
+msgstr "Si necesita ver esta información otra vez, presione este botón."
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "italiano"
+
+#: www/index.html:85
+msgid "Language you want to translate from"
+msgstr "Idioma del que quiere traducir"
+
+#: www/index.html:97
+msgid "Language you want to translate to"
+msgstr "Idioma al que quiere traducir"
+
+#: www/js/kamusi.js:134
+msgid "No Thanks"
+msgstr "No, gracias"
+
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:216
+msgid "No data yet for {{search_term}}."
+msgstr "No hay información aún para {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:260
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+"No hay definición aún en {{translate(ob.target_concept.language)}} para esto "
+"significado de <b>{{parse(search_term)}}</b>."
+
+#: www/index.html:238
+msgid "No matches yet."
+msgstr "Aún se han encontrado coincidencias."
+
+#: www/index.html:153
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"En la página resultante, haga clic en cualquier traducción para ver una "
+"búsqueda para ese término."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "persa"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "portugués"
+
+#: www/js/kamusi.js:136
+msgid "Rate It Now"
+msgstr "Valórelo ahora"
+
+#: www/js/kamusi.js:129
+msgid "Rate Kamusi Here!"
+msgstr "Valore el programa Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:266
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Usuarios registrados de {{translate(ob.target_concept.language)}}, por "
+"favor, sugieran una definición."
+
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:220
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Usuarios registrados de {{translate(source_language_name)}}, por favor, "
+"sugieran un término."
+
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:241
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Usuarios registrados de {{translate(target_language_name)}}, por favor, "
+"sugieran un término."
+
+#: www/js/kamusi.js:135
+msgid "Remind Me Later"
+msgstr "Recuérdemelo más tarde"
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "rumano"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "eslovaco"
+
+#: www/index.html:198 www/index.html:84
+msgid "Source Language"
+msgstr "Traducir de"
+
+#: www/index.html:295
+msgid "Sources"
+msgstr "Fuentes"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "español"
+
+#: www/index.html:90 www/index.html:91
+msgid "Swap Languages"
+msgstr "Cambiar idiomas"
+
+#: www/index.html:206 www/index.html:96
+msgid "Target Language"
+msgstr "Traducir a"
+
+#: www/index.html:65
+msgid "UI language"
+msgstr "Idioma de la interfaz Kamusi"
+
+#: www/index.html:240 www/index.html:265
+msgid "Upcoming feature:"
+msgstr "Característica futura:"
+
+#: www/js/kamusi.js:130 www/js/kamusi.js:264
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"¡Esperamos que Kamusi le esté siendo útil!\n"
+"Si nos aprecia, evalúenos ahora, por favor.\n"
+"Si aún tenemos que trabajar para lograr su mejor evaluación, por favor, "
+"envíenos comentarios sobre cómo mejorar en https://kamusigold.org/info/"
+"contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "¡Bienvenido/a a Kamusi Here!"
+
+#: www/index.html:129
+msgid "You can select the language of the application here."
+msgstr "Puede seleccionar aquí el idioma de la aplicación."
+
+#: www/index.html:141
+msgid "You can swap source and destination languages with this button."
+msgstr ""
+"Puede cambiar el idioma de origen y el idioma al que va a traducir con este "
+"botón."
+
+#: www/index.html:161
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
+msgstr ""
+"Se dará cuanta de que no siempre tenemos una coincidencia para un término "
+"que usted busca desde nuestras fuentes originales. Pronto, esta app estará "
+"habilitada para pedirle que comparta lo que usted sepa - Continúe "
+"siguiéndonos."

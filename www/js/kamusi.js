@@ -27,7 +27,9 @@ app.factory('languageApi', function($http) {
         getAvailableUiLanguages: function() {
             return [
                 {name: "العربية", code: "ar"},
+                {name: "Darija", code: "ary"},
                 {name: "English", code: "en"},
+                {name: "Español", code: "es"},
                 {name: "Euskara", code: "eu"},
                 {name: "Français", code: "fr"},
                 {name: "فارسی", code: "fa"},
