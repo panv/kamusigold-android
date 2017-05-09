@@ -64,10 +64,13 @@ app.factory('storage', function($window) {
         setLaunch: function() {
             $window.localStorage.setItem('initial_launch', "nope");
         },
+        // Push search query into stack
         push_search: function(search_term, src_lang, target_lang) {
             search_stack.push({source: src_lang, target: target_lang, term: search_term});
         },
+        // Pop last search from stack
         pop_search: function() {
+            // Double pop because last element of stack is the current search
             search_stack.pop();
             return search_stack.pop();
         }
@@ -135,6 +138,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         };
         AppRate.promptForRating(false);
 
+        // Goes back to previous searches on back button press
         $ionicPlatform.registerBackButtonAction(function() {
             let previous_search = storage.pop_search();
             if (previous_search) {
@@ -246,7 +250,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         }
         keys.sort()
         for (i = 0; i < keys.length; i++) {
-            $scope.language_list.push({'name': keys[i], 'code': language_obj[keys[i]]});
+            $scope.language_list.push({name: keys[i], code: language_obj[keys[i]]});
         }
     }
 
@@ -275,7 +279,6 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         if (typeof src_lang != 'undefined' && typeof trgt_lang != 'undefined') {
             $scope.wordSearch(input_word, src_lang, trgt_lang);
 
-            // This functionality should happen even when 'Enter' is pressed.
             $("#form").hide();
             $(".homeButton").css('visibility', 'visible');
             $(".searchButton").css('visibility', 'visible');
@@ -340,7 +343,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
 
     // Replaces underscores by spaces in the result terms
     $scope.parse = function(term) {
-        return term.replace('_', ' ');
+        return term.replace(/_/g, ' ');
     }
 
     $scope.pos = function(t1, t2) {
