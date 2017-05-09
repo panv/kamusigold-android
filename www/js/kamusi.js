@@ -45,6 +45,7 @@ app.factory('languageApi', function($http) {
 
 // Factory used to access local storage
 app.factory('storage', function($window) {
+    let search_stack = [];
     return {
         // Stores the current UI language
         setUiLanguage: function(language) {
@@ -62,6 +63,12 @@ app.factory('storage', function($window) {
         // Called after initial launch of the app
         setLaunch: function() {
             $window.localStorage.setItem('initial_launch', "nope");
+        },
+        push_search: function(search_term, src_lang, target_lang) {
+            search_stack.push({source: src_lang, target: target_lang, term: search_term});
+        },
+        pop_search: function() {
+            return search_stack.pop();
         }
     }
 });
@@ -74,10 +81,10 @@ window.onload = function() {
         }
     }
 
-    // When we click leftArrow button
-    $(".leftArrow").click(function() {
+    // When we click home button
+    $(".homeButton").click(function() {
         $("#form").show();
-        $(".leftArrow").css('visibility', 'hidden');
+        $(".homeButton").css('visibility', 'hidden');
         $(".searchButton").css('visibility', 'hidden');
         $("#sample").hide();
     });
@@ -86,26 +93,11 @@ window.onload = function() {
     $(".searchButton").click(function() {
         window.scrollTo(0, 0);
         $("#within").show();
-        $(".leftArrow").css('visibility', 'visible');
+        $(".homeButton").css('visibility', 'visible');
         $(".searchButton").css('visibility', 'visible');
         $("#sample").show();
     });
 };
-
-// ------------ Double back button press to exit---------------
-document.addEventListener('backbutton', () => {
-    if (this.nav.canGoBack()) {
-        this.nav.pop();
-        return;
-    }
-    if (!this.backPressed) {
-        this.backPressed = true;
-        window.plugins.toast.show('Presiona el boton atras de nuevo para cerrar', 'short', 'bottom');
-        setTimeout(() => this.backPressed = false, 2000);
-        return;
-    }
-    navigator.app.exitApp();
-}, false);
 
 app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
                                        storage, $window, gettextCatalog) {
@@ -141,6 +133,14 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
             }
         };
         AppRate.promptForRating(false);
+
+        $ionicPlatform.registerBackButtonAction(function() {
+            let previous_search = storage.pop_search();
+            if (previous_search) {
+                $scope.wordSearch(previous_search.term, previous_search.source,
+                    previous_search.target);
+            }
+        }, 100);
     }, false);
 
     // Called when clicking on the help button
@@ -276,7 +276,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
 
             // This functionality should happen even when 'Enter' is pressed.
             $("#form").hide();
-            $(".leftArrow").css('visibility', 'visible');
+            $(".homeButton").css('visibility', 'visible');
             $(".searchButton").css('visibility', 'visible');
             $("#sample").show();
         }
@@ -285,6 +285,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     // Called when clicking on one of the result terms
     // First parses the source and target languages and then calls wordSearch
     $scope.targetTermOnClick = function(input_word, source, target) {
+        storage.push_search($scope.input_word.trim().replace(/ /g, '_'),
+            $scope.source_language, $scope.target_language);
         languageApi.getDict().then(function(dict) {
             languageApi.getApi().then(function(api) {
                 let src_lang = api[source];
