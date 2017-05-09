@@ -68,6 +68,7 @@ app.factory('storage', function($window) {
             search_stack.push({source: src_lang, target: target_lang, term: search_term});
         },
         pop_search: function() {
+            search_stack.pop();
             return search_stack.pop();
         }
     }
@@ -285,8 +286,6 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     // Called when clicking on one of the result terms
     // First parses the source and target languages and then calls wordSearch
     $scope.targetTermOnClick = function(input_word, source, target) {
-        storage.push_search($scope.input_word.trim().replace(/ /g, '_'),
-            $scope.source_language, $scope.target_language);
         languageApi.getDict().then(function(dict) {
             languageApi.getApi().then(function(api) {
                 let src_lang = api[source];
@@ -301,6 +300,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
 
     // Sends a translation request to the database and displays the response
     $scope.wordSearch = function(input_word, src_lang, trgt_lang) {
+        storage.push_search(input_word, src_lang, trgt_lang);
         $.get("https://kamusigold.org/preD/termTranslate/" + input_word + '/' + src_lang + '/' + trgt_lang)
             .then(function(data) {
                 $("#within").hide();
