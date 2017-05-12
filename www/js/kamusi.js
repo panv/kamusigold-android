@@ -61,8 +61,8 @@ app.factory('storage', function($window) {
             return $window.localStorage.getItem('initial_launch');
         },
         // Called after initial launch of the app
-        setLaunch: function() {
-            $window.localStorage.setItem('initial_launch', "nope");
+        setLaunch: function(init) {
+            $window.localStorage.setItem('initial_launch', init);
         },
         // Push search query into stack
         push_search: function(search_term, src_lang, target_lang) {
@@ -113,13 +113,14 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     document.addEventListener('deviceready', function() {
         // Display help on initial launch
         if (!storage.isInitialLaunch()) {
+            storage.setLaunch("init");
             displayWalkthrough(6);
         }
 
         // Prompt user to rate the app
         AppRate.preferences = {
             displayAppName: "Kamusi Here!",
-            usesUntilPrompt: 2,
+            usesUntilPrompt: 5,
             promptAgainForEachNewVersion: true,
             storeAppURL: {
                 ios: "org.kamusigold.kamusihere",
@@ -330,8 +331,8 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
         storage.setUiLanguage($scope.selected_translation);
         // Display help on first launch after selecting the language
-        if (!storage.isInitialLaunch()) {
-            storage.setLaunch();
+        if (storage.isInitialLaunch() == "init") {
+            storage.setLaunch("lang_set");
             displayWalkthrough(1);
         }
     }
