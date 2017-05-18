@@ -5,7 +5,7 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: es\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,215 +14,214 @@ msgstr ""
 
 #: www/js/language-names.js:3
 msgid "Arabic"
-msgstr "árabe"
+msgstr "Arabo"
 
 #: www/js/language-names.js:4
 msgid "Basque"
-msgstr "vasco"
+msgstr "Basco"
 
 #: www/js/language-names.js:5
 msgid "Catalan"
-msgstr "catalán"
+msgstr "Catalano"
 
-#: www/index.html:230 www/index.html:256 www/index.html:285
+#: www/index.html:231 www/index.html:257 www/index.html:286
 msgid "Definition:"
-msgstr "Definición"
+msgstr "Definizione:"
 
 #: www/js/language-names.js:6
 msgid "English"
-msgstr "inglés"
+msgstr "Inglese"
 
-#: www/index.html:193 www/index.html:78
+#: www/index.html:194 www/index.html:78
 msgid "Enter your word here"
-msgstr "Meta su palabra aquí"
+msgstr "Inserisci qui la tua parola"
 
-#: www/index.html:233 www/index.html:272 www/index.html:288
+#: www/index.html:234 www/index.html:273 www/index.html:289
 msgid "Example:"
-msgstr "Ejemplo"
+msgstr "Esempio:"
 
 #: www/js/language-names.js:7
 msgid "French"
-msgstr "francés"
+msgstr "Francese"
 
 #: www/js/language-names.js:8
 msgid "Galician"
-msgstr "gallego"
+msgstr "Galiziano"
 
-#: www/index.html:102 www/index.html:211
+#: www/index.html:102 www/index.html:212
 msgid "Go !"
-msgstr "Ir"
+msgstr "Vai !"
 
 #: www/index.html:64
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Aiuto"
 
 #: www/index.html:68
 msgid "I speak"
-msgstr "Hablo"
+msgstr "Parlo"
 
-#: www/index.html:179
+#: www/index.html:180
 msgid "If you ever need to see this information again, click on this button."
-msgstr "Si necesita ver esta información otra vez, presione este botón."
+msgstr ""
+"Se vuoi visualizzare nuovamente questa informazione, clicca sul pulsante."
 
 #: www/js/language-names.js:9
 msgid "Italian"
-msgstr "italiano"
+msgstr "Italiano"
 
 #: www/index.html:85
 msgid "Language you want to translate from"
-msgstr "Idioma del que quiere traducir"
+msgstr "Lingua da cui vuoi tradurre"
 
 #: www/index.html:97
 msgid "Language you want to translate to"
-msgstr "Idioma al que quiere traducir"
+msgstr "Lingua in cui vuoi tradurre"
 
-#: www/js/kamusi.js:134
+#: www/js/kamusi.js:137
 msgid "No Thanks"
-msgstr "No, gracias"
+msgstr "No, grazie"
 
 #. {{search_term}} is the term looked up, leave it as is in the translation
-#: www/index.html:216
+#: www/index.html:217
 msgid "No data yet for {{search_term}}."
-msgstr "No hay información aún para {{search_term}}."
+msgstr "Nessuna informazione ancora per {{search_term}}."
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
-#: www/index.html:260
+#: www/index.html:261
 msgid ""
 "No definition yet in {{translate(ob.target_concept.language)}} for this "
 "meaning of <b>{{parse(search_term)}}</b>."
 msgstr ""
-"No hay definición aún en {{translate(ob.target_concept.language)}} para esto "
-"significado de <b>{{parse(search_term)}}</b>."
+"Ancora nessuna definizione in {{translate(ob.target_concept.language)}} per "
+"questo significato di <b>{{parse(search_term)}}</b>."
 
-#: www/index.html:238
+#: www/index.html:239
 msgid "No matches yet."
-msgstr "Aún se han encontrado coincidencias."
+msgstr "Ancora nessuna corrispondenza. "
 
 #: www/index.html:153
 msgid ""
 "On the result page, click any translation result to see a search for that "
 "term."
 msgstr ""
-"En la página resultante, haga clic en cualquier traducción para ver una "
-"búsqueda para ese término."
+"Sulla pagina dei risultati, clicca qualsiasi traduzione per vedere la "
+"ricerca per quel termine."
 
 #: www/js/language-names.js:10
 msgid "Persian"
-msgstr "persa"
+msgstr "Persiano"
 
 #: www/js/language-names.js:11
 msgid "Portuguese"
-msgstr "portugués"
+msgstr "Portoghese"
 
-#: www/js/kamusi.js:136
+#: www/js/kamusi.js:139
 msgid "Rate It Now"
-msgstr "Valórelo ahora"
+msgstr "Vota ora"
 
-#: www/js/kamusi.js:129
+#: www/js/kamusi.js:132
 msgid "Rate Kamusi Here!"
-msgstr "Valore el programa Kamusi Here!"
+msgstr "Vota Kamusi Here!"
 
 #. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
-#: www/index.html:266
+#: www/index.html:267
 msgid ""
 "Registered speakers of {{translate(ob.target_concept.language)}} please "
 "suggest a definition."
 msgstr ""
-"Usuarios registrados de {{translate(ob.target_concept.language)}}, por "
-"favor, sugieran una definición."
+"Parlanti registrati di {{translate(ob.target_concept.language)}} fornite "
+"cortesemente una definizione."
 
 #. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
-#: www/index.html:220
+#: www/index.html:221
 msgid ""
 "Registered speakers of {{translate(source_language_name)}} please suggest a "
 "term."
 msgstr ""
-"Usuarios registrados de {{translate(source_language_name)}}, por favor, "
-"sugieran un término."
+"Parlanti registrati di {{translate(source_language_name)}} suggerite "
+"cortesemente un termine."
 
 #. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
-#: www/index.html:241
+#: www/index.html:242
 msgid ""
 "Registered speakers of {{translate(target_language_name)}} please suggest a "
 "term."
 msgstr ""
-"Usuarios registrados de {{translate(target_language_name)}}, por favor, "
-"sugieran un término."
+"Parlanti registrati di {{translate(target_language_name)}} suggerite "
+"cortesemente un termine."
 
-#: www/js/kamusi.js:135
+#: www/js/kamusi.js:138
 msgid "Remind Me Later"
-msgstr "Recuérdemelo más tarde"
+msgstr "Ricordami più tardi"
 
 #: www/js/language-names.js:12
 msgid "Romanian"
-msgstr "rumano"
+msgstr "Rumeno"
 
 #: www/js/language-names.js:13
 msgid "Slovak"
-msgstr "eslovaco"
+msgstr "Slovacco"
 
-#: www/index.html:198 www/index.html:84
+#: www/index.html:199 www/index.html:84
 msgid "Source Language"
-msgstr "Traducir de"
+msgstr "Lingua di partenza"
 
-#: www/index.html:295
+#: www/index.html:296
 msgid "Sources"
-msgstr "Fuentes"
+msgstr "Fonti"
 
 #: www/js/language-names.js:14
 msgid "Spanish"
-msgstr "español"
+msgstr "Spagnolo"
 
 #: www/index.html:90 www/index.html:91
 msgid "Swap Languages"
-msgstr "Cambiar idiomas"
+msgstr "Inverti le lingue"
 
-#: www/index.html:206 www/index.html:96
+#: www/index.html:207 www/index.html:96
 msgid "Target Language"
-msgstr "Traducir a"
+msgstr "Lingua di arrivo"
 
 #: www/index.html:65
 msgid "UI language"
-msgstr "Idioma de la interfaz Kamusi"
+msgstr "Lingua dell'applicazione"
 
-#: www/index.html:240 www/index.html:265
+#: www/index.html:241 www/index.html:266
 msgid "Upcoming feature:"
-msgstr "Característica futura:"
+msgstr "Prossima funzionalità:"
 
-#: www/js/kamusi.js:130 www/js/kamusi.js:264
+#: www/js/kamusi.js:133
 msgid ""
 "We hope you are enjoying Kamusi Here!\n"
 "If we have earned your appreciation, please give us a rating now!\n"
 "If we still have work to earn your highest rating, please send us feedback "
 "at https://kamusigold.org/info/contact"
 msgstr ""
-"¡Esperamos que Kamusi le esté siendo útil!\n"
-"Si nos aprecia, evalúenos ahora, por favor.\n"
-"Si aún tenemos que trabajar para lograr su mejor evaluación, por favor, "
-"envíenos comentarios sobre cómo mejorar en https://kamusigold.org/info/"
-"contact"
+"Speriamo che Kamusi Here sia di tuo gradimento!\n"
+"Se abbiamo guadagnato il tuo apprezzamento, per favore votaci ora!\n"
+"Se dobbiamo ancora lavorare per guadagnare il punteggio più alto, per favore "
+"inviaci la tua opinione su https://kamusigold.org/info/contact"
 
 #: www/index.html:108
 msgid "Welcome to Kamusi Here!"
-msgstr "¡Bienvenido/a a Kamusi Here!"
+msgstr "Benvenuti in Kamusi Here!"
 
 #: www/index.html:129
 msgid "You can select the language of the application here."
-msgstr "Puede seleccionar aquí el idioma de la aplicación."
+msgstr "Puoi selezionare la lingua dell'applicazione ora."
 
 #: www/index.html:141
 msgid "You can swap source and destination languages with this button."
 msgstr ""
-"Puede cambiar el idioma de origen y el idioma al que va a traducir con este "
-"botón."
+"Puoi invertire la lingua di partenza e la lingua di arrivo con questo "
+"pulsante."
 
-#: www/index.html:161
+#: www/index.html:162
 msgid ""
 "You will notice that we do not always have a match for a term you are "
 "looking for from our original sources. Soon, this app will be asking you to "
 "help share what you know - stay tuned!"
 msgstr ""
-"Se dará cuanta de que no siempre tenemos una coincidencia para un término "
-"que usted busca desde nuestras fuentes originales. Pronto, esta app estará "
-"habilitada para pedirle que comparta lo que usted sepa - Continúe "
-"siguiéndonos."
+"Noterai che non abbiamo sempre una corrispondenza per il termine che stai "
+"cercando nelle nostre fonti originali. Presto, questa app ti chiederà aiuto "
+"per condividere cosa sai - resta sintonizzato!"

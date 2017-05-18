@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: www/js/language-names.js:3
+msgid "Arabic"
+msgstr "Αραβικά"
+
+#: www/js/language-names.js:4
+msgid "Basque"
+msgstr "Βάσκικα"
+
+#: www/js/language-names.js:5
+msgid "Catalan"
+msgstr "Καταλανικά"
+
+#: www/index.html:231 www/index.html:257 www/index.html:286
+msgid "Definition:"
+msgstr "Ορισμός:"
+
+#: www/js/language-names.js:6
+msgid "English"
+msgstr "Αγγλικά"
+
+#: www/index.html:194 www/index.html:78
+msgid "Enter your word here"
+msgstr "Εισάγετε τη λέξη σας εδώ"
+
+#: www/index.html:234 www/index.html:273 www/index.html:289
+msgid "Example:"
+msgstr "Παράδειγμα:"
+
+#: www/js/language-names.js:7
+msgid "French"
+msgstr "Γαλλικά"
+
+#: www/js/language-names.js:8
+msgid "Galician"
+msgstr "Γαλικιανά"
+
+#: www/index.html:102 www/index.html:212
+msgid "Go !"
+msgstr "Μετάφρασε !"
+
+#: www/index.html:64
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: www/index.html:68
+msgid "I speak"
+msgstr "Μιλάω"
+
+#: www/index.html:180
+msgid "If you ever need to see this information again, click on this button."
+msgstr ""
+"Εάν θέλετε να δείτε ξανά αυτές τις πληροφορίες, κάντε κλικ σε αυτό το κουμπί."
+
+#: www/js/language-names.js:9
+msgid "Italian"
+msgstr "Ιταλικά"
+
+#: www/index.html:85
+msgid "Language you want to translate from"
+msgstr "Γλώσσα από την οποία θέλετε να μεταφράσετε"
+
+#: www/index.html:97
+msgid "Language you want to translate to"
+msgstr "Γλώσσα στην οποία θέλετε να μεταφράσετε"
+
+#: www/js/kamusi.js:137
+msgid "No Thanks"
+msgstr "Όχι Ευχαριστώ"
+
+#. {{search_term}} is the term looked up, leave it as is in the translation
+#: www/index.html:217
+msgid "No data yet for {{search_term}}."
+msgstr "Δεν υπάρχουν δεδομένα ακόμη για {{search_term}}."
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, <b>{{parse(search_term)}}</b> is the term looked up, leave them as is in the translation
+#: www/index.html:261
+msgid ""
+"No definition yet in {{translate(ob.target_concept.language)}} for this "
+"meaning of <b>{{parse(search_term)}}</b>."
+msgstr ""
+"Δεν υπάρχει ακόμα ορισμός στη γλώσσα {{translate(ob.target_concept."
+"language)}} για αυτή τη έννοια του <b>{{parse(search_term)}}</b>."
+
+#: www/index.html:239
+msgid "No matches yet."
+msgstr "Δεν υπάρχουν ακόμα αντιστοιχίες."
+
+#: www/index.html:153
+msgid ""
+"On the result page, click any translation result to see a search for that "
+"term."
+msgstr ""
+"Στη σελίδα αποτελεσμάτων, κάντε κλικ σε οποιοδήποτε αποτέλεσμα μετάφρασης "
+"για να δείτε μια αναζήτηση για αυτόν τον όρο."
+
+#: www/js/language-names.js:10
+msgid "Persian"
+msgstr "Περσικά"
+
+#: www/js/language-names.js:11
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+#: www/js/kamusi.js:139
+msgid "Rate It Now"
+msgstr "Βαθμολογήστε το τώρα"
+
+#: www/js/kamusi.js:132
+msgid "Rate Kamusi Here!"
+msgstr "Βαθμολογήστε το Kamusi Here!"
+
+#. {{translate(ob.target_concept.language)}} is the name of a language, leave it as is in the translation
+#: www/index.html:267
+msgid ""
+"Registered speakers of {{translate(ob.target_concept.language)}} please "
+"suggest a definition."
+msgstr ""
+"Εγγεγραμμένοι ομιλητές της γλώσσας {{translate(ob.target_concept.language)}} "
+"παρακαλώ προτείνετε έναν ορισμό."
+
+#. {{translate(source_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:221
+msgid ""
+"Registered speakers of {{translate(source_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Εγγεγραμμένοι ομιλητές της γλώσσας {{translate(source_language_name)}} "
+"παρακαλώ προτείνετε έναν όρο."
+
+#. {{translate(target_language_name)}} is the name of a language, leave it as is in the translation
+#: www/index.html:242
+msgid ""
+"Registered speakers of {{translate(target_language_name)}} please suggest a "
+"term."
+msgstr ""
+"Εγγεγραμμένοι ομιλητές της γλώσσας {{translate(target_language_name)}} "
+"παρακαλώ προτείνετε έναν όρο."
+
+#: www/js/kamusi.js:138
+msgid "Remind Me Later"
+msgstr "Θύμισέ μου αργότερα"
+
+#: www/js/language-names.js:12
+msgid "Romanian"
+msgstr "Ρουμάνικα"
+
+#: www/js/language-names.js:13
+msgid "Slovak"
+msgstr "Σλοβάκικα"
+
+#: www/index.html:199 www/index.html:84
+msgid "Source Language"
+msgstr "Γλώσσα Προέλευσης"
+
+#: www/index.html:296
+msgid "Sources"
+msgstr "Πηγές"
+
+#: www/js/language-names.js:14
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+#: www/index.html:90 www/index.html:91
+msgid "Swap Languages"
+msgstr "Εναλλαγή Γλωσσών"
+
+#: www/index.html:207 www/index.html:96
+msgid "Target Language"
+msgstr "Γλώσσα Προορισμού"
+
+#: www/index.html:65
+msgid "UI language"
+msgstr "Γλώσσα Περιβάλλοντος"
+
+#: www/index.html:241 www/index.html:266
+msgid "Upcoming feature:"
+msgstr "Προσεχής λειτουργία:"
+
+#: www/js/kamusi.js:133
+msgid ""
+"We hope you are enjoying Kamusi Here!\n"
+"If we have earned your appreciation, please give us a rating now!\n"
+"If we still have work to earn your highest rating, please send us feedback "
+"at https://kamusigold.org/info/contact"
+msgstr ""
+"Ελπίζουμε να απολαμβάνετε το Kamusi Here!\n"
+"Εάν κερδίσαμε την εκτίμησή σας, παρακαλούμε βαθμολογείστε μας τώρα!\n"
+"Αν θέλουμε ακόμα δουλειά, παρακαλούμε στείλτε μας τα σχόλια σας στη "
+"διεύθυνση https://kamusigold.org/info/contact"
+
+#: www/index.html:108
+msgid "Welcome to Kamusi Here!"
+msgstr "Καλωσήλθατε στο Kamusi Here!"
+
+#: www/index.html:129
+msgid "You can select the language of the application here."
+msgstr "Μπορείτε να επιλέξετε τη γλώσσα της εφαρμογής εδώ."
+
+#: www/index.html:141
+msgid "You can swap source and destination languages with this button."
+msgstr ""
+"Μπορείτε να εναλλάξετε τις γλώσσες προέλευσης και προορισμού με αυτό το "
+"κουμπί."
+
+#: www/index.html:162
+msgid ""
+"You will notice that we do not always have a match for a term you are "
+"looking for from our original sources. Soon, this app will be asking you to "
+"help share what you know - stay tuned!"
+msgstr ""
+"Θα παρατηρήσατε ότι δεν έχουμε πάντα αντιστοιχία για κάθε όρο που αναζητάτε "
+"από τις αρχικές πηγές μας. Σύντομα, η εφαρμογή θα σας ζητήσει να βοηθήσετε "
+"και να μοιραστείτε αυτά που γνωρίζετε - μείνετε συντονισμένοι!"

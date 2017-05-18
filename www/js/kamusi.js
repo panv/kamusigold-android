@@ -27,16 +27,18 @@ app.factory('languageApi', function($http) {
         getAvailableUiLanguages: function() {
             return [
                 {name: "العربية", code: "ar"},
-                {name: "Darija", code: "ary"},
+                {name: "Darija Lmaghribia", code: "ary"},
+                {name: "Ελληνικά", code: "el"},
                 {name: "English", code: "en"},
                 {name: "Español", code: "es"},
                 {name: "Euskara", code: "eu"},
                 {name: "Français", code: "fr"},
+                {name: "Italiano", code: "it_IT"},
                 {name: "فارسی", code: "fa"},
-                {name: "Język polski", code: "pl_PL"},
+                {name: "Polszczyzna", code: "pl_PL"},
                 {name: "Română", code: "ro"},
-                {name: "ру́сский язы́к", code: "ru_RU"},
-                {name: "Swahili", code: "sw"},
+                {name: "Русский", code: "ru_RU"},
+                {name: "Kiswahili", code: "sw"},
                 {name: "اُردُو", code: "ur"}
             ];
         }
@@ -124,6 +126,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
             promptAgainForEachNewVersion: true,
             storeAppURL: {
                 ios: "org.kamusigold.kamusihere",
+                // 1220859686
                 android: "market://details?id=com.ionicframework.kamusi454359"
             },
             customLocale: {
