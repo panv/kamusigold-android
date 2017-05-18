@@ -242,20 +242,20 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
         $scope.$apply();
     }
 
-    // TODO: optimize this
     // Loads the list of languages in the language selection drop-down menus (source and target)
     function loadListOfLanguages(language_obj) {
-        $scope.language_list = [];
-        keys = []
-        for (k in language_obj) {
-            if (language_obj.hasOwnProperty(k)) {
-                keys.push(k);
+        let languages = [];
+        for (name in language_obj) {
+            if (language_obj.hasOwnProperty(name)) {
+                languages.push({name: name, code: language_obj[name],
+                               translated_name: gettextCatalog.getString(name)});
             }
         }
-        keys.sort()
-        for (i = 0; i < keys.length; i++) {
-            $scope.language_list.push({name: keys[i], code: language_obj[keys[i]]});
-        }
+        languages.sort(function(x, y) {
+            let collator = new Intl.Collator(); // pass locale
+            return collator.compare(x.translated_name, y.translated_name);
+        });
+        $scope.language_list = languages;
     }
 
     // Load the databases languages in the drop-down menus
@@ -333,6 +333,7 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
     $scope.switchLanguage = function() {
         gettextCatalog.setCurrentLanguage($scope.selected_translation);
         storage.setUiLanguage($scope.selected_translation);
+        languageApi.getApi().then(loadListOfLanguages);
         // Display help on first launch after selecting the language
         if (storage.isInitialLaunch() == "init") {
             storage.setLaunch("lang_set");
