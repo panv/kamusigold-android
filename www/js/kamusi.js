@@ -121,12 +121,12 @@ app.controller('displayCtrl', function($scope, $ionicPlatform, languageApi,
 
         // Prompt user to rate the app
         AppRate.preferences = {
+            openStoreInApp: true,
             displayAppName: "Kamusi Here!",
             usesUntilPrompt: 5,
             promptAgainForEachNewVersion: true,
             storeAppURL: {
-                ios: "org.kamusigold.kamusihere",
-                // 1220859686
+                ios: '1220859686',
                 android: "market://details?id=com.ionicframework.kamusi454359"
             },
             customLocale: {
