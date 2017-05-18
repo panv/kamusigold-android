@@ -275,7 +275,7 @@
     </div>
 
     <div class="inner3" ng-hide="ob.source_concept.language == 'English' || ob.target_concept.language == 'English'">
-      <div>{{translate(ob.english_concept.language)}} ({{ob.target_terms[0].pos}}):
+      <div>{{translate(ob.english_concept.language)}} ({{ob.eng_terms[0].pos}}):
         <span ng-repeat="term in ob.eng_terms">
           <button class="engTermButton" ng-click='targetTermOnClick(term.lemma, term.language, ob.source_concept.language)'>
             {{parse(term.lemma)}}
